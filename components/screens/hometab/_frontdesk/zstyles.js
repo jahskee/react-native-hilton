@@ -54,13 +54,13 @@ export const MenuItem = styled.View`
   justify-content: space-around;
   align-items: center;
   margin: 20px;
-  border: 1px solid red;
+  border: 0px solid red;
 `;
 
 export const MenuRow = styled.View`
   flex: 1;
   flex-direction: row;
-  border: 1px solid red;
+  border: 0px solid red;
   justify-content: space-evenly;
 `;
 
