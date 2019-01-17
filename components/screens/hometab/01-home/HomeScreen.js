@@ -9,6 +9,7 @@ import {
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
+import { myStyle } from "../../../_styles/myStyle";
 import {
   MainView,
   DeckBtn,
@@ -18,7 +19,6 @@ import {
   MenuRow,
 } from "./zstyles";
 
-import StatusBarBackground from "../StatusBarBackground";
 
 const DeckItem = props => {
   const onPress = () => {
@@ -36,15 +36,14 @@ const DeckItem = props => {
 
 export const addKeys = (val, key) => ({ key: "" + key, ...val });
 
-class FrontDeskScreen extends React.PureComponent {
+class HomeScreen extends React.PureComponent {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "Front Desk",
-      headerTintColor: "blue",
+      headerTitle: "Home",
+      headerTintColor: myStyle.primaryColor,
       headerTitleStyle: {
         fontWeight: "bold"
-      },
-      header: null
+      }
     };
   };
 
@@ -72,15 +71,10 @@ class FrontDeskScreen extends React.PureComponent {
 
   componentDidMount = () => {
    
-    this.props.addDeckKeys();
     
   };
 
-  //logoBottom = "https://i.imgur.com/mbwvZcO.png";
   logoImage = "https://i.imgur.com/pAixOoS.png";
-  //logoBottom = "https://i.imgur.com/aOwucSK.png";
-  //logoBottom = "";
-
   aboutBtn = "https://i.imgur.com/1H8iyQf.png";
   bookNowBtn = "https://i.imgur.com/P8dpmLP.png";
   galleryBtn = "https://i.imgur.com/HWF6YLL.png";
@@ -93,7 +87,7 @@ class FrontDeskScreen extends React.PureComponent {
   render() {
     return (
       <MainView>
-        <StatusBarBackground style={{ backgroundColor: "midnightblue" }} />
+      
 
         <Image
           style={{
@@ -197,7 +191,7 @@ class FrontDeskScreen extends React.PureComponent {
 }
 
 // ----------- Prop-Types ------
-FrontDeskScreen.propTypes = {
+HomeScreen.propTypes = {
   navigation: PropTypes.object.isRequired
 };
 
@@ -210,13 +204,9 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = {
   addDeck: _actions.addDeck,
   addDeckKeys: _actions.addDeckKeys
-  /*
-  clearAnswers,
-  updateData,
-  getQuestions*/
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FrontDeskScreen);
+)(HomeScreen);

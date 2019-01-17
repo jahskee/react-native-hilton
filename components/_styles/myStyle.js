@@ -8,7 +8,7 @@ export const myStyle = {
     titleFontFamily: "Didot-Italic",
     subTitleFontFamily: 'Noteworthy',
     fontFamily: 'Noteworthy',
-    primaryColor: "#5b7dd3",
+    primaryColor: "green",
     fontSize: 16,   
     topBarColor: '#fff',
     bottomBarColor: 'lightblue',

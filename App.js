@@ -12,7 +12,7 @@ import store from "./components/redux/store/store";
 
 import { myStyle } from "./components/_styles/myStyle";
 
-import FrontDeskScreen from "./components/screens/hometab/_frontdesk/FrontDeskScreen";
+import HomeScreen from "./components/screens/hometab/01-home/HomeScreen";
 import SelectDeckScreen from "./components/screens/hometab/select_deck/SelectDeckScreen";
 import AddDeckScreen from "./components/screens/hometab/add_deck/AddDeckScreen";
 
@@ -20,19 +20,17 @@ import AddCardScreen from "./components/screens/hometab/add_card/AddCardScreen";
 
 import StartQuizScreen from "./components/screens/hometab/start_quiz/StartQuizScreen";
 import ScoreViewScreen from "./components/screens/hometab/score_view/ScoreViewScreen";
-/*
-import ScoreScreen from "./components/screens/hometab/score/ScoreScreen";
-*/
+
 import SettingScreen from "./components/screens/settingtab/setting/SettingScreen";
 
-import FontScreen from "./components/screens/fonttab/font/FontScreen";
+import MyReservationScreen from "./components/screens/reservationstab/reservation/ReservationScreen";
 
 
 global.log = console.log;
 
 const HomeTab = createStackNavigator(
   {
-    FrontDeskScreen,    
+    HomeScreen,    
     AddDeckScreen,
     SelectDeckScreen,
     AddCardScreen,
@@ -43,7 +41,7 @@ const HomeTab = createStackNavigator(
     SettingScreen,*/
   },
   {
-    initialRouteName: "FrontDeskScreen",
+    initialRouteName: "HomeScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
@@ -69,12 +67,12 @@ const SettingTab = createStackNavigator(
 );
 
 
-const FontTab = createStackNavigator(
+const ReservationsTab = createStackNavigator(
   {  
-    FontScreen,
+    MyReservationScreen,
   },
   {
-    initialRouteName: "FontScreen",
+    initialRouteName: "MyReservationScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
@@ -87,7 +85,7 @@ const FontTab = createStackNavigator(
 const MainTabs = createBottomTabNavigator(
   {    
     Home: HomeTab,       
-    Fonts: FontTab,
+    MyReservation: ReservationsTab,
     Settings: SettingTab,
   },
   {
@@ -99,14 +97,14 @@ const MainTabs = createBottomTabNavigator(
           iconName = `ios-home${focused ? '' : '-outline'}`;          
         } else if (routeName === 'Settings') {
           iconName = `ios-construct${focused ? '' : '-outline'}`;
-        } else if (routeName === 'Fonts') {
-          iconName = `ios-american-football${focused ? '' : '-outline'}`;
+        } else if (routeName === 'MyReservation') {
+          iconName = `ios-calendar${focused ? '' : '-outline'}`;
         } 
         return <Ionicons name={iconName} size={25} color={tintColor} />;
       },
     }),
     tabBarOptions: {
-      activeTintColor: '#2a5089',
+      activeTintColor: myStyle.primaryColor,
       inactiveTintColor: 'gray',
     },
     barStyle: { backgroundColor: myStyle.bottomBarColor },
