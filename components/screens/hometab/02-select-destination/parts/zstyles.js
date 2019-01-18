@@ -14,9 +14,11 @@ export const HotelDesc = styled.View`
 
 export const HotelName = styled.Text`
   flex-wrap: wrap;
+  
+  font-size: 14;
   font-weight: bold;
-  font-size: 18;
   padding-bottom: 5px;
+  color: darkgreen;
 `;
 
 /* ----- Hotel photo and price ----- */
@@ -36,4 +38,8 @@ export const Price = styled.Text`
 
   font-weight: bold;
   font-size: 18px;
+`;
+
+export const Distance = styled.Text`
+   margin-top: 10px;
 `;

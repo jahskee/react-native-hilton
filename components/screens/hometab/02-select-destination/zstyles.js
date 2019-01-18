@@ -3,12 +3,13 @@ import styled from "styled-components/native";
 export const MainView = styled.View`
   flex: 1;
   background: whitesmoke;
-  align-items: center;
+  align-content: space-between;
   padding-top: 10px;
 `;
 
 export const Destinations = styled.View`
   margin-top: 10px;
+  margin-bottom: 100px;
 
 `;
 
@@ -21,6 +22,19 @@ export const TopPanel = styled.View`
 `;
 
 export const BottomPanel = styled.View`
-  border: 1px solid green;
+  margin-bottom: 40px;
 `;
 
+export const Button2 = styled.View`
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  background: green;
+  margin: 0 auto;
+  border-radius: 10;
+`;
+
+export const ButtonText = styled.Text`
+  color: white;
+`;

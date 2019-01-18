@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, Button } from "react-native";
+import { View, Text, Image, TouchableOpacity, Button, FlatList } from "react-native";
 
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
@@ -12,45 +12,31 @@ import {
   Destinations,
   TopPanel,
   BottomPanel,
+  Button2,
+  ButtonText,
 } from "./zstyles";
+
+import data from '../../../_data/data';
 
 class SelectDestinationScreen extends Component {
 
   state = {
-    locations: [
-      {
-        locationName: 'Los Angeles, CA',
-        hotels: [
-          { 
-            name: 'Hilton Los Angeles Airport',
-            address: '5711 W Century Blvd, Los Angeles, CA 90041',
-            price: 110.50,
-            image: 'https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png',
-          }, 
-          { 
-            name: 'DoubleTree Los Angeles',
-            address: '535 South Grand Avenue, Los Angeles, CA 90071 US',
-            price: 89.10,
-            image: 'https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png',
-          },
-        ]
-      },
-      {
-
-      }
-  
-    ]
-   ,
-    hello: 'hello'
+    locations: data.locations,
+    selectedLocation: 0,
   };
 
 
   constructor(props) {
     super(props);
     this.deck = this.props.navigation.getParam("deck");
+    
   }
 
-  dropDownData = [{ value: "Los Angeles, CA" }, { value: "Washington DC" }];
+  dropDownData = [
+    { value: this.state.locations[0].locationName }, 
+    { value: this.state.locations[1].locationName }
+  ];
+
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Select Destination",
@@ -61,7 +47,17 @@ class SelectDestinationScreen extends Component {
     };
   };
 
+  handleOnChangeLocation =  (text) => {
+    let selectedLocation;
+    if (text === 'Los Angeles, CA') {
+      selectedLocation = 0;
+    } else if (text === 'Washington, DC') {
+      selectedLocation = 1;
+    }
 
+    this.setState({selectedLocation});
+    console.log(text)
+  }
 
   navProceed = () => {
     this.props.navigation.navigate("BookAndPayScreen", { deck: 100 });
@@ -77,23 +73,29 @@ class SelectDestinationScreen extends Component {
       <MainView>
         <TopPanel>
           <Dropdown
-            label="Select Destination"
+            label="Where are you going?"
+            value='Los Angeles, CA'
             data={this.dropDownData}
             containerStyle={{ width: "90%" }}
+            onChangeText = { this.handleOnChangeLocation}
           />
           <Destinations>
-            <Destination hotel={ this.state.locations[0].hotels[0] }/>
-            <Destination hotel={ this.state.locations[0].hotels[1] } />
+             <FlatList
+              data={this.state.locations[this.state.selectedLocation].hotels}
+              renderItem={ (hotel) => {
+                  console.log(JSON.stringify(hotel))
+                  return (   <Destination hotel={ hotel.item }/>)
+              }}
+
+              keyExtractor = {(item) => item.id}
+             />
+    
+      
+           
           </Destinations>
         </TopPanel>
-
-        <BottomPanel>
-          <Button
-            onPress={this.navProceed}
-            title="Proceed"
-            accessibilityLabel="Learn more about this purple button"
-          />
-        </BottomPanel>
+       
+     
       </MainView>
     );
   }
