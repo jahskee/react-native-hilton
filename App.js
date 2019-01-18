@@ -19,22 +19,24 @@ import SettingScreen from "./components/screens/settingtab/setting/SettingScreen
 import MyReservationScreen from "./components/screens/reservationstab/reservation/ReservationScreen";
 
 import SelectDestinationScreen from "./components/screens/hometab/02-select-destination/SelectDestinationScreen";
-import BookAndPayScreen from  "./components/screens/hometab/03-book-and-pay/BookAndPayScreen";
-import ReviewBookingScreen from  "./components/screens/hometab/04-review-booking/ReviewBookingScreen";
-import ThankYouScreen from  "./components/screens/hometab/05-thank-you/ThankYouScreen";
+import PickDatesScreen from  "./components/screens/hometab/03-pick-dates/PickDatesScreen";
+import PaymentScreen from  "./components/screens/hometab/04-payment/PaymentScreen";
+import ReviewBookingScreen from  "./components/screens/hometab/05-review-booking/ReviewBookingScreen";
+import ThankYouScreen from  "./components/screens/hometab/06-thank-you/ThankYouScreen";
 global.log = console.log;
 
 const HomeTab = createStackNavigator(
   {
     HomeScreen,    
     SelectDestinationScreen,
-    BookAndPayScreen,
+    PickDatesScreen,
+    PaymentScreen,
     ReviewBookingScreen,
     ThankYouScreen
   },
   {
     // initialRouteName: "HomeScreen",
-    initialRouteName: "BookAndPayScreen",
+    initialRouteName: "PickDatesScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
@@ -43,6 +45,7 @@ const HomeTab = createStackNavigator(
     },    
   }
 );
+
 
 const SettingTab = createStackNavigator(
   {  

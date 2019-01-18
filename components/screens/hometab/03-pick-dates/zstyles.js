@@ -41,6 +41,11 @@ export const HotelAddress = styled.Text`
   font-size: 12px;
 `;
 
+export const HotelDiv2 = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
 export const HotelDistance = styled.Text`
   
   margin-bottom: 10px;
@@ -48,8 +53,9 @@ export const HotelDistance = styled.Text`
   font-size: 12px;
 `;
 export const HotelPrice = styled.Text`
-
-  color: darkgreen;
+  color: #30442b;
+  margin-right: 10px;
+  font-weight: bold;
 `;
 
 export const Photo = styled.View`
@@ -60,8 +66,8 @@ export const Photo = styled.View`
 
 /* ---------- Panel 2 ----------*/
 export const Panel2 = styled.View`
-  flex: 1;
-  border: 1px solid blue;
+  flex: 2;
+ 
   width: 100%;
 `;
 
@@ -72,10 +78,4 @@ export const Panel3 = styled.View`
   width: 100%;
 `;
 
-/* ---------- Panel 4 ----------*/
-export const Panel4 = styled.View`
- flex: 1;
-  border: 1px solid blue;
-  width: 100%;
-`;
 
