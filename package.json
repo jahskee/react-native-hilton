@@ -33,6 +33,6 @@
     "redux-freeze": "^0.1.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "styled-components": "2.2.4"
+    "styled-components": "4.1.3"
   }
 }

@@ -13,8 +13,6 @@ export const Destinations = styled.View`
 
 `;
 
-
-
 export const TopPanel = styled.View`
   flex: 1;
   width: 100%;

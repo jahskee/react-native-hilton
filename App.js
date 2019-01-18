@@ -34,7 +34,7 @@ const HomeTab = createStackNavigator(
   },
   {
     // initialRouteName: "HomeScreen",
-    initialRouteName: "HomeScreen",
+    initialRouteName: "BookAndPayScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
