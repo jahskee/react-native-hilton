@@ -40,7 +40,7 @@ class SelectDestinationScreen extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "Select Destination",
+      headerTitle: "Booking",
       headerTintColor: myStyle.primaryColor,
       headerTitleStyle: {
         fontWeight: "bold"
@@ -59,10 +59,6 @@ class SelectDestinationScreen extends Component {
     this.setState({selectedLocation});
     console.log(text)
   }
-
-  navProceed = () => {
-    this.props.navigation.navigate("BookAndPayScreen", { deck: 100 });
-  };
 
   componentDidMount = () => {
     this.props.updateData({ quizrun: true });
@@ -87,7 +83,7 @@ class SelectDestinationScreen extends Component {
               data={this.state.locations[this.state.selectedLocation].hotels}
               renderItem={ (hotel) => {
                   console.log(JSON.stringify(hotel))
-                  return (   <Destination hotel={ hotel.item }/>)
+                  return (   <Destination hotel={ hotel.item } navigation={this.props.navigation} />)
               }}
 
               keyExtractor = {(item) => item.id}

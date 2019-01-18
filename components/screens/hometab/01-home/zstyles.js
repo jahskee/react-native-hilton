@@ -26,3 +26,4 @@ export const Image2 = styled.View`
   width: 60;
   height: 70;
 `;
+

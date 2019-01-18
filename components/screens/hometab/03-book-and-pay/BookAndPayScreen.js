@@ -9,13 +9,12 @@ import { myStyle } from "../../../_styles/myStyle";
 class BookAndPayScreen extends Component {
   constructor(props) {
     super(props);
-
-    this.deck = this.props.navigation.getParam("deck");
+    this.hotelInfo = this.props.navigation.getParam("hotelInfo");
   }
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "Booking & Payment",
+      headerTitle: "Payment",
       headerTintColor: myStyle.primaryColor,
       headerTitleStyle: {
         fontWeight: "bold"

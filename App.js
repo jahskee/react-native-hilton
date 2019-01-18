@@ -34,7 +34,7 @@ const HomeTab = createStackNavigator(
   },
   {
     // initialRouteName: "HomeScreen",
-    initialRouteName: "SelectDestinationScreen",
+    initialRouteName: "HomeScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
@@ -78,7 +78,7 @@ const ReservationsTab = createStackNavigator(
 const MainTabs = createBottomTabNavigator(
   {    
     Home: HomeTab,       
-    MyReservation: ReservationsTab,
+    Reservations: ReservationsTab,
     Settings: SettingTab,
   },
   {
@@ -90,7 +90,7 @@ const MainTabs = createBottomTabNavigator(
           iconName = `ios-home${focused ? '' : '-outline'}`;          
         } else if (routeName === 'Settings') {
           iconName = `ios-construct${focused ? '' : '-outline'}`;
-        } else if (routeName === 'MyReservation') {
+        } else if (routeName === 'Reservations') {
           iconName = `ios-calendar${focused ? '' : '-outline'}`;
         } 
         return <Ionicons name={iconName} size={25} color={tintColor} />;

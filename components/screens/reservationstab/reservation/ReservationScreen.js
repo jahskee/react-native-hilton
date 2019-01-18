@@ -8,7 +8,7 @@ import { styles } from "./zstyles";
 class ReservationScreen extends React.PureComponent {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "My Reservation",
+      headerTitle: "My Reservations",
       headerTintColor: myStyle.primaryColor
     };
   };

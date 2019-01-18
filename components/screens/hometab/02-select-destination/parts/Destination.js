@@ -13,14 +13,15 @@ import {
 } from "./zstyles";
   
 export const Destination = props => {
-  const onPress = () => {
-   
+
+  const handleSelectHotel = () => {
+    props.navigation.navigate("BookAndPayScreen", {hotelInfo: props.hotel});
   };
   
   logoImage = "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png";
 
   return (
-    <TouchableOpacity onPress={this.navProceed}>
+    <TouchableOpacity onPress={handleSelectHotel}>
   
       <DestinationItem>
         <HotelDesc>

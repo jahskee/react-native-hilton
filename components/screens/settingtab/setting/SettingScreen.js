@@ -11,15 +11,21 @@ import { styles } from "./zstyles";
 class SettingScreen extends React.PureComponent {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "Settings",
+      headerTitle: "My Settings",
       headerTintColor: myStyle.primaryColor
     };
   };
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}> To be implemented.</Text>
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "lightgray"
+        }}
+      >
+    
       </View>
     );
   }
