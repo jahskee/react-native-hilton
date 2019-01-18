@@ -15,13 +15,39 @@ import {
 } from "./zstyles";
 
 class SelectDestinationScreen extends Component {
+
+  state = {
+    locations: [
+      {
+        locationName: 'Los Angeles, CA',
+        hotels: [
+          { 
+            name: 'Hilton Los Angeles Airport',
+            address: '5711 W Century Blvd, Los Angeles, CA 90041',
+            price: 110.50,
+            image: 'https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png',
+          }, 
+          { 
+            name: 'DoubleTree Los Angeles',
+            address: '535 South Grand Avenue, Los Angeles, CA 90071 US',
+            price: 89.10,
+            image: 'https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png',
+          },
+        ]
+      },
+      {
+
+      }
+  
+    ]
+   ,
+    hello: 'hello'
+  };
+
+
   constructor(props) {
     super(props);
-
     this.deck = this.props.navigation.getParam("deck");
-    this.state = {
-      percentCorrect: this.percentCorrect
-    };
   }
 
   dropDownData = [{ value: "Los Angeles, CA" }, { value: "Washington DC" }];
@@ -46,6 +72,7 @@ class SelectDestinationScreen extends Component {
   };
 
   render() {
+   
     return (
       <MainView>
         <TopPanel>
@@ -55,8 +82,8 @@ class SelectDestinationScreen extends Component {
             containerStyle={{ width: "90%" }}
           />
           <Destinations>
-            <Destination/>
-            <Destination />
+            <Destination hotel={ this.state.locations[0].hotels[0] }/>
+            <Destination hotel={ this.state.locations[0].hotels[1] } />
           </Destinations>
         </TopPanel>
 

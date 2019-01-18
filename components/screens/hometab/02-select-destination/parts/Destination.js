@@ -20,9 +20,8 @@ export const Destination = props => {
   return (
     <DestinationItem>
       <HotelDesc>
-        <HotelName>Hilton Los Angeles Airport</HotelName>
-        <Text>5711 Century Blvd, Los Angeles</Text>
-        <Text>CA 9004</Text>
+        <HotelName>{props.hotel.name}</HotelName>
+        <Text>{props.hotel.address}</Text>
       </HotelDesc>
       <HotelPhotoPrice>
       
@@ -30,12 +29,12 @@ export const Destination = props => {
           <Image
             style={{ width: 50, height: 50 }}
             source={{
-              uri: this.logoImage
+              uri: props.hotel.image
             }}
           />
         </Photo>
         <Price>
-          <Text>$130</Text>
+          <Text>${props.hotel.price}</Text>
         </Price>
       </HotelPhotoPrice>
     </DestinationItem>
