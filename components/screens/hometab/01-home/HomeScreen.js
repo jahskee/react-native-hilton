@@ -4,7 +4,8 @@ import {
   View,
   Image,
   Animated,
-  Dimensions
+  Dimensions,
+  TouchableHighlight
 } from "react-native";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -70,9 +71,12 @@ class HomeScreen extends React.PureComponent {
   };
 
   componentDidMount = () => {
-   
-    
+  
   };
+
+  selectDestination = () => {
+    this.props.navigation.navigate("SelectDestinationScreen", { deck: 100 });
+  }
 
   logoImage = "https://i.imgur.com/pAixOoS.png";
   aboutBtn = "https://i.imgur.com/1H8iyQf.png";
@@ -111,12 +115,14 @@ class HomeScreen extends React.PureComponent {
                         />
                   </MenuItem>
                   <MenuItem >
+                       <TouchableHighlight onPress={this.selectDestination}>
                         <Image
                           style={this.menuImageDimension}
                           source={{
                             uri: this.bookNowBtn
                           }}
                         />
+                        </TouchableHighlight>
                   </MenuItem>
 
                   <MenuItem >

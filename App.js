@@ -13,35 +13,28 @@ import store from "./components/redux/store/store";
 import { myStyle } from "./components/_styles/myStyle";
 
 import HomeScreen from "./components/screens/hometab/01-home/HomeScreen";
-import SelectDeckScreen from "./components/screens/hometab/select_deck/SelectDeckScreen";
-import AddDeckScreen from "./components/screens/hometab/add_deck/AddDeckScreen";
-
-import AddCardScreen from "./components/screens/hometab/add_card/AddCardScreen";
-
-import StartQuizScreen from "./components/screens/hometab/start_quiz/StartQuizScreen";
-import ScoreViewScreen from "./components/screens/hometab/score_view/ScoreViewScreen";
 
 import SettingScreen from "./components/screens/settingtab/setting/SettingScreen";
 
 import MyReservationScreen from "./components/screens/reservationstab/reservation/ReservationScreen";
 
-
+import SelectDestinationScreen from "./components/screens/hometab/02-select-destination/SelectDestinationScreen";
+import BookAndPayScreen from  "./components/screens/hometab/03-book-and-pay/BookAndPayScreen";
+import ReviewBookingScreen from  "./components/screens/hometab/04-review-booking/ReviewBookingScreen";
+import ThankYouScreen from  "./components/screens/hometab/05-thank-you/ThankYouScreen";
 global.log = console.log;
 
 const HomeTab = createStackNavigator(
   {
     HomeScreen,    
-    AddDeckScreen,
-    SelectDeckScreen,
-    AddCardScreen,
-    StartQuizScreen,
-    ScoreViewScreen,
-    /*
-    ScoreScreen,
-    SettingScreen,*/
+    SelectDestinationScreen,
+    BookAndPayScreen,
+    ReviewBookingScreen,
+    ThankYouScreen
   },
   {
-    initialRouteName: "HomeScreen",
+    // initialRouteName: "HomeScreen",
+    initialRouteName: "SelectDestinationScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
