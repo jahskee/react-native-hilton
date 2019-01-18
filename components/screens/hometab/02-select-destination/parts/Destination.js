@@ -4,6 +4,7 @@ import { View, Text, Image, TouchableOpacity, Button } from "react-native";
 import {
   DestinationItem,
   HotelName,
+  HotelAddress,
   HotelDesc,
   HotelPhotoPrice,
   Photo,
@@ -24,11 +25,13 @@ export const Destination = props => {
       <DestinationItem>
         <HotelDesc>
           <HotelName>{props.hotel.name}</HotelName>
-          <Text>{props.hotel.address}</Text>
+          <HotelAddress>{props.hotel.address}</HotelAddress>
           <Distance>{props.hotel.distance} mi</Distance>
         </HotelDesc>
         <HotelPhotoPrice>
-        
+          <Price>
+            <Text>${props.hotel.price.toFixed(2)}</Text>
+          </Price>
           <Photo>
             <Image
               style={{ width: 50, height: 50 }}
@@ -37,9 +40,6 @@ export const Destination = props => {
               }}
             />
           </Photo>
-          <Price>
-            <Text>${props.hotel.price}</Text>
-          </Price>
         </HotelPhotoPrice>
       </DestinationItem>
     </TouchableOpacity>

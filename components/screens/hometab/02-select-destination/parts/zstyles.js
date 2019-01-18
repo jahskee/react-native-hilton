@@ -21,12 +21,16 @@ export const HotelName = styled.Text`
   color: darkgreen;
 `;
 
+export const HotelAddress = styled.Text`
+  color: #30442b;
+`;
+
 /* ----- Hotel photo and price ----- */
 
 export const HotelPhotoPrice = styled.View`
   flex: 1;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   margin-left: 10px;
 `;
@@ -37,7 +41,8 @@ export const Photo = styled.View`
 export const Price = styled.Text`
 
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
+  color: #30442b;
 `;
 
 export const Distance = styled.Text`

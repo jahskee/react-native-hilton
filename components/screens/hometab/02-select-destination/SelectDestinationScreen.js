@@ -11,6 +11,7 @@ import {
   MainView,
   Destinations,
   TopPanel,
+  Question,
   BottomPanel,
   Button2,
   ButtonText,
@@ -71,10 +72,12 @@ class SelectDestinationScreen extends Component {
    
     return (
       <MainView>
+       
         <TopPanel>
+         
           <Dropdown
-            label="Where are you going?"
-            value='Los Angeles, CA'
+            label='Where are you going?'
+            value='Los Angeles, CA'           
             data={this.dropDownData}
             containerStyle={{ width: "90%" }}
             onChangeText = { this.handleOnChangeLocation}
@@ -89,7 +92,7 @@ class SelectDestinationScreen extends Component {
 
               keyExtractor = {(item) => item.id}
              />
-    
+
       
            
           </Destinations>

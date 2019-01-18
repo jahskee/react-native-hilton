@@ -38,3 +38,8 @@ export const Button2 = styled.View`
 export const ButtonText = styled.Text`
   color: white;
 `;
+
+export const Question = styled.Text`
+  font-size: 18px;
+  color: #30442b;
+`;
