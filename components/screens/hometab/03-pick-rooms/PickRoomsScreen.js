@@ -26,10 +26,26 @@ class PickRoomsScreen extends Component {
       description: 'A panoramic view of the city. This room can accomodate 2 pax.',
       pax: 2,  image: "https://i.imgur.com/16KB8eq.png",
      },
-     {roomNo: '305', type: 'Single Bed', price: 100,
-     description: 'A panoramic view of the city. This room can accomodate 2 pax.',
-     pax: 2,  image: "https://i.imgur.com/16KB8eq.png",
-    }
+     {roomNo: '200', type: 'King Bed', price: 140,
+     description: 'For those who needs a spacious room. This room can accomodate 2 pax.',
+     pax: 2,  image: "https://i.imgur.com/IVBzHhY.png",
+    },
+    {roomNo: '305', type: 'King Bed', price: 140,
+    description: 'For those who needs a spacious room. This room can accomodate 2 pax.',
+    pax: 2,  image: "https://i.imgur.com/IVBzHhY.png",
+   },
+   {roomNo: '414', type: 'King Bed', price: 140,
+   description: 'For those who needs a spacious room. This room can accomodate 2 pax.',
+   pax: 2,  image: "https://i.imgur.com/IVBzHhY.png",
+  },
+  {roomNo: '512', type: 'King Bed', price: 140,
+  description: 'For those who needs a spacious room. This room can accomodate 2 pax.',
+  pax: 2,  image: "https://i.imgur.com/IVBzHhY.png",
+ },
+ {roomNo: '603', type: 'King Bed', price: 140,
+ description: 'For those who needs a spacious room. This room can accomodate 2 pax.',
+ pax: 2,  image: "https://i.imgur.com/IVBzHhY.png",
+}
     ]
   }
  
@@ -49,7 +65,7 @@ class PickRoomsScreen extends Component {
        return room.isSelected;
     })
     if (selectedRooms.length === 0) {
-      alert('Please select one or more room(s).')
+      alert('Please book one or more room(s).')
       return;
     }
     this.props.navigation.navigate("PickDatesScreen");
