@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, Button } from "react-native";
+import { View, Text, Image, TouchableOpacity, Button, ScrollView } from "react-native";
 
 import { MainView, TextHead, DeckBtn, StartOverBtn } from "./zstyles";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
-
+import HotelHeader from '../_libs/hotel-header/HotelHeader';
+import HotelFooter from '../_libs/hotel-footer/HotelFooter';
 class PickRoomsScreen extends Component {
   constructor(props) {
     super(props);
@@ -23,11 +24,9 @@ class PickRoomsScreen extends Component {
     };
   };
 
-
-  logoImage = "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png";
   
-  navProceed = () => {
-    this.props.navigation.navigate("PickDatesScreen", { deck: 100 });
+  handleSubmit = () => {
+    this.props.navigation.navigate("PickDatesScreen");
   }
 
   componentDidMount = () =>  {
@@ -37,19 +36,18 @@ class PickRoomsScreen extends Component {
   render() {
     return (
       <MainView>
-        <Image
-          style={{ width: 128, height: 128 }}
-          source={{
-            uri: this.logoImage
-          }}
-        />
-    
-    <Button
-        onPress={this.navProceed}
-        title="Proceed"
+        
+         <HotelHeader/>
+         <ScrollView>
+          <Text>
+            Middle
+          </Text>
+         
+         </ScrollView>
+         <HotelFooter buttonLabel={'Proceed'} handleSubmit={this.handleSubmit}/>
        
-        accessibilityLabel="Learn more about this purple button"
-      />
+       
+
       </MainView>
     );
   }

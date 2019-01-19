@@ -7,7 +7,6 @@ export const Panel1 = styled.View`
   width: 100%;
   justify-content: space-between;
   margin: 5px;
-
 `;
 
 export const HotelInfo = styled.View`

@@ -1,3 +1,4 @@
+
 import React from "react";
 import { View, Text, Image, TouchableOpacity, Button } from "react-native";
 
@@ -12,7 +13,7 @@ import {
     HotelPrice,
 } from "./zstyles";
   
-const HotelHeadInfo = props => {
+const HotelHeader = props => {
   image01 = 'https://i.imgur.com/7gQlc4P.png';
   return (
     <Panel1>
@@ -25,7 +26,6 @@ const HotelHeadInfo = props => {
           />
        </Photo>
        <HotelInfo>
-
           <HotelName>Hilton Checkers Los Angeles</HotelName>
           <HotelAddress>535 South Grand Ave, Los Angeles, CA 90071 US</HotelAddress>
           <HotelDiv2>
@@ -40,4 +40,4 @@ const HotelHeadInfo = props => {
 };
 
 
-export default HotelHeadInfo;
+export default HotelHeader;

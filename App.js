@@ -16,7 +16,7 @@ import HomeScreen from "./components/screens/hometab/01-home/HomeScreen";
 
 import SettingScreen from "./components/screens/settingtab/setting/SettingScreen";
 
-import MyReservationScreen from "./components/screens/reservationstab/reservation/ReservationScreen";
+import ReservationScreen from "./components/screens/reservationstab/reservation/ReservationScreen";
 
 import SelectDestinationScreen from "./components/screens/hometab/02-select-destination/SelectDestinationScreen";
 
@@ -38,8 +38,8 @@ const HomeTab = createStackNavigator(
     ThankYouScreen
   },
   {
-     //initialRouteName: "PickDatesScreen",
-    initialRouteName: "HomeScreen",
+     initialRouteName: "HomeScreen",
+    //initialRouteName: "PickRoomsScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
@@ -68,10 +68,10 @@ const SettingTab = createStackNavigator(
 
 const ReservationsTab = createStackNavigator(
   {  
-    MyReservationScreen,
+    ReservationScreen,
   },
   {
-    initialRouteName: "MyReservationScreen",
+    initialRouteName: "ReservationScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {

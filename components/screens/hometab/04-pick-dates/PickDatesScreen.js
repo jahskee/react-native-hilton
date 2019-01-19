@@ -18,7 +18,8 @@ import {
 } from "./zstyles";
 
 
-import HotelHeadInfo from '../_libs/hotel-head-info/HotelHeadInfo';
+import HotelHeader from '../_libs/hotel-header/HotelHeader';
+import HotelFooter from '../_libs/hotel-footer/HotelFooter';
 import Dates from 'react-native-dates';
 import moment from 'moment';
 
@@ -31,12 +32,6 @@ class PickDatesScreen extends Component {
     endDate: null
   };
 
- 
-  constructor(props) {
-    super(props);
-    this.hotelInfo = this.props.navigation.getParam("hotelInfo");
-  }
-
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Pick Dates",
@@ -47,9 +42,9 @@ class PickDatesScreen extends Component {
     };
   };
 
-  logoImage = "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png";
+
   
-  navProceed = () => {
+  handleSubmit = () => {
     if (this.state.startDate === null || this.state.endDate === null) {
       alert('Please select start and end dates');
       return;
@@ -57,15 +52,6 @@ class PickDatesScreen extends Component {
     this.props.navigation.navigate("PaymentScreen", { deck: 100 });
   }
 
-  componentDidMount = () =>  {
-    
-  }
-
-
-  handleCalendarChange = range => {
-    console.log(range);
-  }
-  
   render() {
 
     const isDateBlocked = (date) =>
@@ -82,7 +68,7 @@ class PickDatesScreen extends Component {
     }
     return (
       <MainView>
-         <HotelHeadInfo/>
+         <HotelHeader/>
          <ScrollView style={{width: '100%', height: 500}}> 
           <Panel2>
           
@@ -107,15 +93,8 @@ class PickDatesScreen extends Component {
                   <Departure>{this.state.endDate? this.state.endDate.toString().slice(4,15): ''}</Departure>
              </DivDate>
           </Panel3>
-          <Panel4>
-            <TouchableOpacity  onPress={this.navProceed}>
-             <CheckinButton>Check In</CheckinButton>
-            </TouchableOpacity>
-         
-          </Panel4>
-         
-   
-       
+      
+          <HotelFooter buttonLabel={'Proceed'} handleSubmit={this.handleSubmit}/>
       </MainView>
     
     );
