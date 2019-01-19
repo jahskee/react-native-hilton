@@ -10,9 +10,9 @@ export const Panel1 = styled.View`
 `;
 
 export const HotelInfo = styled.View`
+  padding-top: 5px;
   
-  padding: 10px 0px;
-  width: 60%;
+  width: 70%;
   
 `;
 export const HotelName = styled.Text`
@@ -47,7 +47,7 @@ export const HotelPrice = styled.Text`
 `;
 
 export const Photo = styled.View`
-  padding-top: 8px;
+  padding-top: 5px;
   padding-left: 5px;
-  width: 40%;
+  width: 30%;
 `;

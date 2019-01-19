@@ -19,7 +19,7 @@ const HotelHeader = props => {
     <Panel1>
     <Photo>
           <Image
-            style={{ width: 120,  height: 120 }}
+            style={{ width: 90,  height: 90 }}
             source={{
               uri: this.image01
             }}
@@ -27,11 +27,9 @@ const HotelHeader = props => {
        </Photo>
        <HotelInfo>
           <HotelName>Hilton Checkers Los Angeles</HotelName>
-          <HotelAddress>535 South Grand Ave, Los Angeles, CA 90071 US</HotelAddress>
-          <HotelDiv2>
-            <HotelDistance>2.5 miles</HotelDistance>
-            <HotelPrice>$185.00</HotelPrice>
-          </HotelDiv2>
+          <HotelAddress>535 South Grand Ave, Los Angeles, CA 90071 US <HotelDistance> (2.5 mi) </HotelDistance></HotelAddress>
+          
+        
        </HotelInfo>
      
     </Panel1>
