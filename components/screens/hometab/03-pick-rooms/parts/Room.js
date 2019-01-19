@@ -12,31 +12,46 @@ import { View, Text, Image, TouchableOpacity, Button, ScrollView } from "react-n
     RHLeft,
     RHMid,
     RHRight,
+    Selected,
   } from "./zstyles";
 
+
   export const RoomDiv = props => {
+
+    const handleRoomSelect = () => {
+        props.handleRoomSelect(props.room.roomNo)
+    }
     return (
-        <TouchableOpacity onPress={props.handleRoomSelect}>
-         <Room>
+        <TouchableOpacity onPress={handleRoomSelect}>
+       
+            <Room>
+                
                 <RoomLeft>
-                  <RoomPhoto>
-                  <Image
-                    style={{ width: '100%', height: 60 }}
+                <RoomPhoto>
+                <Image
+                    style={{ width: '100%', height: 60,  }}
                     source={{
-                      uri: props.room.image
+                    uri: props.room.image
                     }}
-                  />
-                  </RoomPhoto>
+                />
+                </RoomPhoto>
+                {props.room.isSelected && (<Selected>Selected</Selected>)}
                 </RoomLeft>
                 <RoomRight>
-                  <RoomHeader>
+                <RoomHeader>
                     <RHLeft>Room {props.room.roomNo}</RHLeft>
                     <RHMid>{props.room.type}</RHMid>
                     <RHRight>${props.room.price}</RHRight>
-                  </RoomHeader>
-                  <RoomBody>{props.room.description}</RoomBody>
+                </RoomHeader>
+                <RoomBody>{props.room.description}</RoomBody>
+
+               
                 </RoomRight>
-              </Room>
+                
+            
+            </Room>
+       
+      
             </TouchableOpacity>
     );
   }

@@ -11,7 +11,6 @@ export const Panel1 = styled.View`
 
 export const HotelInfo = styled.View`
   padding-top: 5px;
-  
   width: 70%;
   
 `;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, Button, ScrollView } from "react-native";
+import { View, Text, Image, TouchableOpacity, Button, ScrollView, FlatList } from "react-native";
 
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
@@ -25,7 +25,11 @@ class PickRoomsScreen extends Component {
       {roomNo: '105', type: 'Single Bed', price: 100,
       description: 'A panoramic view of the city. This room can accomodate 2 pax.',
       pax: 2,  image: "https://i.imgur.com/16KB8eq.png",
-     }
+     },
+     {roomNo: '305', type: 'Single Bed', price: 100,
+     description: 'A panoramic view of the city. This room can accomodate 2 pax.',
+     pax: 2,  image: "https://i.imgur.com/16KB8eq.png",
+    }
     ]
   }
  
@@ -41,13 +45,27 @@ class PickRoomsScreen extends Component {
 
   
   handleSubmit = () => {
-  
+    const selectedRooms = this.state.rooms.filter( room => {
+       return room.isSelected;
+    })
+    if (selectedRooms.length === 0) {
+      alert('Please select one or more room(s).')
+      return;
+    }
     this.props.navigation.navigate("PickDatesScreen");
   }
 
-  handleRoomSelect = () => {
-   
-    alert('room selected');
+  handleRoomSelect = (roomNo) => {
+    const newRooms = this.state.rooms.map( room => {
+      if(room.roomNo === roomNo) {           
+          return {...room, isSelected: !room.isSelected };    
+      } else {
+        return room;
+      }
+    })
+    this.setState({rooms: newRooms})
+  
+  //  alert(roomNo);
  }
  
   render() {
@@ -57,11 +75,17 @@ class PickRoomsScreen extends Component {
          <HotelHeader/>
 
          <ScrollView style={{width: '100%', height: 500, marginTop: 10}}>
-     
-         
          <Rooms>
-           <RoomDiv room={this.state.rooms[0]} handleRoomSelect={this.handleRoomSelect} />
-           <RoomDiv room={this.state.rooms[1]} handleRoomSelect={this.handleRoomSelect} />
+          <FlatList
+              data={this.state.rooms}
+              renderItem={ (room) => {
+                  
+                  return (<RoomDiv room={room.item} handleRoomSelect={this.handleRoomSelect} /> )
+              }}
+
+              keyExtractor = {(item) => item.roomNo}
+          />
+
          </Rooms>
          </ScrollView>
          <HotelFooter buttonLabel={'Select'} handleSubmit={this.handleSubmit}/>

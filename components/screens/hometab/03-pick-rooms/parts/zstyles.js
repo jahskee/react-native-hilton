@@ -6,6 +6,7 @@ export const Room = styled.View`
   width: 98%;
   padding: 0 5px;
   margin-bottom: 3px;
+  background: #cccc;
 `;
 /*----- Room header -----*/
 export const RoomHeader = styled.View`
@@ -51,4 +52,10 @@ export const RoomRight = styled.View`
   padding: 5px;
 
   width: 70%;
+`;
+
+export const Selected = styled.Text`
+    color: red;
+    font-weight: bold;
+    text-align: center;
 `;
