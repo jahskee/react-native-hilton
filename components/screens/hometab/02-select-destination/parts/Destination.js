@@ -15,7 +15,7 @@ import {
 export const Destination = props => {
 
   const handleSelectHotel = () => {
-    props.navigation.navigate("PickDatesScreen", {hotelInfo: props.hotel});
+    props.navigation.navigate("PickRoomsScreen", {hotelInfo: props.hotel});
   };
   
   logoImage = "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png";

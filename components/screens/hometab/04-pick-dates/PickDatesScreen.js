@@ -6,11 +6,19 @@ import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
 import {
   MainView,
-  ScrollView2,
-  Panel1,
   Panel2,
   Panel3,
   Panel4,
+  LabelDate,
+  Arrival,
+  DivDate,
+  CheckinButton,
+  Departure
+
+} from "./zstyles";
+
+import {
+  Panel1,
   HotelInfo,
   Photo,
   HotelName,
@@ -18,15 +26,9 @@ import {
   HotelDiv2,
   HotelDistance,
   HotelPrice,
-  LabelDate,
-  LabelArrival,
-  Arrival,
-  DivDate,
-  CheckinButton,
-  Departure
+} from "../03-pick-rooms/zstyles-common";
 
-} from "./zstyles";
-//import CalendarPicker from 'react-native-calendar-picker';
+
 import Dates from 'react-native-dates';
 import moment from 'moment';
 class BookingScreen extends Component {
@@ -57,6 +59,10 @@ class BookingScreen extends Component {
   logoImage = "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png";
   
   navProceed = () => {
+    if (this.state.startDate === null || this.state.endDate === null) {
+      alert('Please select start and end dates');
+      return;
+    }
     this.props.navigation.navigate("PaymentScreen", { deck: 100 });
   }
 
@@ -81,14 +87,8 @@ class BookingScreen extends Component {
     );
     
     return (
-     
-
-      
       <MainView>
-       
-      
-
-          <Panel1>
+        <Panel1>
           <Photo>
                 <Image
                   style={{ width: 120,  height: 120 }}
@@ -105,8 +105,6 @@ class BookingScreen extends Component {
                   <HotelDistance>2.5 miles</HotelDistance>
                   <HotelPrice>$185.00</HotelPrice>
                 </HotelDiv2>
-             
-               
              </HotelInfo>
            
           </Panel1>

@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
 
-class PaymentScreen extends Component {
+class PickRoomsScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -15,7 +15,7 @@ class PaymentScreen extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "Review Booking",
+      headerTitle: "Pick Rooms",
       headerTintColor: myStyle.primaryColor,
       headerTitleStyle: {
         fontWeight: "bold"
@@ -27,7 +27,7 @@ class PaymentScreen extends Component {
   logoImage = "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png";
   
   navProceed = () => {
-    this.props.navigation.navigate("ReviewBookingScreen", { deck: 100 });
+    this.props.navigation.navigate("PickDatesScreen", { deck: 100 });
   }
 
   componentDidMount = () =>  {
@@ -69,4 +69,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PaymentScreen);
+)(PickRoomsScreen);
