@@ -1,5 +1,5 @@
 {
-  "name": "flashcard",
+  "name": "hilton-reservation",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -21,12 +21,17 @@
   "dependencies": {
     "expo": "^27.0.1",
     "lodash": "^4.17.11",
+    "moment": "^2.23.0",
     "prop-types": "^15.6.2",
     "react": "16.3.1",
+    "react-dom": "^16.7.0",
     "react-native": "~0.55.2",
+    "react-native-calendar-picker": "^5.22.0",
     "react-native-calendario": "^0.2.5",
+    "react-native-dates": "^2.0.4",
     "react-native-image-overlay": "^0.1.2",
     "react-native-material-dropdown": "^0.11.1",
+    "react-native-range-datepicker": "^1.8.2",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "2.2.4",
     "react-redux": "^5.0.7",

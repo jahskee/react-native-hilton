@@ -4,9 +4,9 @@ import Calendar from 'react-native-calendario';
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
-
 import {
   MainView,
+  ScrollView2,
   Panel1,
   Panel2,
   Panel3,
@@ -18,10 +18,27 @@ import {
   HotelDiv2,
   HotelDistance,
   HotelPrice,
+  LabelDate,
+  LabelArrival,
+  Arrival,
+  DivDate,
+  LabelDeparture,
+  Departure
 
 } from "./zstyles";
-
+//import CalendarPicker from 'react-native-calendar-picker';
+import Dates from 'react-native-dates';
+import moment from 'moment';
 class BookingScreen extends Component {
+
+  state = {
+    date: null,
+    focus: 'startDate',
+    startDate: null,
+    endDate: null
+  };
+
+ 
   constructor(props) {
     super(props);
     this.hotelInfo = this.props.navigation.getParam("hotelInfo");
@@ -54,7 +71,19 @@ class BookingScreen extends Component {
   }
   
   render() {
+
+    const isDateBlocked = (date) =>
+    date.isBefore(moment(), 'day');
+
+  const onDatesChange = ({ startDate, endDate, focusedInput }) =>
+    this.setState({ ...this.state, focus: focusedInput }, () =>
+      this.setState({ ...this.state, startDate, endDate })
+    );
+    
     return (
+     
+
+      
       <MainView>
        
       
@@ -81,47 +110,28 @@ class BookingScreen extends Component {
              </HotelInfo>
            
           </Panel1>
+          <ScrollView2>
           <Panel2>
-             <Calendar
-                  onChange={ this.handleCalendarChange }
-                  showWeekdays={false}
-                  minDate="2018-04-20"
-                  startDate="2018-04-30"
-                  endDate="2018-05-05"
-                
-                  theme={{
-                    weekColumnTextStyle: {
-                      color: 'red',
-                    },
-                    weekColumnStyle: {
-                      paddingVertical: 20,
-                    },
-                    weekColumnsContainerStyle: {
-                      backgroundColor: 'lightgrey',
-                    },
-                    monthTitleStyle: {
-                      color: 'blue',
-                    },
-                    nonTouchableDayContainerStyle: {
-                      backgroundColor: '#babfb5',
-                    },
-                    nonTouchableDayTextStyle: {
-                      color: 'whitesmoke',
-                    },
-                    dayTextStyle: {
-                      color: '#7c6d6d',
-                    },
-                    activeDayContainerStyle: {
-                      backgroundColor: 'green',
-                    },
-                    activeDayTextStyle: {
-                      color: 'whitesmoke',
-                    },
-                  }}
-                />
+          
+              <Dates
+            onDatesChange={onDatesChange}
+            isDateBlocked={isDateBlocked}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
+            focusedInput={this.state.focus}
+            range
+          />
+
           </Panel2>
           <Panel3>
-             <Text>panel 3</Text>
+             <DivDate>
+                  <LabelDate>Arrival: </LabelDate>
+                  <Arrival>{this.state.startDate? this.state.startDate.toString().slice(4,15): ''}</Arrival>
+             </DivDate>
+             <DivDate>
+                  <LabelDate>Departure: </LabelDate>
+                  <Departure>{this.state.endDate? this.state.endDate.toString().slice(4,15): ''}</Departure>
+             </DivDate>
           </Panel3>
          
     <Button
@@ -130,7 +140,9 @@ class BookingScreen extends Component {
        
         accessibilityLabel="Learn more about this purple button"
       />
+        </ScrollView2>
       </MainView>
+    
     );
   }
 }

@@ -35,8 +35,8 @@ const HomeTab = createStackNavigator(
     ThankYouScreen
   },
   {
-    // initialRouteName: "HomeScreen",
-    initialRouteName: "PickDatesScreen",
+     initialRouteName: "PickDatesScreen",
+    //initialRouteName: "HomeScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {

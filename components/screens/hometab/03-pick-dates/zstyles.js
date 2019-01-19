@@ -5,16 +5,18 @@ export const MainView = styled.View`
   background: whitesmoke;
   align-items: center;
   justify-content: center;
-  padding: 2px 15px;
-  
  
+`;
+
+export const ScrollView2 = styled.ScrollView`
+  width: 100%;
 `;
 
 /* ---------- Panel 1 ----------*/
 export const Panel1 = styled.View`
 
   flex-direction: row;
-  
+  padding: 0 10px;
   width: 100%;
   justify-content: space-between;
   margin: 5px;
@@ -67,15 +69,43 @@ export const Photo = styled.View`
 /* ---------- Panel 2 ----------*/
 export const Panel2 = styled.View`
   flex: 2;
- 
   width: 100%;
+ 
 `;
 
 /* ---------- Panel 3 ----------*/
 export const Panel3 = styled.View`
+  margin-top: 20px;
+
+  padding: 10px;
   flex: 1; 
-  border: 1px solid blue;
   width: 100%;
+`;
+
+export const DivDate = styled.View`
+  flex-direction: row;
+  margin-top: 5px;
+  justify-content: space-between;
+  padding: 0 16px;
+
+`;
+export const LabelDate = styled.Text`
+  font-size: 16px;  
+`;
+export const LabelArrival = styled.Text`
+  font-size: 16px;
+`;
+export const Arrival = styled.Text`
+font-size: 16px;
+color: #30442b;
+`;
+
+export const LabelDeparture = styled.Text`
+font-size: 16px;
+`;
+export const Departure = styled.Text`
+font-size: 16px;
+color: #30442b;
 `;
 
 
