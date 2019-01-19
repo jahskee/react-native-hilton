@@ -7,28 +7,28 @@ import { myStyle } from "../../../_styles/myStyle";
 import HotelHeader from '../_libs/hotel-header/HotelHeader';
 import HotelFooter from '../_libs/hotel-footer/HotelFooter';
 
+import { RoomDiv } from './parts/Room';
+
 import { 
   MainView, 
-  Rooms, Room, 
-  RoomHeader, 
-  RoomBody,
-  RoomPhoto, 
-  RoomDescription,
-  RoomLeft,
-  RoomRight,
-  RHLeft,
-  RHMid,
-  RHRight,
-
-Text2 } from "./zstyles";
+  Rooms
+} from "./zstyles";
 
 class PickRoomsScreen extends Component {
-  constructor(props) {
-    super(props);
 
-    this.deck = this.props.navigation.getParam("deck");
+  state = {
+    rooms:[
+      {roomNo: '104', type: 'Twin Bed', price: 120,
+       description: 'You have the best view of the Atlantic ocean. This room can accomodate 4 pax.',
+       pax: 4, image: "https://i.imgur.com/DwJ2lTj.png",
+      },
+      {roomNo: '105', type: 'Single Bed', price: 100,
+      description: 'A panoramic view of the city. This room can accomodate 2 pax.',
+      pax: 2,  image: "https://i.imgur.com/16KB8eq.png",
+     }
+    ]
   }
-
+ 
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Available Rooms",
@@ -41,13 +41,15 @@ class PickRoomsScreen extends Component {
 
   
   handleSubmit = () => {
+  
     this.props.navigation.navigate("PickDatesScreen");
   }
 
-  componentDidMount = () =>  {
+  handleRoomSelect = () => {
+   
+    alert('room selected');
+ }
  
-  }
-  roomImage = "https://i.imgur.com/DwJ2lTj.png";
   render() {
     return (
       <MainView>
@@ -58,28 +60,8 @@ class PickRoomsScreen extends Component {
      
          
          <Rooms>
-            <Room>
-              <RoomLeft>
-                <RoomPhoto>
-                <Image
-                  style={{ width: '100%', height: 75 }}
-                  source={{
-                    uri: this.roomImage
-                  }}
-                />
-                </RoomPhoto>
-              </RoomLeft>
-              <RoomRight>
-                <RoomHeader>
-                  <RHLeft>Room 104</RHLeft>
-                  <RHMid>Twin Bed</RHMid>
-                  <RHRight>$120</RHRight>
-                </RoomHeader>
-                <RoomBody>You have the best view of the Atlantic ocean.</RoomBody>
-              </RoomRight>
-            </Room>
-            
-            
+           <RoomDiv room={this.state.rooms[0]} handleRoomSelect={this.handleRoomSelect} />
+           <RoomDiv room={this.state.rooms[1]} handleRoomSelect={this.handleRoomSelect} />
          </Rooms>
          </ScrollView>
          <HotelFooter buttonLabel={'Select'} handleSubmit={this.handleSubmit}/>
