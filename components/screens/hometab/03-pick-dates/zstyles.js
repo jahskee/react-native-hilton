@@ -75,11 +75,27 @@ export const Panel2 = styled.View`
 
 /* ---------- Panel 3 ----------*/
 export const Panel3 = styled.View`
-  margin-top: 20px;
-
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
   padding: 10px;
   flex: 1; 
   width: 100%;
+`;
+
+/* ---------- Panel 4 ----------*/
+export const Panel4 = styled.View`
+  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const CheckinButton = styled.Text`
+    background: green;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 40px;
 `;
 
 export const DivDate = styled.View`
@@ -107,5 +123,6 @@ export const Departure = styled.Text`
 font-size: 16px;
 color: #30442b;
 `;
+
 
 

@@ -22,7 +22,7 @@ import {
   LabelArrival,
   Arrival,
   DivDate,
-  LabelDeparture,
+  CheckinButton,
   Departure
 
 } from "./zstyles";
@@ -133,13 +133,14 @@ class BookingScreen extends Component {
                   <Departure>{this.state.endDate? this.state.endDate.toString().slice(4,15): ''}</Departure>
              </DivDate>
           </Panel3>
+          <Panel4>
+            <TouchableOpacity  onPress={this.navProceed}>
+             <CheckinButton>Check In</CheckinButton>
+            </TouchableOpacity>
          
-    <Button
-        onPress={this.navProceed}
-        title="Proceed"
-       
-        accessibilityLabel="Learn more about this purple button"
-      />
+          </Panel4>
+         
+   
         </ScrollView2>
       </MainView>
     
