@@ -1,18 +1,21 @@
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import freeze from "redux-freeze";
-import { createLogger } from "redux-logger";
+/* jshint esversion: 6 */
 
-import * as _actions from "../actions/actions";
-import rootReducer from "../reducers/reducers";
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import freeze from 'redux-freeze';
+import { createLogger } from 'redux-logger';
+
+import * as _actions from '../actions/actions';
+import rootReducer from '../reducers/reducers';
 
 const middlewares = [];
 middlewares.push(thunk);
 
-if (process.env.NODE_ENV === `development`) {
-  console.log("we are on dev mode...");
-  const logger = createLogger({ diff: false });
-  //  middlewares.push(freeze); // returns error when state is mutated
+if (process.env.NODE_ENV === 'development') {
+  const logger = createLogger({ diff: true });
+
+  // returns error when state is mutated
+  middlewares.push(freeze);
   middlewares.push(logger);
 }
 
@@ -22,11 +25,24 @@ export function configureStore() {
   const store = createStore(
     rootReducer,
     persistedState,
-    applyMiddleware(...middlewares)
+    applyMiddleware(...middlewares),
   );
   return store;
 }
 
 const store = configureStore();
+
+// initialize store with data
+const initialList = [
+  {
+    from: 'Celsius',
+    to: 'Rankine',
+    input: 0,
+    correctAnswer: parseInt(491.67, 10).toFixed(2),
+    studentAnswer: 0,
+    result: '',
+  },
+];
+store.dispatch(_actions.initExamEntries(initialList));
 
 export default store;

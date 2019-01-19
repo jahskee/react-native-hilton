@@ -6,6 +6,7 @@ export const DestinationItem = styled.View`
   border: 1px solid lightgray;
   padding: 5px 5px 5px 10px;
   margin-bottom: 10px;
+  background: #cccc;
 `;
 
 export const HotelDesc = styled.View`

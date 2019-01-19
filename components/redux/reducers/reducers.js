@@ -1,59 +1,64 @@
 /* jshint esversion: 6 */
-import { combineReducers } from "redux";
-import * as _actions from "../actions/actions";
 
-import { decksData } from "../_data/initdata.js";
+import { combineReducers } from 'redux';
 
-// store.data is anything not yet categorized
-const dataReducer = (prevData = {}, action) => {
+import * as _actions from '../actions/actions';
+import reducerFuncs from './reducerFuncs';
+
+const merge = (prev, next) => Object.assign({}, prev, next);
+
+/* any uncategorized state */
+const dataReducer = (data = {}, action) => {
   switch (action.type) {
     case _actions.UPDATE_DATA:
-      return {...prevData, ...action.payload};
+      return merge(data, action.payload);
     default:
-      return prevData;
+      return data;
   }
 };
 
-const addKeys = (val, key) => ({ key: "" + key, ...val });
-
-const deckReducer = (prevDecks = decksData, action) => {
+const examEntriesReducer = (examEntries = [], action) => {
   switch (action.type) {
-    case _actions.ADD_DECK:
-      return [...prevDecks, action.payload];
-    case _actions.ADD_DECK_KEYS:
-      return [...prevDecks].map(addKeys);
+    case _actions.INIT_EXAM_ENTRIES:
+      return [...examEntries, ...action.payload];
 
-    case _actions.ADD_CARD: {
-      // start add card
-      const newDecks = [...prevDecks];
+    case _actions.ADD_EXAM_ENTRY:
+      return [...examEntries, action.payload];
 
-      const question = {
-        question: action.payload.question,
-        answer: action.payload.answer,
-        isCorrect: action.payload.isCorrect
-      };
+    case _actions.UPDATE_EXAM_ANSWER:
+      return reducerFuncs.updateExamAnswer(examEntries, action);
 
-      let index = 0;
-      for (let i = 0; i < prevDecks.length; i++) {
-        if (prevDecks[i].title === action.payload.deckName) {
-          index = i;
-          break;
-        }
-      }
-
-      const deck = newDecks[index];
-      deck.questions = [...deck.questions, question];
-      return newDecks;
-    } // end add card
+    case _actions.UPDATE_EXAM_RESULTS:
+      return reducerFuncs.updateExamResults(examEntries, action);
 
     default:
-      return prevDecks;
+      return examEntries;
+  }
+};
+
+const roomsReducer = (examEntries = [], action) => {
+  switch (action.type) {
+    case _actions.INIT_EXAM_ENTRIES:
+      return [...rooms, ...action.payload];
+
+    case _actions.ADD_EXAM_ENTRY:
+      return [...examEntries, action.payload];
+
+    case _actions.UPDATE_EXAM_ANSWER:
+      return reducerFuncs.updateExamAnswer(examEntries, action);
+
+    case _actions.UPDATE_EXAM_RESULTS:
+      return reducerFuncs.updateExamResults(examEntries, action);
+
+    default:
+      return examEntries;
   }
 };
 
 const reducer = combineReducers({
-  decks: deckReducer,
-  data: dataReducer
+  data: dataReducer,
+  rooms: roomsReducer,
+  examEntries: examEntriesReducer,
 });
 
 export default reducer;

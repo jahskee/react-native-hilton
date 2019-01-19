@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, Button, FlatList } from "react-native";
+import { FlatList } from "react-native";
 
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
@@ -11,10 +11,6 @@ import {
   MainView,
   Destinations,
   TopPanel,
-  Question,
-  BottomPanel,
-  Button2,
-  ButtonText,
 } from "./zstyles";
 
 import data from '../../../_data/data';
