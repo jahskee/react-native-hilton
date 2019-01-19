@@ -20,11 +20,11 @@ API.fetchRooms = async () => {
       }
     });
    
-    rooms = await response.data.data;
+    rooms = await response.data.data.rooms;
   } catch (err) {
     throw new Error(err);
   }
-  return rooms;
+  return rooms.map(room => ({...room, isSelected: false}));
 };
 
 export default API;

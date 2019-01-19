@@ -34,7 +34,7 @@ class PickRoomsScreen extends Component {
         return room;
       }
     });
-    this.setState({ rooms: newRooms });
+    this.props.toggleRoomSelected(roomNo);
   };
 
   handleSubmit = () => {
@@ -56,7 +56,6 @@ class PickRoomsScreen extends Component {
     return (
       <MainView>
         <HotelHeader />
-
         <ScrollView style={{ width: "100%", height: 500, marginTop: 10 }}>
           <Rooms>
             <FlatList
@@ -87,7 +86,8 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = {
-  updateData: _actions.updateData
+  updateData: _actions.updateData,
+  toggleRoomSelected: _actions.toggleRoomSelected
   // addDeck: _actions.addDeck,
 };
 

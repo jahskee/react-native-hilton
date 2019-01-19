@@ -25,8 +25,9 @@ const roomsReducer = (rooms = [], action) => {
     case _actions.FETCH_ROOMS_SUCCESS:
       return action.payload;
     case _actions.FETCH_ROOMS_FAILURE:
-      return {};
-
+      return [];
+    case _actions.TOGGLE_ROOM_SELECTED:
+       rooms = reducerFuncs.toggleRoomSelected(action, rooms);
     default:
       return rooms;
   }
