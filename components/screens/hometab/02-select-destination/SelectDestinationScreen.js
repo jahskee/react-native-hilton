@@ -40,7 +40,7 @@ class SelectDestinationScreen extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "Booking",
+      headerTitle: "Select Destination",
       headerTintColor: myStyle.primaryColor,
       headerTitleStyle: {
         fontWeight: "bold"

@@ -17,21 +17,12 @@ import {
 
 } from "./zstyles";
 
-import {
-  Panel1,
-  HotelInfo,
-  Photo,
-  HotelName,
-  HotelAddress,
-  HotelDiv2,
-  HotelDistance,
-  HotelPrice,
-} from "../03-pick-rooms/zstyles-common";
 
-
+import HotelHeadInfo from '../_libs/hotel-head-info/HotelHeadInfo';
 import Dates from 'react-native-dates';
 import moment from 'moment';
-class BookingScreen extends Component {
+
+class PickDatesScreen extends Component {
 
   state = {
     date: null,
@@ -70,7 +61,6 @@ class BookingScreen extends Component {
     
   }
 
-  image01 = 'https://i.imgur.com/7gQlc4P.png';
 
   handleCalendarChange = range => {
     console.log(range);
@@ -85,29 +75,14 @@ class BookingScreen extends Component {
     this.setState({ ...this.state, focus: focusedInput }, () =>
       this.setState({ ...this.state, startDate, endDate })
     );
-    
+    const HotelHeadInfo2 = props => {
+       return (
+         <Text>Testing</Text>
+       )
+    }
     return (
       <MainView>
-        <Panel1>
-          <Photo>
-                <Image
-                  style={{ width: 120,  height: 120 }}
-                  source={{
-                    uri: this.image01
-                  }}
-                />
-             </Photo>
-             <HotelInfo>
-
-                <HotelName>Hilton Checkers Los Angeles</HotelName>
-                <HotelAddress>535 South Grand Ave, Los Angeles, CA 90071 US</HotelAddress>
-                <HotelDiv2>
-                  <HotelDistance>2.5 miles</HotelDistance>
-                  <HotelPrice>$185.00</HotelPrice>
-                </HotelDiv2>
-             </HotelInfo>
-           
-          </Panel1>
+         <HotelHeadInfo/>
          <ScrollView style={{width: '100%', height: 500}}> 
           <Panel2>
           
@@ -161,4 +136,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BookingScreen);
+)(PickDatesScreen);
