@@ -1,30 +1,46 @@
 /* jshint esversion: 6 */
-
+import  API from '../../api/API';
 export const UPDATE_DATA = 'UPDATE_DATA';
-export const ADD_EXAM_ENTRY = 'ADD_EXAM_ENTRY';
-export const INIT_EXAM_ENTRIES = 'INIT_EXAM_ENTRIES';
-export const UPDATE_EXAM_ANSWER = 'UPDATE_EXAM_ANSWER';
-export const UPDATE_EXAM_RESULTS = 'UPDATE_EXAM_RESULTS';
 
-export const initExamEntries = examEntries => ({
-  type: INIT_EXAM_ENTRIES,
-  payload: examEntries,
+export const INIT_ROOMS = 'INIT_ROOMS';
+
+export const initRooms = rooms => ({
+  type: INIT_ROOMS,
+  payload: rooms,
 });
 
-export const addExamEntry = examEntry => ({
-  type: ADD_EXAM_ENTRY,
-  payload: examEntry,
+/* ---- Start: Async fetch of Rooms ---- */
+export const FETCH_ROOMS_BEGIN   = 'FETCH_ROOMS_BEGIN';
+export const FETCH_ROOMS_SUCCESS = 'FETCH_ROOMS_SUCCESS';
+export const FETCH_ROOMS_FAILURE = 'FETCH_ROOMS_FAILURE';
+
+export const fetchRoomsBegin = () => ({
+  type: FETCH_ROOMS_BEGIN,
+  payload: []
 });
 
-export const updateExamAnswer = (index, studentAnswer) => ({
-  type: UPDATE_EXAM_ANSWER,
-  payload: { index, studentAnswer },
+export const fetchRoomsSuccess = rooms => ({
+  type: FETCH_ROOMS_SUCCESS,
+  payload: rooms 
 });
 
-export const updateExamResults = examEntries => ({
-  type: UPDATE_EXAM_RESULTS,
-  paylod: examEntries,
+export const fetchRoomsFailure = error => ({
+  type: FETCH_ROOMS_FAILURE,
+  payload: { error }
 });
+
+// async actions creators
+export const fetchRooms = () => async dispatch => {
+  dispatch(fetchRoomsBegin);
+  try {   
+    const rooms = await API.fetchRooms();  
+    await dispatch(fetchRoomsSuccess(rooms.rooms));
+  } catch (error) {
+    console.error(error);
+    dispatch(fetchRoomsFailure(error));
+  }
+};
+/* ---- End: Async fetch of Rooms ---- */
 
 // any state not yet categorized
 export const updateData = data => ({

@@ -17,7 +17,7 @@ import {
   TextBtn,
   TextCards,
   MenuItem,
-  MenuRow,
+  MenuRow
 } from "./zstyles";
 
 
@@ -52,31 +52,22 @@ class HomeScreen extends React.PureComponent {
     super(props);
 
     this.state = {};
-    
+
     this.dimensions = Dimensions.get("window");
     this.imageHeight = Math.round((this.dimensions.width * 9) / 16);
     this.imageWidth = this.dimensions.width - 20;
-    this.menuImageDimension = { width: 60, height: 75};
+    this.menuImageDimension = { width: 60, height: 75 };
   }
 
-  navToAddDeckScreen = async () => {
-    this.props.navigation.navigate("AddDeckScreen");
-  };
-
-  navToSelectDeck = props => {
-    const index = props.item.key;
-    const { bgcolor } = this.props.decks[index].style;
-    const deck = this.props.decks[index];
-    this.props.navigation.navigate("SelectDeckScreen", { deck });
-  };
-
+  
   componentDidMount = () => {
+    
   
   };
 
   selectDestination = () => {
     this.props.navigation.navigate("SelectDestinationScreen", { deck: 100 });
-  }
+  };
 
   logoImage = "https://i.imgur.com/pAixOoS.png";
   aboutBtn = "https://i.imgur.com/1H8iyQf.png";
@@ -91,8 +82,6 @@ class HomeScreen extends React.PureComponent {
   render() {
     return (
       <MainView>
-      
-
         <Image
           style={{
             width: this.imageWidth,
@@ -103,94 +92,102 @@ class HomeScreen extends React.PureComponent {
             uri: this.logoImage
           }}
         />
-        <View style={{ margin: 10, width: this.imageWidth, flex:1, flexDirection: 'column', justifyContent: 'space-evenly' }}>
-            {/* -----  First Row ----- */}
-            <MenuRow>
-                  <MenuItem >
-                        <Image
-                          style={this.menuImageDimension}
-                          source={{
-                            uri: this.aboutBtn
-                          }}
-                        />
-                  </MenuItem>
-                  <MenuItem >
-                       <TouchableHighlight onPress={this.selectDestination}>
-                        <Image
-                          style={this.menuImageDimension}
-                          source={{
-                            uri: this.bookNowBtn
-                          }}
-                        />
-                        </TouchableHighlight>
-                  </MenuItem>
+        <View
+          style={{
+            margin: 10,
+            width: this.imageWidth,
+            flex: 1,
+            flexDirection: "column",
+            justifyContent: "space-evenly"
+          }}
+        >
+          {/* -----  First Row ----- */}
+          <MenuRow>
+            <MenuItem>
+              <Image
+                style={this.menuImageDimension}
+                source={{
+                  uri: this.aboutBtn
+                }}
+              />
+            </MenuItem>
+            <MenuItem>
+              <TouchableHighlight onPress={this.selectDestination}>
+                <Image
+                  style={this.menuImageDimension}
+                  source={{
+                    uri: this.bookNowBtn
+                  }}
+                />
+              </TouchableHighlight>
+            </MenuItem>
 
-                  <MenuItem >
-                        <Image
-                          style={this.menuImageDimension}
-                          source={{
-                            uri: this.galleryBtn
-                          }}
-                        />
-                  </MenuItem>
-            </MenuRow>
-           
-            <MenuRow>
-                  <MenuItem >
-                        <Image
-                          style={this.menuImageDimension}
-                          source={{
-                            uri: this.locationBtn
-                          }}
-                        />
-                  </MenuItem>
-                  <MenuItem >
-                        <Image
-                           style={this.menuImageDimension}
-                          source={{
-                            uri: this.roomsBtn
-                          }}
-                        />
-                 </MenuItem>
+            <MenuItem>
+              <Image
+                style={this.menuImageDimension}
+                source={{
+                  uri: this.galleryBtn
+                }}
+              />
+            </MenuItem>
+          </MenuRow>
 
-                 <MenuItem >
-                        <Image
-                          style={this.menuImageDimension}
-                          source={{
-                            uri: this.amenityBtn
-                          }}
-                        />
-                  </MenuItem>
-            </MenuRow>
+          <MenuRow>
+            <MenuItem>
+              <Image
+                style={this.menuImageDimension}
+                source={{
+                  uri: this.locationBtn
+                }}
+              />
+            </MenuItem>
+            <MenuItem>
+              <Image
+                style={this.menuImageDimension}
+                source={{
+                  uri: this.roomsBtn
+                }}
+              />
+            </MenuItem>
 
-            <MenuRow>
-                  <MenuItem >
-                        <Image
-                          style={this.menuImageDimension}
-                          source={{
-                            uri: this.diningBtn
-                          }}
-                        />
-                  </MenuItem>
-                  <MenuItem >
-                        <Image
-                          style={this.menuImageDimension}
-                          source={{
-                            uri: this.feedbackBtn
-                          }}
-                        />
-                 </MenuItem>
+            <MenuItem>
+              <Image
+                style={this.menuImageDimension}
+                source={{
+                  uri: this.amenityBtn
+                }}
+              />
+            </MenuItem>
+          </MenuRow>
 
-                 <MenuItem >
-                        <Image
-                          style={this.menuImageDimension}
-                          source={{
-                            uri: this.moreBtn
-                          }}
-                        />
-                  </MenuItem>
-            </MenuRow>
-          </View>
+          <MenuRow>
+            <MenuItem>
+              <Image
+                style={this.menuImageDimension}
+                source={{
+                  uri: this.diningBtn
+                }}
+              />
+            </MenuItem>
+            <MenuItem>
+              <Image
+                style={this.menuImageDimension}
+                source={{
+                  uri: this.feedbackBtn
+                }}
+              />
+            </MenuItem>
+
+            <MenuItem>
+              <Image
+                style={this.menuImageDimension}
+                source={{
+                  uri: this.moreBtn
+                }}
+              />
+            </MenuItem>
+          </MenuRow>
+        </View>
       </MainView>
     );
   }

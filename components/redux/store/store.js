@@ -32,17 +32,7 @@ export function configureStore() {
 
 const store = configureStore();
 
-// initialize store with data
-const initialList = [
-  {
-    from: 'Celsius',
-    to: 'Rankine',
-    input: 0,
-    correctAnswer: parseInt(491.67, 10).toFixed(2),
-    studentAnswer: 0,
-    result: '',
-  },
-];
-store.dispatch(_actions.initExamEntries(initialList));
 
+store.dispatch(_actions.fetchRooms());
+//store.dispatch(_actions.initRooms(roomsData))
 export default store;

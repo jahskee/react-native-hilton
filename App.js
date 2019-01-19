@@ -113,6 +113,7 @@ const AppNavigator = createSwitchNavigator({
   Main: MainTabs
 });
 
+
 export default class App extends React.Component {
   render() {
     return (

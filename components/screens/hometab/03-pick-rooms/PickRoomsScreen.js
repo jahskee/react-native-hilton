@@ -15,73 +15,6 @@ import { RoomDiv } from "./parts/Room";
 import { MainView, Rooms } from "./zstyles";
 
 class PickRoomsScreen extends Component {
-  state = {
-    rooms: [
-      {
-        roomNo: "104",
-        type: "Twin Bed",
-        price: 120,
-        description:
-          "You have the best view of the Atlantic ocean. This room can accomodate 4 pax.",
-        pax: 4,
-        image: "https://i.imgur.com/DwJ2lTj.png"
-      },
-      {
-        roomNo: "105",
-        type: "Single Bed",
-        price: 104,
-        description:
-          "A panoramic view of the city. This room can accomodate 2 pax.",
-        pax: 2,
-        image: "https://i.imgur.com/16KB8eq.png"
-      },
-      {
-        roomNo: "200",
-        type: "King Bed",
-        price: 140,
-        description:
-          "For those who needs a spacious room. This room can accomodate 2 pax.",
-        pax: 2,
-        image: "https://i.imgur.com/IVBzHhY.png"
-      },
-      {
-        roomNo: "305",
-        type: "King Bed",
-        price: 105,
-        description:
-          "For those who needs a spacious room. This room can accomodate 2 pax.",
-        pax: 2,
-        image: "https://i.imgur.com/F8ppoyb.png"
-      },
-      {
-        roomNo: "414",
-        type: "King Bed",
-        price: 132,
-        description:
-          "For those who needs a spacious room. This room can accomodate 2 pax.",
-        pax: 2,
-        image: "https://i.imgur.com/wiSvQTU.png"
-      },
-      {
-        roomNo: "512",
-        type: "King Bed",
-        price: 116,
-        description:
-          "For those who needs a spacious room. This room can accomodate 2 pax.",
-        pax: 2,
-        image: "https://i.imgur.com/rDYYKLR.png"
-      },
-      {
-        roomNo: "603",
-        type: "King Bed",
-        price: 156,
-        description:
-          "For those who needs a spacious room. This room can accomodate 2 pax.",
-        pax: 2,
-        image: "https://i.imgur.com/O5uX5AP.png"
-      }
-    ]
-  };
 
   static navigationOptions = ({ navigation }) => {
     return {
@@ -94,7 +27,7 @@ class PickRoomsScreen extends Component {
   };
 
   handleRoomSelect = roomNo => {
-    const newRooms = this.state.rooms.map(room => {
+    const newRooms = this.props.rooms.map(room => {
       if (room.roomNo === roomNo) {
         return { ...room, isSelected: !room.isSelected };
       } else {
@@ -105,7 +38,7 @@ class PickRoomsScreen extends Component {
   };
 
   handleSubmit = () => {
-    const selectedRooms = this.state.rooms.filter(room => {
+    const selectedRooms = this.props.rooms.filter(room => {
       return room.isSelected;
     });
     if (selectedRooms.length === 0) {
@@ -114,6 +47,11 @@ class PickRoomsScreen extends Component {
     }
     this.props.navigation.navigate("PickDatesScreen");
   };
+
+  componentDidMount() {
+    console.log(JSON.stringify(this.props.rooms))
+   
+  }
   render() {
     return (
       <MainView>
@@ -122,7 +60,7 @@ class PickRoomsScreen extends Component {
         <ScrollView style={{ width: "100%", height: 500, marginTop: 10 }}>
           <Rooms>
             <FlatList
-              data={this.state.rooms}
+              data={this.props.rooms}
               renderItem={room => {
                 return (
                   <RoomDiv
@@ -143,7 +81,8 @@ class PickRoomsScreen extends Component {
 
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
-  data: store.data
+  data: store.data,
+  rooms: store.rooms
   //   decks: store.decks
 });
 

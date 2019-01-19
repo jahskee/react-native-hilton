@@ -17,48 +17,24 @@ const dataReducer = (data = {}, action) => {
   }
 };
 
-const examEntriesReducer = (examEntries = [], action) => {
+
+const roomsReducer = (rooms = [], action) => {
   switch (action.type) {
-    case _actions.INIT_EXAM_ENTRIES:
-      return [...examEntries, ...action.payload];
-
-    case _actions.ADD_EXAM_ENTRY:
-      return [...examEntries, action.payload];
-
-    case _actions.UPDATE_EXAM_ANSWER:
-      return reducerFuncs.updateExamAnswer(examEntries, action);
-
-    case _actions.UPDATE_EXAM_RESULTS:
-      return reducerFuncs.updateExamResults(examEntries, action);
+    case _actions.FETCH_ROOMS_BEGIN:
+      return action.payload;
+    case _actions.FETCH_ROOMS_SUCCESS:
+      return action.payload;
+    case _actions.FETCH_ROOMS_FAILURE:
+      return {};
 
     default:
-      return examEntries;
-  }
-};
-
-const roomsReducer = (examEntries = [], action) => {
-  switch (action.type) {
-    case _actions.INIT_EXAM_ENTRIES:
-      return [...rooms, ...action.payload];
-
-    case _actions.ADD_EXAM_ENTRY:
-      return [...examEntries, action.payload];
-
-    case _actions.UPDATE_EXAM_ANSWER:
-      return reducerFuncs.updateExamAnswer(examEntries, action);
-
-    case _actions.UPDATE_EXAM_RESULTS:
-      return reducerFuncs.updateExamResults(examEntries, action);
-
-    default:
-      return examEntries;
+      return rooms;
   }
 };
 
 const reducer = combineReducers({
   data: dataReducer,
   rooms: roomsReducer,
-  examEntries: examEntriesReducer,
 });
 
 export default reducer;

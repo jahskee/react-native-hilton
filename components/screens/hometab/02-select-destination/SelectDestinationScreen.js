@@ -53,7 +53,7 @@ class SelectDestinationScreen extends Component {
     }
 
     this.setState({selectedLocation});
-    console.log(text)
+
   }
 
   componentDidMount = () => {
@@ -78,7 +78,6 @@ class SelectDestinationScreen extends Component {
              <FlatList
               data={this.state.locations[this.state.selectedLocation].hotels}
               renderItem={ (hotel) => {
-                  console.log(JSON.stringify(hotel))
                   return (   <Destination hotel={ hotel.item } navigation={this.props.navigation} />)
               }}
 
