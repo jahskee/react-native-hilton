@@ -68,9 +68,7 @@ export const Photo = styled.View`
 
 /* ---------- Panel 2 ----------*/
 export const Panel2 = styled.View`
-  flex: 2;
   width: 100%;
- 
 `;
 
 /* ---------- Panel 3 ----------*/
@@ -79,14 +77,14 @@ export const Panel3 = styled.View`
   margin-bottom: 10px;
   
   padding: 10px;
-  flex: 1; 
+
   width: 100%;
 `;
 
 /* ---------- Panel 4 ----------*/
 export const Panel4 = styled.View`
-  margin-bottom: 100px;
-  justify-content: center;
+  margin-bottom: 20px;
+
   align-items: center;
 `;
 

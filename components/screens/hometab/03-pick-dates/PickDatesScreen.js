@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, Button } from "react-native";
+import { View, Text, Image, TouchableOpacity, Button, ScrollView } from "react-native";
 import Calendar from 'react-native-calendario';
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
@@ -110,7 +110,7 @@ class BookingScreen extends Component {
              </HotelInfo>
            
           </Panel1>
-          <ScrollView2>
+         <ScrollView style={{width: '100%', height: 500}}> 
           <Panel2>
           
               <Dates
@@ -123,6 +123,7 @@ class BookingScreen extends Component {
           />
 
           </Panel2>
+          </ScrollView>
           <Panel3>
              <DivDate>
                   <LabelDate>Arrival: </LabelDate>
@@ -141,7 +142,7 @@ class BookingScreen extends Component {
           </Panel4>
          
    
-        </ScrollView2>
+       
       </MainView>
     
     );
