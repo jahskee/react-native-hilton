@@ -49,7 +49,7 @@ class PickDatesScreen extends Component {
       alert('Please select start and end dates');
       return;
     }
-    this.props.navigation.navigate("PaymentScreen", { deck: 100 });
+    this.props.navigation.navigate("ReviewBookingScreen", { deck: 100 });
   }
 
   render() {
@@ -94,7 +94,7 @@ class PickDatesScreen extends Component {
              </DivDate>
           </Panel3>
       
-          <HotelFooter buttonLabel={'Proceed'} handleSubmit={this.handleSubmit}/>
+          <HotelFooter buttonLabel={'Pick Dates'} handleSubmit={this.handleSubmit}/>
       </MainView>
     
     );

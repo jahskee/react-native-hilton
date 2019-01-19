@@ -44,7 +44,7 @@ class PickRoomsScreen extends Component {
           </Text>
          
          </ScrollView>
-         <HotelFooter buttonLabel={'Proceed'} handleSubmit={this.handleSubmit}/>
+         <HotelFooter buttonLabel={'Select Room(s)'} handleSubmit={this.handleSubmit}/>
        
        
 

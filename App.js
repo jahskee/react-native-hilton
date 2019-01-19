@@ -13,18 +13,17 @@ import store from "./components/redux/store/store";
 import { myStyle } from "./components/_styles/myStyle";
 
 import HomeScreen from "./components/screens/hometab/01-home/HomeScreen";
-
 import SettingScreen from "./components/screens/settingtab/setting/SettingScreen";
-
 import ReservationScreen from "./components/screens/reservationstab/reservation/ReservationScreen";
 
+/*---- Home tab screens ----*/
 import SelectDestinationScreen from "./components/screens/hometab/02-select-destination/SelectDestinationScreen";
-
 import PickRoomsScreen from  "./components/screens/hometab/03-pick-rooms/PickRoomsScreen";
 import PickDatesScreen from  "./components/screens/hometab/04-pick-dates/PickDatesScreen";
-import PaymentScreen from  "./components/screens/hometab/05-payment/PaymentScreen";
-import ReviewBookingScreen from  "./components/screens/hometab/06-review-booking/ReviewBookingScreen";
+import ReviewBookingScreen from  "./components/screens/hometab/05-review-booking/ReviewBookingScreen";
+import PaymentScreen from  "./components/screens/hometab/06-payment/PaymentScreen";
 import ThankYouScreen from  "./components/screens/hometab/07-thank-you/ThankYouScreen";
+
 global.log = console.log;
 
 const HomeTab = createStackNavigator(
@@ -38,7 +37,7 @@ const HomeTab = createStackNavigator(
     ThankYouScreen
   },
   {
-     initialRouteName: "HomeScreen",
+    initialRouteName: "HomeScreen",
     //initialRouteName: "PickRoomsScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
