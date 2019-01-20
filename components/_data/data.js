@@ -9,8 +9,8 @@ const data = {
           address: "5711 W Century Blvd, Los Angeles, CA 90041 US",
           distance: 1.0,
           price: 110.5,
-          image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+          image: "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+          cityId: "5c43f218bede3a2ef82f071b"
         },
         {
           id: '02',  
@@ -18,8 +18,8 @@ const data = {
           address: "535 South Grand Avenue, Los Angeles, CA 90071 US",
           distance: 1.2,
           price: 105,
-          image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+          image: "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+          cityId: "5c43f218bede3a2ef82f071b"
         },
         {
             id: '03',  
@@ -27,8 +27,8 @@ const data = {
             address: "9876 Wilshire Blvd, Beverly Hills, CA, US, 90210",
             distance: 2.0,
             price: 185.5,
-            image:
-              "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+            image: "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            cityId: "5c43f218bede3a2ef82f071b"
         },
         {
             id: '04',  
@@ -36,8 +36,8 @@ const data = {
             address: "535 South Grand Avenue, Los Angeles, CA 90071 US",
             distance: 2.2,
             price: 126.0,
-            image:
-              "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+            image: "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            cityId: "5c43f218bede3a2ef82f071b"
         },
         {
             id: '05',  
@@ -45,8 +45,8 @@ const data = {
             address: "168 South Los Robles Ave, Pasadena, CA 91101 US",
             distance: 2.5,
             price: 175,
-            image:
-              "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+            image: "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            cityId: "5c43f218bede3a2ef82f071b"
         },
         {
             id: '06',  
@@ -55,7 +55,8 @@ const data = {
             distance: 2.8,
             price: 258,
             image:
-              "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+              "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            cityId: "5c43f218bede3a2ef82f071b"
         },
         {
             id: '07',  
@@ -64,7 +65,8 @@ const data = {
             distance: 3.0,
             price: 131,
             image:
-              "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+              "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            cityId: "5c43f218bede3a2ef82f071b"
         },
         {
             id: '08',  
@@ -73,7 +75,8 @@ const data = {
             distance: 4.5,
             price: 128,
             image:
-              "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+              "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            cityId: "5c43f218bede3a2ef82f071b"
         },
 
       ]
@@ -87,8 +90,8 @@ const data = {
           address: "1919 Connecticut Ave NW, Washington, DC 20009 US",
           distance: 2.0,
           price: 98,
-          image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+          image: "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+          cityId: "5c43f208bede3a2ef82f071a"
         },
         {
           id: '10',  
@@ -96,8 +99,8 @@ const data = {
           address: " 1515 Rhode Island Avenue NW, Washington, DC 20005 US",
           distance: 3.8,
           price: 106,
-          image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png"
+          image: "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+          cityId: "5c43f208bede3a2ef82f071a"
         }
       ]
     }

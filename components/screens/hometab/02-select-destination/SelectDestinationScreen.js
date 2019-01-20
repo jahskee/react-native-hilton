@@ -7,30 +7,19 @@ import { myStyle } from "../../../_styles/myStyle";
 import { Dropdown } from "react-native-material-dropdown";
 import { Destination } from "./parts/Destination";
 
-import {
-  MainView,
-  Destinations,
-  TopPanel,
-} from "./zstyles";
+import { MainView, Destinations, TopPanel } from "./zstyles";
 
-import data from '../../../_data/data';
+import data from "../../../_data/data";
 
 class SelectDestinationScreen extends Component {
-
   state = {
     locations: data.locations,
     selectedLocation: 0,
+    filteredHotels: [],
   };
 
-
-  constructor(props) {
-    super(props);
-    this.deck = this.props.navigation.getParam("deck");
-    
-  }
-
   dropDownData = [
-    { value: this.state.locations[0].locationName }, 
+    { value: this.state.locations[0].locationName },
     { value: this.state.locations[1].locationName }
   ];
 
@@ -44,52 +33,44 @@ class SelectDestinationScreen extends Component {
     };
   };
 
-  handleOnChangeLocation =  (text) => {
-    let selectedLocation;
-    if (text === 'Los Angeles, CA') {
-      selectedLocation = 0;
-    } else if (text === 'Washington, DC') {
-      selectedLocation = 1;
+  handleOnChangeLocation = text => {
+    let locationIndex;
+    if (text === "Los Angeles, CA") {
+      locationIndex = 0;
+    } else if (text === "Washington, DC") {
+      locationIndex = 1;
     }
-
-    this.setState({selectedLocation});
-
-  }
-
-  componentDidMount = () => {
-    this.props.updateData({ quizrun: true });
+    this.props.saveUserSession({selectedLocation: text, locationIndex });
+  
   };
+  
 
   render() {
-   
     return (
       <MainView>
-       
         <TopPanel>
-         
           <Dropdown
-            label='Where are you going?'
-            value='Los Angeles, CA'           
+            label="Where are you going?"
+            value="Los Angeles, CA"
             data={this.dropDownData}
             containerStyle={{ width: "90%" }}
-            onChangeText = { this.handleOnChangeLocation}
+            onChangeText={this.handleOnChangeLocation}
           />
           <Destinations>
-             <FlatList
-              data={this.state.locations[this.state.selectedLocation].hotels}
-              renderItem={ (hotel) => {
-                  return (   <Destination hotel={ hotel.item } navigation={this.props.navigation} />)
+            <FlatList
+              data={this.state.locations[this.props.userSession.locationIndex].hotels}
+              renderItem={hotel => {
+                return (
+                  <Destination
+                    hotel={hotel.item}
+                    navigation={this.props.navigation}
+                  />
+                );
               }}
-
-              keyExtractor = {(item) => item.id}
-             />
-
-      
-           
+              keyExtractor={item => item.id}
+            />
           </Destinations>
         </TopPanel>
-       
-     
       </MainView>
     );
   }
@@ -97,13 +78,15 @@ class SelectDestinationScreen extends Component {
 
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
-  data: store.data
-  //   decks: store.decks
+  data: store.data,
+  userSession: store.userSession,
+  hotels: store.hotels,
+  city: store.city,
 });
 
 const mapDispatchToProps = {
-  updateData: _actions.updateData
-  // addDeck: _actions.addDeck,
+  updateData: _actions.updateData,
+  saveUserSession: _actions.saveUserSession,
 };
 
 export default connect(

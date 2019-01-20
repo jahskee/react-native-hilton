@@ -5,6 +5,7 @@ import {
 } from "react-native";
 
 import { connect } from "react-redux";
+import * as _roomActions from "../../../redux/actions/roomActions";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
 import HotelHeader from "../_libs/hotel-header/HotelHeader";
@@ -48,10 +49,6 @@ class PickRoomsScreen extends Component {
     this.props.navigation.navigate("PickDatesScreen");
   };
 
-  componentDidMount() {
-    console.log(JSON.stringify(this.props.rooms))
-   
-  }
   render() {
     return (
       <MainView>
@@ -87,7 +84,7 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
-  toggleRoomSelected: _actions.toggleRoomSelected
+  toggleRoomSelected: _roomActions.toggleRoomSelected
   // addDeck: _actions.addDeck,
 };
 
