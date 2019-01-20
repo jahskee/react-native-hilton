@@ -5,7 +5,6 @@ export const MainView = styled.View`
   background: whitesmoke;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid red;
 `;
 
 export const Container = styled.View`
@@ -77,4 +76,14 @@ export const TextInput4 = styled.TextInput`
   padding: 5px 10px;
   width: 80px;
   height: 25;
+`;
+
+export const AmountDiv = styled.View`
+  justify-content: flex-end;
+`;
+
+export const Amount = styled.Text`
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: right;
 `;

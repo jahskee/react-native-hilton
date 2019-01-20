@@ -20,7 +20,9 @@ import {
   TextInput2,
   TextInput3,
   TextInput4,
-  View2
+  View2,
+  Amount,
+  AmountDiv
 } from "./zstyles";
 
 class PaymentScreen extends Component {
@@ -113,6 +115,12 @@ class PaymentScreen extends Component {
         <HotelHeader />
         <ScrollView style={{ marginTop: 20 }}>
           <Container>
+            <AmountDiv>
+              <Amount>
+                Total: $156
+              </Amount>
+            </AmountDiv>
+           
             <TopLabel>
               <Text>Please enter your personal info.</Text>
             </TopLabel>
