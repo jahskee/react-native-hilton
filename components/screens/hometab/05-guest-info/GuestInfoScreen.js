@@ -11,10 +11,13 @@ import HotelFooter from '../_libs/hotel-footer/HotelFooter';
 
 
 class ReviewBookingScreen extends Component {
-  constructor(props) {
-    super(props);
-
-    this.deck = this.props.navigation.getParam("deck");
+  state = {
+    firstName: '',
+    lastName: '',
+    street:'',
+    city: '',
+    state: '',
+    country: '',
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -28,7 +31,42 @@ class ReviewBookingScreen extends Component {
   };
 
   
+
+  handleChangeFirstName = (text) => {
+    this.setState({firstName: text})
+  }
+
+  handleChangeLastName = (text) => {
+    this.setState({lastName: text})
+  }
+
+  handleChangeStreet = (text) => {
+    this.setState({street: text})
+  }
+
+  handleChangeCity = (text) => {
+    this.setState({city: text})
+  }
+
+  handleChangeState = (text) => {
+    this.setState({state: text})
+  }
+
+  handleChangeCountry = (text) => {
+    this.setState({country: text})
+  }
+
   handleSubmit = () => {
+    if (
+      this.state.firstName === ''||
+      this.state.lastName === ''||
+      this.state.street === ''||
+      this.state.city === ''||
+      this.state.state === ''||
+      this.state.country === ''){
+        alert("Please check for empty values.")
+        return;
+    }
     this.props.navigation.navigate("PaymentScreen", { deck: 100 });
   }
 
@@ -44,7 +82,7 @@ class ReviewBookingScreen extends Component {
     }*/
     return (
       <MainView>
-        
+       
       <HotelHeader/>
         <ScrollView style={{marginTop: 20}}>
 
@@ -54,27 +92,27 @@ class ReviewBookingScreen extends Component {
           </TopLabel>
           <Row>
               <Label>First Name</Label>
-              <Input />
+              <Input onChangeText={this.handleChangeFirstName} value={this.state.firstName}/>
           </Row>
           <Row>
               <Label>Last Name</Label>
-              <Input />
+              <Input onChangeText={this.handleChangeLastName} value={this.state.lastName}/>
           </Row>
           <Row>
               <Label>Street</Label>
-              <Input />
+              <Input onChangeText={this.handleChangeStreet} value={this.state.street}/>
           </Row>
           <Row>
               <Label>City</Label>
-              <Input />
+              <Input onChangeText={this.handleChangeCity} value={this.state.city}/>
           </Row>
           <Row>
               <Label>State</Label>
-              <Input />
+              <Input onChangeText={this.handleChangeState} value={this.state.state}/>
           </Row>
           <Row>
               <Label>Country</Label>
-              <Input />
+              <Input onChangeText={this.handleChangeCountry} value={this.state.country}/>
           </Row>
 
      

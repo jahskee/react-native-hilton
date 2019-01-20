@@ -27,7 +27,6 @@ API.fetchRooms = async () => {
   return rooms.map(room => ({...room, isSelected: false}));
 };
 
-
 API.fetchHotels = async () => {
   let hotels = {};
   try {
