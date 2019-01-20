@@ -8,11 +8,9 @@ import {
   MainView,
   Panel2,
   Panel3,
-  Panel4,
   LabelDate,
   Arrival,
   DivDate,
-  CheckinButton,
   Departure
 
 } from "./zstyles";

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, Button } from "react-native";
+import { Text, Image, TouchableOpacity } from "react-native";
 
 import {
   DestinationItem,

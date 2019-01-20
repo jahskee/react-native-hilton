@@ -14,7 +14,7 @@ import data from "../../../_data/data";
 class SelectDestinationScreen extends Component {
   state = {
     locations: data.locations,
-    selectedLocation: 0,
+    selectedLocation: 0
   };
 
   dropDownData = [
@@ -41,18 +41,14 @@ class SelectDestinationScreen extends Component {
     }
     this.props.saveUserSession({
       selectedLocation: text
-    
     });
-  
   };
 
-  handleSelectHotel = (hotel) => {
+  handleSelectHotel = hotel => {
     this.props.saveUserSession({
       selectedHotel: hotel
-    })
-
-  }
-  
+    });
+  };
 
   render() {
     return (
@@ -67,7 +63,10 @@ class SelectDestinationScreen extends Component {
           />
           <Destinations>
             <FlatList
-              data={this.state.locations[this.props.userSession.locationIndex].hotels}
+              data={
+                this.state.locations[this.props.userSession.locationIndex]
+                  .hotels
+              }
               renderItem={hotel => {
                 return (
                   <Destination
@@ -91,12 +90,12 @@ const mapStateToProps = store => ({
   data: store.data,
   userSession: store.userSession,
   hotels: store.hotels,
-  city: store.city,
+  city: store.city
 });
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
-  saveUserSession: _actions.saveUserSession,
+  saveUserSession: _actions.saveUserSession
 };
 
 export default connect(
