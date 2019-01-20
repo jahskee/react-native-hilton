@@ -22,7 +22,7 @@ class ReviewBookingScreen extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "Review Booking",
+      headerTitle: "Finalize Reservation",
       headerTintColor: myStyle.primaryColor,
       headerTitleStyle: {
         fontWeight: "bold"

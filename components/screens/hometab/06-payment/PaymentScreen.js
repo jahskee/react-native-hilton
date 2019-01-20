@@ -41,7 +41,7 @@ class PaymentScreen extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "Payment",
+      headerTitle: "Payment Info",
       headerTintColor: myStyle.primaryColor,
       headerTitleStyle: {
         fontWeight: "bold"
@@ -105,6 +105,21 @@ class PaymentScreen extends Component {
       alert("Please enter values on empty fields.");
       return;
     }
+
+    /* credit card info are supposed to be encrypted
+     or should not be saved in the system */
+    this.props.saveUserSession({paymentInfo: {
+      name: this.state.name,
+      creditCard: "**********XXXXXX",
+      month: "xx",
+      year: "xx",
+      cvv: "xxx",
+      street: this.state.street,
+      city: this.state.city,
+      zipCode: this.state.zipCode,
+      state: this.state.state,
+      country: this.state.country,
+    }});
 
     this.props.navigation.navigate("ReviewBookingScreen");
   };
@@ -210,8 +225,8 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = {
-  updateData: _actions.updateData
-  // addDeck: _actions.addDeck,
+  updateData: _actions.updateData,
+  saveUserSession: _actions.saveUserSession
 };
 
 export default connect(
