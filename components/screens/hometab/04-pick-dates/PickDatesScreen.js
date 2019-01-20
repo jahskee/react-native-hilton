@@ -109,8 +109,8 @@ class PickDatesScreen extends Component {
 
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
-  data: store.data
-  //   decks: store.decks
+  data: store.data,
+  userSession: store.userSession
 });
 
 const mapDispatchToProps = {

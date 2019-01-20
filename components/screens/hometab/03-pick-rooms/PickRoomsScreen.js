@@ -81,8 +81,8 @@ class PickRoomsScreen extends Component {
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
   data: store.data,
-  rooms: store.rooms
-  //   decks: store.decks
+  rooms: store.rooms,
+  userSession: store.userSession
 });
 
 const mapDispatchToProps = {

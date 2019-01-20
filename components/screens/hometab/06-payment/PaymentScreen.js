@@ -98,9 +98,9 @@ class PaymentScreen extends Component {
          alert("Please enter values on empty fields.");
       return;
     }
-
+   
     
-    this.props.navigation.navigate("RewviewBookingScreen");
+    this.props.navigation.navigate("ReviewBookingScreen");
   };
 
   render() {
@@ -193,8 +193,8 @@ class PaymentScreen extends Component {
 
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
-  data: store.data
-  //   decks: store.decks
+  data: store.data,
+  userSession: store.userSession
 });
 
 const mapDispatchToProps = {
