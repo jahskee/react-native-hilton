@@ -15,7 +15,6 @@ class SelectDestinationScreen extends Component {
   state = {
     locations: data.locations,
     selectedLocation: 0,
-    filteredHotels: [],
   };
 
   dropDownData = [
@@ -40,9 +39,19 @@ class SelectDestinationScreen extends Component {
     } else if (text === "Washington, DC") {
       locationIndex = 1;
     }
-    this.props.saveUserSession({selectedLocation: text, locationIndex });
+    this.props.saveUserSession({
+      selectedLocation: text
+    
+    });
   
   };
+
+  handleSelectHotel = (hotel) => {
+    this.props.saveUserSession({
+      selectedHotel: hotel
+    })
+
+  }
   
 
   render() {
@@ -63,6 +72,7 @@ class SelectDestinationScreen extends Component {
                 return (
                   <Destination
                     hotel={hotel.item}
+                    handleSelectHotel={this.handleSelectHotel}
                     navigation={this.props.navigation}
                   />
                 );

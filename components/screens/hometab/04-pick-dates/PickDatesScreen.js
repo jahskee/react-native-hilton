@@ -49,6 +49,12 @@ class PickDatesScreen extends Component {
       alert('Please select start and end dates');
       return;
     }
+
+    this.props.saveUserSession({
+      arrival: this.state.startDate._d,
+      departure: this.state.endDate._d
+    })
+
     this.props.navigation.navigate("ReviewBookingScreen", { deck: 100 });
   }
 
@@ -109,6 +115,7 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
+  saveUserSession: _actions.saveUserSession,
   // addDeck: _actions.addDeck,
 };
 

@@ -41,5 +41,5 @@ store.dispatch(_cityActions.fetchCities());
 store.dispatch(_hotelActions.fetchHotels());
 store.dispatch(_roomActions.fetchRooms());
 store.dispatch(_actions.saveUserSession({selectedLocation: 'Los Angeles, CA', locationIndex: 0}))
-//store.dispatch(_actions.initRooms(roomsData))
+
 export default store;

@@ -46,6 +46,9 @@ class PickRoomsScreen extends Component {
       alert("Please book one or more room(s).");
       return;
     }
+  
+  
+    this.props.saveUserSession({selectedRooms});
     this.props.navigation.navigate("PickDatesScreen");
   };
 
@@ -84,7 +87,8 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
-  toggleRoomSelected: _roomActions.toggleRoomSelected
+  toggleRoomSelected: _roomActions.toggleRoomSelected,
+  saveUserSession: _actions.saveUserSession,
   // addDeck: _actions.addDeck,
 };
 
