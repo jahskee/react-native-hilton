@@ -83,7 +83,7 @@ class ReviewBookingScreen extends Component {
   render() {
     return (
       <MainView>
-        <HotelHeader />
+        <HotelHeader hotel={this.props.userSession.selectedHotel}/>
         <ScrollView style={{ marginTop: 20 }}>
           <Container>
             <TopLabel>

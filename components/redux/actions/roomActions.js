@@ -8,6 +8,11 @@ export const toggleRoomSelected = (roomNo) => ({
   payload: {roomNo}
 });
 
+export const RESET_ROOMS_SELECTION = "RESET_ROOMS_SELECTION";
+export const resetRoomsSelection = () => ({
+  type: RESET_ROOMS_SELECTION,
+});
+
 
 /* ---- Start: Async fetch of Rooms ---- */
 export const FETCH_ROOMS_BEGIN   = 'FETCH_ROOMS_BEGIN';

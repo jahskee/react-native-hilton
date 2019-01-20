@@ -46,7 +46,7 @@ class SelectDestinationScreen extends Component {
 
   handleSelectHotel = hotel => {
     this.props.saveUserSession({
-      selectedHotel: hotel
+      selectedHotel: hotel,
     });
   };
 

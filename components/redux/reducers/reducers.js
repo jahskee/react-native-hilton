@@ -31,6 +31,10 @@ const roomReducer = (rooms = [], action) => {
       return [];
     case _roomActions.TOGGLE_ROOM_SELECTED:
        rooms = reducerFuncs.toggleRoomSelected(action, rooms);
+       return rooms;
+    case _roomActions.RESET_ROOMS_SELECTION:
+       rooms = rooms.map( room => ({...room, isSelected: false}));
+       return rooms;
     default:
       return rooms;
   }

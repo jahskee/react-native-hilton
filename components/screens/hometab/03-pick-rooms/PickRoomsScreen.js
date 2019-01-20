@@ -52,10 +52,15 @@ class PickRoomsScreen extends Component {
     this.props.navigation.navigate("PickDatesScreen");
   };
 
+  componentDidMount() {
+    this.props.saveUserSession({selectedRooms:[]});
+    this.props.resetRoomsSelection();
+  }
+
   render() {
     return (
       <MainView>
-        <HotelHeader />
+        <HotelHeader hotel={this.props.userSession.selectedHotel}/>
         <ScrollView style={{ width: "100%", height: 500, marginTop: 10 }}>
           <Rooms>
             <FlatList
@@ -88,6 +93,7 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = {
   updateData: _actions.updateData,
   toggleRoomSelected: _roomActions.toggleRoomSelected,
+  resetRoomsSelection: _roomActions.resetRoomsSelection,
   saveUserSession: _actions.saveUserSession,
   // addDeck: _actions.addDeck,
 };

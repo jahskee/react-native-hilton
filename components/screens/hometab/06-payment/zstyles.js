@@ -79,11 +79,12 @@ export const TextInput4 = styled.TextInput`
 `;
 
 export const AmountDiv = styled.View`
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 export const Amount = styled.Text`
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 20px;
   text-align: right;
 `;

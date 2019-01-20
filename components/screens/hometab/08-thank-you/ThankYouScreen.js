@@ -39,7 +39,7 @@ class ThankYouScreen extends Component {
   render() {
     return (
       <MainView>
-        <HotelHeader />
+        <HotelHeader hotel={this.props.userSession.selectedHotel}/>
         <ScrollView>
           <Text>Middle</Text>
         </ScrollView>

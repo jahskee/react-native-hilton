@@ -127,12 +127,15 @@ class PaymentScreen extends Component {
   render() {
     return (
       <MainView>
-        <HotelHeader />
+        <HotelHeader hotel={this.props.userSession.selectedHotel}/>
         <ScrollView style={{ marginTop: 20 }}>
           <Container>
             <AmountDiv>
+            <Amount>
+                {this.props.userSession.nightsStay+ ' Night(s)' }
+              </Amount>
               <Amount>
-                Total: $156
+                Total: ${this.props.userSession.totalAmount.toFixed(2)}
               </Amount>
             </AmountDiv>
            
