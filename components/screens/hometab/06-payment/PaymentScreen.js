@@ -19,10 +19,18 @@ import HotelFooter from "../_libs/hotel-footer/HotelFooter";
 import { MainView, Container, TopLabel, Row, Label, Input, Text2, Text3, TextInput2, TextInput3, TextInput4,   View2 } from "./zstyles";
 
 class PaymentScreen extends Component {
-  constructor(props) {
-    super(props);
 
-    this.deck = this.props.navigation.getParam("deck");
+  state = {
+    name: '',
+    creditCard: '',
+    month: '',
+    year: '',
+    cvv: '',
+    street: '',
+    city: '',
+    zipCode: '',
+    state: '',
+    country: '',
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -35,16 +43,66 @@ class PaymentScreen extends Component {
     };
   };
 
+  handleChangeName = (text) => {
+    this.setState({ name: text });
+  }
+
+  handleChangeCreditCard = (text) => {
+    this.setState({ creditCard: text });
+  }
+
+  handleChangeCCMonth = (text) => {
+    this.setState({ month: text });
+  }
+
+  handleChangeCCYear = (text) => {
+    this.setState({ year: text });
+  }
+
+  handleChangeCVV = (text) => {
+    this.setState({ cvv: text });
+  }
+
+  handleChangeStreet = (text) => {
+    this.setState({ street: text });
+  }
+
+  handleChangeCity = (text) => {
+    this.setState({ city: text });
+  }
+
+  handleChangeZipCode = (text) => {
+    this.setState({ zipCode: text });
+  }
+
+  handleChangeState = (text) => {
+    this.setState({ state: text });
+  }
+
+  handleChangeCountry = (text) => {
+    this.setState({ country: text });
+  }
+  
   handleSubmit = () => {
+
+    if (this.state.name === "" ||
+      this.state.creditCard === "" ||
+      this.state.month === "" ||
+      this.state.year === "" ||
+      this.state.cvv === "" ||
+      this.state.street === "" ||
+      this.state.city === "" ||
+      this.state.zipCode === "" ||
+      this.state.state === "" ||
+      this.state.country === "" ) {
+         alert("Please enter values on empty fields.");
+      return;
+    }
+
+    
     this.props.navigation.navigate("RewviewBookingScreen");
   };
 
-  handleChange = () => {
-
-  }
-  state = {
-    creditCard: '',
-  }
   render() {
     return (
       <MainView>
@@ -57,69 +115,69 @@ class PaymentScreen extends Component {
             <Row>
               <Label>Name on Card</Label>
               <Input
-                onChangeText={this.handleChange}
-                value={this.state.creditCard}
+                onChangeText={this.handleChangeName}
+                value={this.state.name}
               />
             </Row>
             <Row>
               <Label>Credit Card</Label>
               <Input
-                onChangeText={this.handleChange}
+                onChangeText={this.handleChangeCreditCard}
                 value={this.state.creditCard}
               />
             </Row>
             <View2>
               <Text2>mm</Text2>
               <TextInput2
-                onChangeText={this.handleChange}
-                value={this.state.creditCard}
+                onChangeText={this.handleChangeCCMonth}
+                value={this.state.month}
               />            
 
               <Text2>yy</Text2>
               <TextInput2
-                onChangeText={this.handleChange}
-                value={this.state.creditCard}
+                onChangeText={this.handleChangeCCYear}
+                value={this.state.year}
               />        
 
               <Text3>cvv</Text3>
               <TextInput3
-                onChangeText={this.handleChange}
-                value={this.state.creditCard}
+                onChangeText={this.handleChangeCVV}
+                value={this.state.cvv}
               />        
             </View2>
             <Row>
               <Label>Street</Label>
               <Input
-                onChangeText={this.handleChange}
-                value={this.state.creditCard}
+                onChangeText={this.handleChangeStreet}
+                value={this.state.street}
               />            
             </Row>
             <Row>
               <Label>City</Label>
               <Input
-                onChangeText={this.handleChange}
-                value={this.state.creditCard}
+                onChangeText={this.handleChangeCity}
+                value={this.state.city}
               />            
             </Row>
             <Row>
               <Label>Zip Code</Label>
               <TextInput4
-                onChangeText={this.handleChange}
-                value={this.state.creditCard}
+                onChangeText={this.handleChangeZipCode}
+                value={this.state.zipCode}
               />            
             </Row>
             <Row>
               <Label>State</Label>
               <Input
-                onChangeText={this.handleChange}
-                value={this.state.creditCard}
+                onChangeText={this.handleChangeState}
+                value={this.state.state}
               />            
             </Row>
             <Row>
               <Label>Country</Label>
               <Input
-                onChangeText={this.handleChange}
-                value={this.state.creditCard}
+                onChangeText={this.handleChangeCountry}
+                value={this.state.country}
               />            
             </Row>
           </Container>

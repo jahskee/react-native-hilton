@@ -65,7 +65,7 @@ class ReviewBookingScreen extends Component {
       this.state.state === "" ||
       this.state.country === ""
     ) {
-      alert("Please check for empty values.");
+      alert("Please enter values on empty fields.");
       return;
     }
 
