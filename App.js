@@ -20,9 +20,10 @@ import ReservationScreen from "./components/screens/reservationstab/reservation/
 import SelectDestinationScreen from "./components/screens/hometab/02-select-destination/SelectDestinationScreen";
 import PickRoomsScreen from  "./components/screens/hometab/03-pick-rooms/PickRoomsScreen";
 import PickDatesScreen from  "./components/screens/hometab/04-pick-dates/PickDatesScreen";
-import ReviewBookingScreen from  "./components/screens/hometab/05-review-booking/ReviewBookingScreen";
+import GuestInfoScreen from  "./components/screens/hometab/05-guest-info/GuestInfoScreen";
 import PaymentScreen from  "./components/screens/hometab/06-payment/PaymentScreen";
-import ThankYouScreen from  "./components/screens/hometab/07-thank-you/ThankYouScreen";
+import ReviewBookingScreen from  "./components/screens/hometab/07-review-booking/ReviewBookingScreen";
+import ThankYouScreen from  "./components/screens/hometab/08-thank-you/ThankYouScreen";
 
 global.log = console.log;
 
@@ -33,12 +34,13 @@ const HomeTab = createStackNavigator(
     PickRoomsScreen,
     PickDatesScreen,
     PaymentScreen,
+    GuestInfoScreen,
     ReviewBookingScreen,
     ThankYouScreen
   },
   {
+    //initialRouteName: "GuestInfoScreen",
     initialRouteName: "HomeScreen",
-    //initialRouteName: "PickRoomsScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {

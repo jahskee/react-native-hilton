@@ -55,7 +55,7 @@ class PickDatesScreen extends Component {
       departure: this.state.endDate._d
     })
 
-    this.props.navigation.navigate("ReviewBookingScreen", { deck: 100 });
+    this.props.navigation.navigate("GuestInfoScreen", { deck: 100 });
   }
 
   render() {

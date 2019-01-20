@@ -26,12 +26,9 @@ class PaymentScreen extends Component {
       }
     };
   };
-
-
-  logoImage = "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png";
   
   handleSubmit = () => {
-    this.props.navigation.navigate("ThankYouScreen", { deck: 100 });
+    this.props.navigation.navigate("RewviewBookingScreen");
   }
 
   componentDidMount = () =>  {
