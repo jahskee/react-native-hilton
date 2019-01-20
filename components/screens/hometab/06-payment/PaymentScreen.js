@@ -132,7 +132,7 @@ class PaymentScreen extends Component {
           <Container>
             <AmountDiv>
             <Amount>
-                {this.props.userSession.nightsStay+ ' Night(s)' }
+                {this.props.userSession.nightsStay+ ' night(s)' }
               </Amount>
               <Amount>
                 Total: ${this.props.userSession.totalAmount.toFixed(2)}
@@ -140,7 +140,7 @@ class PaymentScreen extends Component {
             </AmountDiv>
            
             <TopLabel>
-              <Text>Please enter your personal info.</Text>
+              <Text>Please enter your payment details.</Text>
             </TopLabel>
             <Row>
               <Label>Name on Card</Label>

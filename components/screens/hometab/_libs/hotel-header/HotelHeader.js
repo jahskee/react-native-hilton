@@ -26,8 +26,8 @@ const HotelHeader = props => {
           />
        </Photo>
        <HotelInfo>
-          <HotelName>Hilton Checkers Los Angeles</HotelName>
-          <HotelAddress>535 South Grand Ave, Los Angeles, CA 90071 US <HotelDistance> (2.5 mi) </HotelDistance></HotelAddress>
+          <HotelName>{props.hotel.name}</HotelName>
+          <HotelAddress>{props.hotel.address} <HotelDistance> ({props.hotel.distance} mi) </HotelDistance></HotelAddress>
           
         
        </HotelInfo>
