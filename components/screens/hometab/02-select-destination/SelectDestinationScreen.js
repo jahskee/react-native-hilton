@@ -40,7 +40,8 @@ class SelectDestinationScreen extends Component {
       locationIndex = 1;
     }
     this.props.saveUserSession({
-      selectedLocation: text
+      selectedLocation: text,
+      locationIndex,
     });
   };
 
@@ -64,8 +65,7 @@ class SelectDestinationScreen extends Component {
           <Destinations>
             <FlatList
               data={
-                this.state.locations[this.props.userSession.locationIndex]
-                  .hotels
+                this.state.locations[this.props.userSession.locationIndex].hotels
               }
               renderItem={hotel => {
                 return (
