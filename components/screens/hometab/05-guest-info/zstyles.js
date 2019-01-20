@@ -5,7 +5,6 @@ export const MainView = styled.View`
   background: whitesmoke;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid red;
 `;
 
 export const Container = styled.View`
