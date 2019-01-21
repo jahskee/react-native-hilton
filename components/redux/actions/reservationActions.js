@@ -62,8 +62,7 @@ export const addReservationFailure = error => ({
 export const addReservation = (param) => async dispatch => {
   dispatch(addReservationBegin);
   try {   
-    const reservation = await API.addReservation(param);  
-    debugger;
+    const reservation = await API.addReservation(param);
     await dispatch(addReservationSuccess(reservation));
   } catch (error) {
     console.error(error);

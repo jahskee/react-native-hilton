@@ -3,11 +3,11 @@ import { ScrollView, View, Text } from "react-native";
 
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
+import * as _reservationActions from "../../../redux/actions/reservationActions";
 import { myStyle } from "../../../_styles/myStyle";
 
 import HotelHeader from "../_libs/hotel-header/HotelHeader";
 import HotelFooter from "../_libs/hotel-footer/HotelFooter";
-import Compute from "../../../utils/Compute";
 
 import {
   MainView,
@@ -22,12 +22,9 @@ import {
 } from "./zstyles";
 
 class ReviewBookingScreen extends Component {
-  constructor(props) {
-    super(props);
+  state ={
 
-    this.deck = this.props.navigation.getParam("deck");
   }
-
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Confirm Reservation",
@@ -39,43 +36,56 @@ class ReviewBookingScreen extends Component {
   };
 
   handleSubmit = () => {
-    this.props.navigation.navigate("ThankYouScreen", { deck: 100 });
+    const reservation = {name: 'testing111111', phone: '541-2333', hotel: 'hotel california',
+    email: 'jahske@ya.com', address: 'address01', arrival: 'Jan 5 2019', departure: 'Jan 7 2019', totalAmount: 120}
+    this.props.addReservation(reservation);
+    this.props.navigation.navigate("ThankYouScreen");
   };
 
-  render() {
+
+  componentDidMount() {
     const userInfo = this.props.userSession;
     const guestInfo = this.props.userSession.guestInfo;
     const hotelInfo = this.props.userSession.selectedHotel;
+
     const name = guestInfo.firstName + " " + guestInfo.lastName;
     const phone = guestInfo.phone;
     const email = guestInfo.email;
     const address =
-      guestInfo.street +
-      ", " +
-      guestInfo.city +
-      ", " +
-      guestInfo.state +
-      ", " +
-      guestInfo.country;
+    guestInfo.street +
+    ", " +
+    guestInfo.city +
+    ", " +
+    guestInfo.state +
+    ", " +
+    guestInfo.country;
     const hotelName = hotelInfo.name;
     const hotelAddress = hotelInfo.address;
     const arrival = userInfo.arrival;
     const departure = userInfo.departure;
-    const totalAmount = this.props.userSession.totalAmount;
-    const selectedRooms = userInfo.selectedRooms;
+    const totalAmount = userInfo.totalAmount;
+   
+    this.setState({
+      name,
+      phone,
+      address,
+      email,
+      totalAmount,
+      hotelName,
+      hotelAddress,
+      arrival,
+      departure,
+    });
 
-    /*    
-    const name = 'sdfadfs';
-    const address = 'adfsdfs';
-    const hotelName = 'asdfsdfsdf';
-    const hotelAddress = 'sdfsdf dsfsdf';
-    const arrival = 'Jan 29 2019';
-    const departure = 'Feb 2 2019';
-    const totalAmount = 450;
+   
 
-    const selectedRooms =[{roomNo: '208',type: 'KingBed', price: 124, nights: 2, subTotal: 120, pax: 4, description:'For those who needs a spacious room. This is a great fit for you.'}, 
-                    {roomNo: '305', type: 'Twin Bed', price: 120, nights: 2, subTotal: 169, pax: 2, description: ''}];
-                        */
+    this.reservation = {
+
+    }
+  }
+  render() {
+   
+   
 
     return (
       <MainView>
@@ -89,20 +99,20 @@ class ReviewBookingScreen extends Component {
             <Row>
               <Label>Name</Label>
 
-              <Value>{name}</Value>
+              <Value>{this.state.name}</Value>
             </Row>
 
             <Row>
               <Label>Address</Label>
-              <Value>{address}</Value>
+              <Value>{this.state.address}</Value>
             </Row>
             <Row>
               <Label>Phone</Label>
-              <Value>{phone}</Value>
+              <Value>{this.state.phone}</Value>
             </Row>
             <Row>
               <Label>Email</Label>
-              <Value>{email}</Value>
+              <Value>{this.state.email}</Value>
             </Row>
           </View>
 
@@ -110,47 +120,50 @@ class ReviewBookingScreen extends Component {
             <TopDivFirst>
               <TopText>Payment Info</TopText>
             </TopDivFirst>
+            
             <Row>
               <Label>Total Amount</Label>
 
               <Value>
-                <Total>${totalAmount.toFixed(2)}</Total>
+                <Total>${this.state.totalAmount}</Total>
               </Value>
             </Row>
-
+              
             <Row>
               <Label>Credit Card #</Label>
               <Value>***********3456</Value>
             </Row>
           </View>
-          
+
           <View>
             <TopDiv>
               <TopText>Hotel Accommodation</TopText>
             </TopDiv>
             <Row>
               <Label>Hotel Name</Label>
-              <Value>{hotelName}</Value>
+              <Value>{this.state.hotelName}</Value>
             </Row>
 
             <Row>
               <Label>Address</Label>
-              <Value>{hotelAddress}</Value>
+              <Value>{this.state.hotelAddress}</Value>
             </Row>
 
             <Row>
               <Label>Arrival</Label>
-              <Value>{arrival}</Value>
+              <Value>{this.state.arrival}</Value>
             </Row>
             <Row>
               <Label>Departure</Label>
-              <Value>{departure}</Value>
+              <Value>{this.state.departure}</Value>
             </Row>
-
-            {selectedRooms.map((room, i) => (
+            {
+              console.log(this.state.selectedRooms)}
+            }
+            {this.props.userSession.selectedRooms.map((room, i) => (
               <Row key={i}>
                 <Label>
-                  Room Reserved {selectedRooms.length === 1 ? "" : i + 1}
+                  Room Reserved {this.props.userSession.selectedRooms.length === 1 ? "" : i + 1}
                 </Label>
                 <Value>
                   {"room " +
@@ -169,9 +182,9 @@ class ReviewBookingScreen extends Component {
                 </Value>
               </Row>
             ))}
+            
+            
           </View>
-
-       
         </ScrollView>
         <HotelFooter
           buttonLabel={"Confirm Payment"}
@@ -189,7 +202,8 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = {
-  updateData: _actions.updateData
+  updateData: _actions.updateData,
+  addReservation: _reservationActions.addReservation
 };
 
 export default connect(
