@@ -3,6 +3,7 @@
     GraphQL + React Native + Redux + Axios + Flow or Typescript
 
 ### RN Installation 
+    git clone https://github.com/jahskee/react-native-hilton
     npm install
     npm start
 
