@@ -13,22 +13,24 @@ export const HotelInfo = styled.View`
   padding-top: 5px;
   width: 70%;
 `;
+
 export const HotelName = styled.Text`
   padding-top: 10px;
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 5px;
-  color: #30442b;
+  color: #30442b; 
 `;
+
 export const HotelAddress = styled.Text`
   margin-bottom: 10px;
   color: #7c6d6d;
   font-size: 12px;
 `;
 
-export const HotelDiv2 = styled.View`
+export const Container = styled.View`
   flex-direction: row;
-  justify-content: space-between;
+  margin-left: 60px;
 `;
 
 export const HotelDistance = styled.Text`
@@ -42,8 +44,6 @@ export const HotelPrice = styled.Text`
   font-weight: bold;
 `;
 
-export const Photo = styled.View`
-  padding-top: 5px;
-  padding-left: 5px;
-  width: 30%;
+export const Row = styled.View`
+  flex-direction: column;
 `;
