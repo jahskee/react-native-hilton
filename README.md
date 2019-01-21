@@ -1,6 +1,5 @@
 
-# React-Native Flash Card App
-
+# Hilton Reservation Test App 
 Video demo: https://youtu.be/8hWKqtWygsg?list=PLQJ5NOpJwpS6noEVr-66XUh5m4pAqV6Q8
 
 ## Installation Instruction
