@@ -1,5 +1,4 @@
 /* jshint esversion: 6 */
-import API from "../../api/API";
 export const UPDATE_DATA = "UPDATE_DATA";
 
 export const initRooms = rooms => ({

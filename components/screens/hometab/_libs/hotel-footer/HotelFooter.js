@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, Button } from "react-native";
+import { TouchableOpacity } from "react-native";
 
 import { GreenButton, HotelFooterView } from "./zstyles";
 

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { ScrollView, View, Text } from "react-native";
 
 import { connect } from "react-redux";
@@ -21,7 +21,7 @@ import {
   Total
 } from "./zstyles";
 
-class ReviewBookingScreen extends Component {
+class ReviewBookingScreen extends PureComponent {
   state = {};
   static navigationOptions = ({ navigation }) => {
     return {

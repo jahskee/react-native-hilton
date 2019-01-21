@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import {
-  View,
   Text,
-  Image,
-  TouchableOpacity,
-  Button,
   ScrollView
 } from "react-native";
 import Calendar from "react-native-calendario";

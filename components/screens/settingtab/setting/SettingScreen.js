@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 import React from "react";
-import { Button, View, Image, ImageLogo, Dimensions } from "react-native";
+import { View, Image, Dimensions } from "react-native";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";

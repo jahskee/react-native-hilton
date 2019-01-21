@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { ScrollView } from "react-native";
 
 import { connect } from "react-redux";
@@ -9,7 +9,7 @@ import HotelHeader from "../_libs/hotel-header/HotelHeader";
 import HotelFooter from "../_libs/hotel-footer/HotelFooter";
 import { MainView, TopDivFirst, TopText, Row, Label, Value } from "./zstyles";
 
-class ThankYouScreen extends Component {
+class ThankYouScreen extends PureComponent {
   state = {};
   static navigationOptions = ({ navigation }) => {
     return {
