@@ -22,9 +22,7 @@ import {
 } from "./zstyles";
 
 class ReviewBookingScreen extends Component {
-  state ={
-
-  }
+  state = {};
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Confirm Reservation",
@@ -36,12 +34,19 @@ class ReviewBookingScreen extends Component {
   };
 
   handleSubmit = () => {
-    const reservation = {name: 'testing111111', phone: '541-2333', hotel: 'hotel california',
-    email: 'jahske@ya.com', address: 'address01', arrival: 'Jan 5 2019', departure: 'Jan 7 2019', totalAmount: 120}
-    this.props.addReservation(reservation);
+    const reservation = {
+      name: "testing111111",
+      phone: "541-2333",
+      hotel: "hotel california",
+      email: "jahske@ya.com",
+      address: "address01",
+      arrival: "Jan 5 2019",
+      departure: "Jan 7 2019",
+      totalAmount: 120
+    };
+    this.props.addReservation(this.reservation);
     this.props.navigation.navigate("ThankYouScreen");
   };
-
 
   componentDidMount() {
     const userInfo = this.props.userSession;
@@ -52,19 +57,19 @@ class ReviewBookingScreen extends Component {
     const phone = guestInfo.phone;
     const email = guestInfo.email;
     const address =
-    guestInfo.street +
-    ", " +
-    guestInfo.city +
-    ", " +
-    guestInfo.state +
-    ", " +
-    guestInfo.country;
+      guestInfo.street +
+      ", " +
+      guestInfo.city +
+      ", " +
+      guestInfo.state +
+      ", " +
+      guestInfo.country;
     const hotelName = hotelInfo.name;
     const hotelAddress = hotelInfo.address;
     const arrival = userInfo.arrival;
     const departure = userInfo.departure;
     const totalAmount = userInfo.totalAmount;
-   
+
     this.setState({
       name,
       phone,
@@ -74,19 +79,25 @@ class ReviewBookingScreen extends Component {
       hotelName,
       hotelAddress,
       arrival,
-      departure,
+      departure
     });
 
-   
-
+    /*
+store.dispatch(_reservationActions.addReservation({name: 'testing', phone: '541-2333', 
+email: 'jahske@ya.com', address: 'address01', arrival: 'Jan 5 2019', departure: 'Jan 7 2019', totalAmount: 120}));
+*/
     this.reservation = {
-
-    }
+      name,
+      phone,
+      email,
+      hotel: hotelName,
+      address: hotelAddress,
+      arrival,
+      departure,
+      totalAmount
+    };
   }
   render() {
-   
-   
-
     return (
       <MainView>
         <HotelHeader hotel={this.props.userSession.selectedHotel} />
@@ -120,7 +131,7 @@ class ReviewBookingScreen extends Component {
             <TopDivFirst>
               <TopText>Payment Info</TopText>
             </TopDivFirst>
-            
+
             <Row>
               <Label>Total Amount</Label>
 
@@ -128,7 +139,7 @@ class ReviewBookingScreen extends Component {
                 <Total>${this.state.totalAmount}</Total>
               </Value>
             </Row>
-              
+
             <Row>
               <Label>Credit Card #</Label>
               <Value>***********3456</Value>
@@ -143,12 +154,10 @@ class ReviewBookingScreen extends Component {
               <Label>Hotel Name</Label>
               <Value>{this.state.hotelName}</Value>
             </Row>
-
             <Row>
               <Label>Address</Label>
               <Value>{this.state.hotelAddress}</Value>
             </Row>
-
             <Row>
               <Label>Arrival</Label>
               <Value>{this.state.arrival}</Value>
@@ -157,13 +166,14 @@ class ReviewBookingScreen extends Component {
               <Label>Departure</Label>
               <Value>{this.state.departure}</Value>
             </Row>
-            {
-              console.log(this.state.selectedRooms)}
-            }
+            {console.log(this.state.selectedRooms)}}
             {this.props.userSession.selectedRooms.map((room, i) => (
               <Row key={i}>
                 <Label>
-                  Room Reserved {this.props.userSession.selectedRooms.length === 1 ? "" : i + 1}
+                  Room Reserved{" "}
+                  {this.props.userSession.selectedRooms.length === 1
+                    ? ""
+                    : i + 1}
                 </Label>
                 <Value>
                   {"room " +
@@ -182,8 +192,6 @@ class ReviewBookingScreen extends Component {
                 </Value>
               </Row>
             ))}
-            
-            
           </View>
         </ScrollView>
         <HotelFooter
