@@ -11,6 +11,7 @@
     npm start
     
     live server: http://kickstartapps.us:4000/graphql
+    github: https://github.com/jahskee/graphql-hilton
 
 ### Server location
     http://kickstartapps.us:4000/graphql
