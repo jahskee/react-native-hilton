@@ -19,7 +19,7 @@
 
 ### Screenshots
 
-![alt text](https://i.imgur.com/8TKTUna.png)
+![alt text](https://i.imgur.com/8Livwri.png)
 
 
 
