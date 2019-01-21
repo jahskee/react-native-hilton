@@ -9,6 +9,8 @@
 ### GraphQL Server Installation
     npm install
     npm start
+    
+    live server: http://kickstartapps.us:4000/graphql
 
 ### Server location
     http://kickstartapps.us:4000/graphql
