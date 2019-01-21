@@ -4,16 +4,25 @@ import {
   Text,
 } from "react-native";
 
-import { MainView, TextHead, DeckBtn, StartOverBtn } from "./zstyles";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
 
 import HotelHeader from "../_libs/hotel-header/HotelHeader";
 import HotelFooter from "../_libs/hotel-footer/HotelFooter";
+import {
+  MainView,
+  TopDivFirst,
+  TopText,
+  Row,
+  Label,
+  Value,
+} from "./zstyles";
 
 class ThankYouScreen extends Component {
-
+  state ={
+    reservation: this.props.userSession.reservations
+  }
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Reservation Confirmed",
@@ -26,21 +35,54 @@ class ThankYouScreen extends Component {
   };
 
   handleSubmit = () => {
-    this.props.navigation.navigate("ReservationScreen", { deck: 100 });
+    this.props.navigation.navigate("ReservationScreen");
   };
 
-
+    /*
+store.dispatch(_reservationActions.addReservation({name: 'testing', phone: '541-2333', 
+email: 'jahske@ya.com', address: 'address01', arrival: 'Jan 5 2019', departure: 'Jan 7 2019', totalAmount: 120}));
+*/
   render() {
+
     return (
       <MainView>
+         
         <HotelHeader hotel={this.props.userSession.selectedHotel}/>
+        
         <ScrollView>
-          <Text>Middle</Text>
+        
+      
+          
+            <TopDivFirst>
+              <TopText>Reservation Info</TopText>
+            </TopDivFirst>
+               
+            <Row>
+              <Label>Name</Label>
+
+              <Value>Jaizon Lubaton</Value>
+            </Row>
+
+        
+            <Row>
+              <Label>Phone</Label>
+              <Value>444445555</Value>
+            </Row>
+            <Row>
+              <Label>Email</Label>
+              <Value>jahskee@y.com</Value>
+            </Row>
+
+         
+        
+ 
         </ScrollView>
+       
         <HotelFooter
           buttonLabel={"View My Reservations"}
           handleSubmit={this.handleSubmit}
         />
+           
       </MainView>
     );
   }

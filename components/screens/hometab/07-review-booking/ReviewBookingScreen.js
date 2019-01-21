@@ -34,17 +34,9 @@ class ReviewBookingScreen extends Component {
   };
 
   handleSubmit = () => {
-    const reservation = {
-      name: "testing111111",
-      phone: "541-2333",
-      hotel: "hotel california",
-      email: "jahske@ya.com",
-      address: "address01",
-      arrival: "Jan 5 2019",
-      departure: "Jan 7 2019",
-      totalAmount: 120
-    };
+   
     this.props.addReservation(this.reservation);
+  
     this.props.navigation.navigate("ThankYouScreen");
   };
 
@@ -82,10 +74,7 @@ class ReviewBookingScreen extends Component {
       departure
     });
 
-    /*
-store.dispatch(_reservationActions.addReservation({name: 'testing', phone: '541-2333', 
-email: 'jahske@ya.com', address: 'address01', arrival: 'Jan 5 2019', departure: 'Jan 7 2019', totalAmount: 120}));
-*/
+
     this.reservation = {
       name,
       phone,
@@ -97,6 +86,8 @@ email: 'jahske@ya.com', address: 'address01', arrival: 'Jan 5 2019', departure: 
       totalAmount
     };
   }
+
+
   render() {
     return (
       <MainView>
@@ -211,7 +202,8 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
-  addReservation: _reservationActions.addReservation
+  addReservation: _reservationActions.addReservation,
+  saveUserSession: _actions.saveUserSession
 };
 
 export default connect(

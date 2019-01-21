@@ -1,6 +1,6 @@
 /* jshint esversion: 6 */
 import  API from '../../api/API';
-
+import * as _actions from './actions';
 
 /* ---- Start: Async fetch of Reservations ---- */
 export const FETCH_RESERVATIONS_BEGIN   = 'FETCH_RESERVATIONS_BEGIN';
@@ -64,9 +64,11 @@ export const addReservation = (param) => async dispatch => {
   try {   
     const reservation = await API.addReservation(param);
     await dispatch(addReservationSuccess(reservation));
+    dispatch(_actions.saveUserSession({reservation}));
   } catch (error) {
     console.error(error);
     dispatch(addReservationFailure(error));
   }
+  
 };
 /* ---- End: Async Add Reservation ---- */
