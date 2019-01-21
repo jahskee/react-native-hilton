@@ -53,7 +53,7 @@ class ReservationScreen extends React.PureComponent {
         />
 
         <FlatList
-          data={this.props.reservations}
+          data={this.props.reservations.slice(0).reverse()}
           renderItem={reservation => {
             console.log(reservation)
             return (
