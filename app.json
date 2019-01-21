@@ -1,9 +1,9 @@
 
 {
   "expo": {
-    "name": "FlashCard App",
-    "description": "FlashCard Application.",
-    "slug": "flashcard",
+    "name": "Hilton App",
+    "description": "Hilton Application.",
+    "slug": "hiltonapp",
     "privacy": "public",
     "sdkVersion": "27.0.0",
     "platforms": ["ios", "android"],
@@ -22,11 +22,11 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.jahskee.flashcard",
+      "bundleIdentifier": "com.jahskee.hiltonapp",
       "supportsTablet": true
     },
     "android": {
-      "package": "com.jahskee.flashcard"
+      "package": "com.jahskee.hiltonapp"
     }
   }
 }
