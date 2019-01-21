@@ -34,12 +34,9 @@ class ReviewBookingScreen extends Component {
   };
 
   handleSubmit = () => {
-   
-    this.props.addReservation(this.reservation).then(()=>{
+    this.props.addReservation(this.reservation).then(() => {
       this.props.navigation.navigate("ThankYouScreen");
-    })
-  
-   
+    });
   };
 
   componentDidMount() {
@@ -76,7 +73,6 @@ class ReviewBookingScreen extends Component {
       departure
     });
 
-
     this.reservation = {
       name,
       phone,
@@ -88,7 +84,6 @@ class ReviewBookingScreen extends Component {
       totalAmount
     };
   }
-
 
   render() {
     return (

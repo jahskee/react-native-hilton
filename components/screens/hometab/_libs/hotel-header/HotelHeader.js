@@ -14,32 +14,28 @@ const HotelHeader = props => {
   image01 = "https://i.imgur.com/7gQlc4P.png";
 
   return (
-
     <View>
-      
-        <Image
-          style={{ width: 90, height: 90 }}
-          source={{
-            uri: this.image01
-          }}
-        />
-       
-        <Panel1>
-          
-          <HotelInfo>
-            {props.hotel !== undefined && (
-              <View>
-                <HotelName>{props.hotel.name}</HotelName>
-                <HotelAddress>
-                  {props.hotel.address}{" "}
-                  <HotelDistance> ({props.hotel.distance} mi) </HotelDistance>
-                </HotelAddress>
-              </View>
-            )}
-          </HotelInfo>
-    </Panel1>
+      <Image
+        style={{ width: 90, height: 90 }}
+        source={{
+          uri: this.image01
+        }}
+      />
+
+      <Panel1>
+        <HotelInfo>
+          {props.hotel !== undefined && (
+            <View>
+              <HotelName>{props.hotel.name}</HotelName>
+              <HotelAddress>
+                {props.hotel.address}{" "}
+                <HotelDistance> ({props.hotel.distance} mi) </HotelDistance>
+              </HotelAddress>
+            </View>
+          )}
+        </HotelInfo>
+      </Panel1>
     </View>
-   
   );
 };
 

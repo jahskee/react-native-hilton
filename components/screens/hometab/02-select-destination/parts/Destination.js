@@ -9,22 +9,20 @@ import {
   HotelPhotoPrice,
   Photo,
   Price,
-  Distance,
+  Distance
 } from "./zstyles";
-  
-export const Destination = props => {
 
+export const Destination = props => {
   const handleSelectHotel = () => {
     props.handleSelectHotel(props.hotel);
-    props.navigation.navigate("PickRoomsScreen", {hotelInfo: props.hotel});
-  
+    props.navigation.navigate("PickRoomsScreen", { hotelInfo: props.hotel });
   };
-  
-  logoImage = "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png";
+
+  logoImage =
+    "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png";
 
   return (
     <TouchableOpacity onPress={handleSelectHotel}>
-  
       <DestinationItem>
         <HotelDesc>
           <HotelName>{props.hotel.name}</HotelName>

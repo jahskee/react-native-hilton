@@ -10,7 +10,6 @@ export const MainView = styled.View`
 export const Destinations = styled.View`
   margin-top: 10px;
   margin-bottom: 100px;
-
 `;
 
 export const TopPanel = styled.View`

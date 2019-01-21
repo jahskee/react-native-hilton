@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import {
-  ScrollView,
-  Text,
-} from "react-native";
+import { ScrollView, Text } from "react-native";
 
 import { MainView, Container, TopLabel, Row, Label, Input } from "./zstyles";
 import { connect } from "react-redux";
@@ -80,23 +77,25 @@ class ReviewBookingScreen extends Component {
       return;
     }
 
-    this.props.saveUserSession({guestInfo: {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      phone: this.state.phone,
-      email: this.state.email,
-      street: this.state.street,
-      city: this.state.city,
-      state: this.state.state,
-      country: this.state.country
-    }})
+    this.props.saveUserSession({
+      guestInfo: {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        phone: this.state.phone,
+        email: this.state.email,
+        street: this.state.street,
+        city: this.state.city,
+        state: this.state.state,
+        country: this.state.country
+      }
+    });
     this.props.navigation.navigate("PaymentScreen", { deck: 100 });
   };
 
   render() {
     return (
       <MainView>
-        <HotelHeader hotel={this.props.userSession.selectedHotel}/>
+        <HotelHeader hotel={this.props.userSession.selectedHotel} />
         <ScrollView style={{ marginTop: 20 }}>
           <Container>
             <TopLabel>
@@ -177,7 +176,7 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
-  saveUserSession: _actions.saveUserSession,
+  saveUserSession: _actions.saveUserSession
 };
 
 export default connect(

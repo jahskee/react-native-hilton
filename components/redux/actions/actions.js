@@ -1,25 +1,21 @@
 /* jshint esversion: 6 */
-import  API from '../../api/API';
-export const UPDATE_DATA = 'UPDATE_DATA';
-
+import API from "../../api/API";
+export const UPDATE_DATA = "UPDATE_DATA";
 
 export const initRooms = rooms => ({
   type: INIT_ROOMS,
-  payload: rooms,
+  payload: rooms
 });
-
 
 /*------ User Session Actions ------*/
-export const SAVE_USER_SESSION = 'SAVE_USER_SESSION';
-export const saveUserSession = (userSession) => ({
+export const SAVE_USER_SESSION = "SAVE_USER_SESSION";
+export const saveUserSession = userSession => ({
   type: SAVE_USER_SESSION,
-  payload: userSession,
+  payload: userSession
 });
-
 
 // any state not yet categorized
 export const updateData = data => ({
   type: UPDATE_DATA,
-  payload: data,
+  payload: data
 });
-

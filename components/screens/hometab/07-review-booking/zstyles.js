@@ -7,7 +7,6 @@ export const MainView = styled.View`
   align-items: center;
 `;
 
-
 export const TopDivFirst = styled.View`
   margin: 10px 10px;
   margin-bottom: 5px;
@@ -56,15 +55,13 @@ export const Value = styled.Text`
 `;
 
 export const SubTotal = styled.Text`
-      font-size: 14px;
-      font-weight: bold;
-      padding-left: 40px;
-      color: #ad9595;
-
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 40px;
+  color: #ad9595;
 `;
 export const Total = styled.Text`
-      font-size: 16px;
-      font-weight: bold;
-      padding-left: 40px;
-
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 40px;
 `;

@@ -35,9 +35,7 @@ export const RoomBody = styled.Text`
   width: 100%;
 `;
 
-export const RoomPhoto = styled.View`
-  
-`;
+export const RoomPhoto = styled.View``;
 
 export const RoomDescription = styled.View`
   border: 1px solid blue;
@@ -55,7 +53,7 @@ export const RoomRight = styled.View`
 `;
 
 export const Selected = styled.Text`
-    color: red;
-    font-weight: bold;
-    text-align: center;
+  color: red;
+  font-weight: bold;
+  text-align: center;
 `;

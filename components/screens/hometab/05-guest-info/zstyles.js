@@ -8,19 +8,17 @@ export const MainView = styled.View`
 `;
 
 export const Container = styled.View`
-  
   margin-left: 25px;
   margin-right: 25px;
 `;
 
 export const TopLabel = styled.View`
-
-margin-bottom: 20px;
+  margin-bottom: 20px;
 `;
 
 export const Row = styled.View`
   flex-direction: row;
- 
+
   width: 100%;
   margin-top: 5px;
 `;

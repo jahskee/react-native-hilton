@@ -1,26 +1,35 @@
 /* jshint esversion: 6 */
 import axios from "axios";
 
+const graphqlServer = "http://kickstartapps.us:4000/graphql";
+//const graphqlServer="http://localhost:4000/graphql";
+
 const API = {};
 
-API.addReservation = async (param) => {
+API.addReservation = async param => {
   let reservation = {};
   try {
     const response = await axios({
-      url: "http://localhost:4000/graphql",
+      url: graphqlServer,
       method: "post",
       data: {
         query: `
                   mutation {
                     saveReservation(
-                            name: "${param.name}", phone: "${param.phone}", email: "${param.email}", hotel: "${param.hotel}", address: "${param.address}",
-                            arrival: "${param.arrival}", departure: "${param.departure}", totalAmount: ${param.totalAmount}
+                            name: "${param.name}", phone: "${
+          param.phone
+        }", email: "${param.email}", hotel: "${param.hotel}", address: "${
+          param.address
+        }",
+                            arrival: "${param.arrival}", departure: "${
+          param.departure
+        }", totalAmount: ${param.totalAmount}
                     ){ id name phone email hotel address arrival departure totalAmount }
                   }
                 `
       }
     });
-   
+
     reservation = await response.data.data.saveReservation;
   } catch (err) {
     throw new Error(err);
@@ -28,12 +37,11 @@ API.addReservation = async (param) => {
   return reservation;
 };
 
-
 API.fetchReservations = async () => {
   let reservations = {};
   try {
     const response = await axios({
-      url: "http://localhost:4000/graphql",
+      url: graphqlServer,
       method: "post",
       data: {
         query: `
@@ -45,7 +53,7 @@ API.fetchReservations = async () => {
                 `
       }
     });
-   
+
     reservations = await response.data.data.reservations;
   } catch (err) {
     throw new Error(err);
@@ -53,12 +61,11 @@ API.fetchReservations = async () => {
   return reservations;
 };
 
-
 API.fetchRooms = async () => {
   let rooms = {};
   try {
     const response = await axios({
-      url: "http://localhost:4000/graphql",
+      url: graphqlServer,
       method: "post",
       data: {
         query: `
@@ -70,19 +77,19 @@ API.fetchRooms = async () => {
                 `
       }
     });
-   
+
     rooms = await response.data.data.rooms;
   } catch (err) {
     throw new Error(err);
   }
-  return rooms.map(room => ({...room, isSelected: false}));
+  return rooms.map(room => ({ ...room, isSelected: false }));
 };
 
 API.fetchHotels = async () => {
   let hotels = {};
   try {
     const response = await axios({
-      url: "http://localhost:4000/graphql",
+      url: graphqlServer,
       method: "post",
       data: {
         query: `
@@ -94,7 +101,7 @@ API.fetchHotels = async () => {
                 `
       }
     });
-   
+
     hotels = await response.data.data.hotels;
   } catch (err) {
     throw new Error(err);
@@ -102,12 +109,11 @@ API.fetchHotels = async () => {
   return hotels;
 };
 
-
 API.fetchCities = async () => {
   let cities = {};
   try {
     const response = await axios({
-      url: "http://localhost:4000/graphql",
+      url: graphqlServer,
       method: "post",
       data: {
         query: `
@@ -119,13 +125,12 @@ API.fetchCities = async () => {
                 `
       }
     });
-   
+
     cities = await response.data.data.cities;
   } catch (err) {
     throw new Error(err);
   }
   return cities;
 };
-
 
 export default API;

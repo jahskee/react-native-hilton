@@ -1,24 +1,21 @@
-
 /* jshint esversion: 6 */
-import  API from '../../api/API';
+import API from "../../api/API";
 
 export const TOGGLE_ROOM_SELECTED = "TOGGLE_ROOM_SELECTED";
-export const toggleRoomSelected = (roomNo) => ({
+export const toggleRoomSelected = roomNo => ({
   type: TOGGLE_ROOM_SELECTED,
-  payload: {roomNo}
+  payload: { roomNo }
 });
 
 export const RESET_ROOMS_SELECTION = "RESET_ROOMS_SELECTION";
 export const resetRoomsSelection = () => ({
-  type: RESET_ROOMS_SELECTION,
+  type: RESET_ROOMS_SELECTION
 });
 
-
 /* ---- Start: Async fetch of Rooms ---- */
-export const FETCH_ROOMS_BEGIN   = 'FETCH_ROOMS_BEGIN';
-export const FETCH_ROOMS_SUCCESS = 'FETCH_ROOMS_SUCCESS';
-export const FETCH_ROOMS_FAILURE = 'FETCH_ROOMS_FAILURE';
-
+export const FETCH_ROOMS_BEGIN = "FETCH_ROOMS_BEGIN";
+export const FETCH_ROOMS_SUCCESS = "FETCH_ROOMS_SUCCESS";
+export const FETCH_ROOMS_FAILURE = "FETCH_ROOMS_FAILURE";
 
 export const fetchRoomsBegin = () => ({
   type: FETCH_ROOMS_BEGIN,
@@ -27,7 +24,7 @@ export const fetchRoomsBegin = () => ({
 
 export const fetchRoomsSuccess = rooms => ({
   type: FETCH_ROOMS_SUCCESS,
-  payload: rooms 
+  payload: rooms
 });
 
 export const fetchRoomsFailure = error => ({
@@ -38,8 +35,8 @@ export const fetchRoomsFailure = error => ({
 // async actions creators
 export const fetchRooms = () => async dispatch => {
   dispatch(fetchRoomsBegin);
-  try {   
-    const rooms = await API.fetchRooms();  
+  try {
+    const rooms = await API.fetchRooms();
     await dispatch(fetchRoomsSuccess(rooms));
   } catch (error) {
     console.error(error);

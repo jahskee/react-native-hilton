@@ -1,15 +1,14 @@
 import styled from "styled-components/native";
 
 export const HotelFooterView = styled.View`
-margin-top: 10px;    
-margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const GreenButton = styled.Text`
-    background: green;
-    color: whitesmoke;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 10px 40px;    
+  background: green;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 40px;
 `;
-

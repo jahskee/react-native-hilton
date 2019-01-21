@@ -108,18 +108,20 @@ class PaymentScreen extends Component {
 
     /* credit card info are supposed to be encrypted
      or should not be saved in the system */
-    this.props.saveUserSession({paymentInfo: {
-      name: this.state.name,
-      creditCard: "**********XXXXXX",
-      month: "xx",
-      year: "xx",
-      cvv: "xxx",
-      street: this.state.street,
-      city: this.state.city,
-      zipCode: this.state.zipCode,
-      state: this.state.state,
-      country: this.state.country,
-    }});
+    this.props.saveUserSession({
+      paymentInfo: {
+        name: this.state.name,
+        creditCard: "**********XXXXXX",
+        month: "xx",
+        year: "xx",
+        cvv: "xxx",
+        street: this.state.street,
+        city: this.state.city,
+        zipCode: this.state.zipCode,
+        state: this.state.state,
+        country: this.state.country
+      }
+    });
 
     this.props.navigation.navigate("ReviewBookingScreen");
   };
@@ -127,18 +129,16 @@ class PaymentScreen extends Component {
   render() {
     return (
       <MainView>
-        <HotelHeader hotel={this.props.userSession.selectedHotel}/>
+        <HotelHeader hotel={this.props.userSession.selectedHotel} />
         <ScrollView style={{ marginTop: 20 }}>
           <Container>
             <AmountDiv>
-            <Amount>
-                {this.props.userSession.nightsStay+ ' night(s)' }
-              </Amount>
+              <Amount>{this.props.userSession.nightsStay + " night(s)"}</Amount>
               <Amount>
                 Total: ${this.props.userSession.totalAmount.toFixed(2)}
               </Amount>
             </AmountDiv>
-           
+
             <TopLabel>
               <Text>Please enter your payment details.</Text>
             </TopLabel>

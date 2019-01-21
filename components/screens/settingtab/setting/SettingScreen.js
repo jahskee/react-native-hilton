@@ -23,14 +23,13 @@ class SettingScreen extends React.PureComponent {
     const imageWidth = dimensions.width;
     return (
       <View>
-       
-          <Image
-            style={{ height: 60, width: imageWidth }}
-            source={{
-              uri: this.state.image
-            }}
-          />
-       
+        <Image
+          style={{ height: 60, width: imageWidth }}
+          source={{
+            uri: this.state.image
+          }}
+        />
+
         <Panel1>
           <HotelInfo />
         </Panel1>

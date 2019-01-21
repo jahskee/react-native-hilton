@@ -56,22 +56,26 @@ class PickDatesScreen extends Component {
       this.state.startDate._d,
       this.state.endDate._d
     );
-    
-     nightsStay = nightsStay === 0 ? nightsStay + 1 : nightsStay;
-     let totalAmount=0;  
+
+    nightsStay = nightsStay === 0 ? nightsStay + 1 : nightsStay;
+    let totalAmount = 0;
     // update rooms in local session to include subTotal field where nightsStay x room rate.
     const selectedRooms = this.props.userSession.selectedRooms.map(room => {
       var subTotal = nightsStay * room.price;
       totalAmount = totalAmount + subTotal;
-      return {...room, nights: nightsStay, subTotal: parseInt(subTotal.toFixed(2))}
+      return {
+        ...room,
+        nights: nightsStay,
+        subTotal: parseInt(subTotal.toFixed(2))
+      };
     });
-  
+
     this.props.saveUserSession({
       arrival: this.state.startDate.format("MMM D YYYY"),
       departure: this.state.endDate.format("MMM D YYYY"),
       nightsStay,
       selectedRooms,
-      totalAmount,
+      totalAmount
     });
 
     this.props.navigation.navigate("GuestInfoScreen");
@@ -89,7 +93,7 @@ class PickDatesScreen extends Component {
     };
     return (
       <MainView>
-        <HotelHeader hotel={this.props.userSession.selectedHotel}/>
+        <HotelHeader hotel={this.props.userSession.selectedHotel} />
         <ScrollView style={{ width: "100%", height: 500 }}>
           <Panel2>
             <Dates

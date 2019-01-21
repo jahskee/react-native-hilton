@@ -11,13 +11,11 @@ export const Panel1 = styled.View`
 
 `;
 
-export const ImageLogo = styled.Image`
-`;
+export const ImageLogo = styled.Image``;
 
 export const HotelInfo = styled.View`
   padding-top: 5px;
   width: 70%;
-  
 `;
 export const HotelName = styled.Text`
   padding-top: 10px;
@@ -27,7 +25,6 @@ export const HotelName = styled.Text`
   color: #30442b;
 `;
 export const HotelAddress = styled.Text`
- 
   margin-bottom: 10px;
   color: #7c6d6d;
   font-size: 12px;
@@ -39,7 +36,6 @@ export const HotelDiv2 = styled.View`
 `;
 
 export const HotelDistance = styled.Text`
-  
   margin-bottom: 10px;
   color: #30442b;
   font-size: 12px;

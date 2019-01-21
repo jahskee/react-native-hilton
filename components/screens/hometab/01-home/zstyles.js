@@ -27,5 +27,4 @@ export const Image2 = styled.View`
   height: 70;
 `;
 
-export const MenuView = styled.View`
-`;
+export const MenuView = styled.View``;

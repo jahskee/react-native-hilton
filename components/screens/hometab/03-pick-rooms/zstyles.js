@@ -13,7 +13,6 @@ export const Rooms = styled.View`
   margin-left: 10px;
 `;
 
-
 export const Text2 = styled.Text`
   border: 1px solid blue;
 `;

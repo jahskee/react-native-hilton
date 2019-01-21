@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import {
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 
 import {
   Room,

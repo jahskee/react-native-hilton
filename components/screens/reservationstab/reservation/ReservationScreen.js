@@ -37,6 +37,7 @@ class ReservationScreen extends React.PureComponent {
 
   componentDidMount() {
     this.props.fetchReservations();
+   
   }
   render() {
     const dimensions = Dimensions.get("window");
@@ -51,39 +52,38 @@ class ReservationScreen extends React.PureComponent {
           }}
         />
 
-      
-          <FlatList
-            data={this.props.reservations}
-            renderItem={reservation => {
-              return (
-                <Reservation>
-                  <RowHead>
-                    <DateRange>Jan 24 2019 - Jan 30 2019</DateRange>
-                  </RowHead>
-                  <RowBody>
-                    <Row>
-                      <Label> Reservation ID</Label>
-                      <Value>sdfsdfsdfsdf</Value>
-                    </Row>
-                    <Row>
-                      <Label> Guest</Label>
-                      <Value>Jaizon Lubaton</Value>
-                    </Row>
-                    <Row>
-                      <Label> Hotel</Label>
-                      <Value>DoubleTrea Hlton</Value>
-                    </Row>
-                    <Row>
-                      <Label> Address</Label>
-                      <Value>6850 Hwigha, CA 33333 US</Value>
-                    </Row>
-                  </RowBody>
-                </Reservation>
-              );
-            }}
-            keyExtractor={item => item.id}
-          />
-        
+        <FlatList
+          data={this.props.reservations}
+          renderItem={reservation => {
+            console.log(reservation)
+            return (
+              <Reservation>
+                <RowHead>
+                  <DateRange>Jan 24 2019 - Jan 30 2019</DateRange>
+                </RowHead>
+                <RowBody>
+                  <Row>
+                    <Label> Reservation ID</Label>
+                    <Value>{reservation.item.id}</Value>
+                  </Row>
+                  <Row>
+                    <Label> Guest</Label>
+                    <Value>{reservation.item.name}</Value>
+                  </Row>
+                  <Row>
+                    <Label> Hotel</Label>
+                    <Value>{reservation.item.hotel}</Value>
+                  </Row>
+                  <Row>
+                    <Label> Address</Label>
+                    <Value>{reservation.item.address}</Value>
+                  </Row>
+                </RowBody>
+              </Reservation>
+            );
+          }}
+          keyExtractor={item => item.id}
+        />
       </View>
     );
   }
