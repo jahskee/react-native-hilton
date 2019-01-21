@@ -27,16 +27,16 @@ import {
 
 class PaymentScreen extends Component {
   state = {
-    name: "sdf",
-    creditCard: "sdf",
-    month: "df",
-    year: "df",
-    cvv: "sdf",
-    street: "sdf",
-    city: "sdf",
-    zipCode: "sdf",
-    state: "df",
-    country: "sdfdf"
+    name: "",
+    creditCard: "",
+    month: "",
+    year: "",
+    cvv: "",
+    street: "",
+    city: "",
+    zipCode: "",
+    state: "",
+    country: ""
   };
 
   static navigationOptions = ({ navigation }) => {

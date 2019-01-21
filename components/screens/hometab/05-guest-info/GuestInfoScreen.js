@@ -11,14 +11,14 @@ import HotelFooter from "../_libs/hotel-footer/HotelFooter";
 
 class ReviewBookingScreen extends Component {
   state = {
-    firstName: "df",
-    lastName: "df",
-    phone: "sdf",
-    email: "ds",
-    street: "df",
-    city: "sdf",
-    state: "ff",
-    country: "dfsdf"
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    street: "",
+    city: "",
+    state: "",
+    country: ""
   };
 
   static navigationOptions = ({ navigation }) => {

@@ -59,7 +59,7 @@ class ReservationScreen extends React.PureComponent {
             return (
               <Reservation>
                 <RowHead>
-                  <DateRange>Jan 24 2019 - Jan 30 2019</DateRange>
+                  <DateRange>{reservation.item.arrival} - {reservation.item.departure}</DateRange>
                 </RowHead>
                 <RowBody>
                   <Row>

@@ -20,12 +20,11 @@ export const Reservation = styled.View`
 
 export const RowHead = styled.View`
   padding: 2px 5px;
-
   background: #897272;
 `;
 
 export const DateRange = styled.Text`
-  font-size: 10px;
+  font-size: 12px;
   color: whitesmoke;
 `;
 
@@ -41,7 +40,7 @@ export const Row = styled.View`
 `;
 
 export const Label = styled.Text`
-  font-size: 10px;
+  font-size: 12px;
   width: 30%;
   border: 1px solid lightgray;
   margin: 0;
@@ -49,7 +48,7 @@ export const Label = styled.Text`
 `;
 
 export const Value = styled.Text`
-  font-size: 10px;
+  font-size: 12px;
   width: 70%;
   border: 1px solid lightgray;
   padding-left: 5px;
