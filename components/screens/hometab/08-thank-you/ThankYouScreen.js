@@ -64,7 +64,7 @@ class ThankYouScreen extends Component {
           </Row>
           <Row>
             <Label>Hotel Address</Label>
-            <Value>{this.state.hotelAddress}</Value>
+            <Value>{this.state.address}</Value>
           </Row>
           <Row>
             <Label>Arrival</Label>
