@@ -82,8 +82,9 @@ const ReservationsTab = createStackNavigator(
 
 const MainTabs = createBottomTabNavigator(
   {
-    Home: HomeTab,
     Reservations: ReservationsTab,
+    Home: HomeTab,
+ 
     Settings: SettingTab
   },
   {

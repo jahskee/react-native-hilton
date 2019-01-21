@@ -1,19 +1,57 @@
-/* jshint esversion: 6 */
-import { StyleSheet } from "react-native";
-import { myStyle } from "../../../_styles/myStyle";
+/*jshint esversion: 6 */
+import styled from "styled-components/native";
+/* ---------- Panel 1 ----------*/
+export const Panel1 = styled.View`
 
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    flexDirection: "column",
-    justifyContent: "center",
-    backgroundColor: myStyle.backgroundDark
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",    
-    color: myStyle.textColor,
-    fontFamily: myStyle.subTitleFontFamily
-  }
-});
+  flex-direction: row;
+ padding: 0;
+ margin: 0
+  width: 100%;
+  justify-content: space-between;
+
+`;
+
+export const ImageLogo = styled.Image`
+`;
+
+export const HotelInfo = styled.View`
+  padding-top: 5px;
+  width: 70%;
+  
+`;
+export const HotelName = styled.Text`
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #30442b;
+`;
+export const HotelAddress = styled.Text`
+ 
+  margin-bottom: 10px;
+  color: #7c6d6d;
+  font-size: 12px;
+`;
+
+export const HotelDiv2 = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const HotelDistance = styled.Text`
+  
+  margin-bottom: 10px;
+  color: #30442b;
+  font-size: 12px;
+`;
+export const HotelPrice = styled.Text`
+  color: #30442b;
+  margin-right: 10px;
+  font-weight: bold;
+`;
+
+export const Photo = styled.View`
+  padding-top: 5px;
+  padding-left: 5px;
+  width: 30%;
+`;
