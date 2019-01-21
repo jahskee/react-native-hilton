@@ -9,6 +9,7 @@ import * as _actions from '../actions/actions';
 import * as _roomActions from '../actions/roomActions';
 import * as _hotelActions from '../actions/hotelActions';
 import * as _cityActions from '../actions/cityActions';
+import * as _reservationActions from '../actions/reservationActions';
 
 import rootReducer from '../reducers/reducers';
 
@@ -37,6 +38,7 @@ export function configureStore() {
 const store = configureStore();
 
 /* --- Initialize store with objects from graphql server --- */
+store.dispatch(_reservationActions.fetchReservations());
 store.dispatch(_cityActions.fetchCities());
 store.dispatch(_hotelActions.fetchHotels());
 store.dispatch(_roomActions.fetchRooms());

@@ -3,6 +3,32 @@ import axios from "axios";
 
 const API = {};
 
+
+API.fetchReservations = async () => {
+  let reservations = {};
+  try {
+    const response = await axios({
+      url: "http://localhost:4000/graphql",
+      method: "post",
+      data: {
+        query: `
+                query {
+                    reservations {
+                      id name phone email hotel address arrival departure totalAmount
+                    }
+                  }
+                `
+      }
+    });
+   
+    reservations = await response.data.data.reservations;
+  } catch (err) {
+    throw new Error(err);
+  }
+  return reservations;
+};
+
+
 API.fetchRooms = async () => {
   let rooms = {};
   try {
