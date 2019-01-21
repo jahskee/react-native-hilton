@@ -69,11 +69,21 @@ const cityReducer = (citys = [], action) => {
 
 const reservationReducer = (reservations = [], action) => {
   switch (action.type) {
+
+    /* ---- fetch reservations -----*/  
     case _reservationActions.FETCH_RESERVATIONS_BEGIN:
       return action.payload;
     case _reservationActions.FETCH_RESERVATIONS_SUCCESS:
       return action.payload;
     case _reservationActions.FETCH_RESERVATIONS_FAILURE:
+      return [];
+
+    /* ---- add reservation -----*/  
+    case _reservationActions.ADD_RESERVATION_BEGIN:
+      return action.payload;
+    case _reservationActions.ADD_RESERVATION_SUCCESS:
+      return action.payload;
+    case _reservationActions.ADD_RESERVATION_FAILURE:
       return [];
     default:
       return reservations;

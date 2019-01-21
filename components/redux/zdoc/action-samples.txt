@@ -1,0 +1,7 @@
+
+//store.dispatch(_reservationActions.fetchReservations());
+//id name phone email hotel address arrival departure totalAmount 
+/*
+store.dispatch(_reservationActions.addReservation({name: 'testing', phone: '541-2333', 
+email: 'jahske@ya.com', address: 'address01', arrival: 'Jan 5 2019', departure: 'Jan 7 2019', totalAmount: 120}));
+*/

@@ -38,7 +38,6 @@ export function configureStore() {
 const store = configureStore();
 
 /* --- Initialize store with objects from graphql server --- */
-store.dispatch(_reservationActions.fetchReservations());
 store.dispatch(_cityActions.fetchCities());
 store.dispatch(_hotelActions.fetchHotels());
 store.dispatch(_roomActions.fetchRooms());
