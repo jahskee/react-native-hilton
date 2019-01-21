@@ -1,6 +1,7 @@
 
 # Hilton Reservation Test App 
 ![Video](https://www.youtube.com/edit?video_id=VIZ7UAruLTw&video_referrer=watch)
+[![IMAGE ALT TEXT HERE](https://www.youtube.com/edit?video_id=VIZ7UAruLTw&video_referrer=watch)
 
 ## Installation Instruction
     npm install
