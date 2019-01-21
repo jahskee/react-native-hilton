@@ -16,16 +16,16 @@
      
 ### Video about the project
     https://www.youtube.com/watch?time_continue=18&v=VIZ7UAruLTw
-    [![Alt text](https://i.imgur.com/pVByW80.png)](https://www.youtube.com/watch?v=VIZ7UAruLTw)
+   [![Alt text](https://i.imgur.com/pVByW80.png)](https://www.youtube.com/watch?v=VIZ7UAruLTw)
 
 ### Screenshots
 
-    ![alt text](https://i.imgur.com/8Livwri.png)
-    ![alt text](https://i.imgur.com/nTmJ3ge.png)
+   ![alt text](https://i.imgur.com/8Livwri.png)
+   ![alt text](https://i.imgur.com/nTmJ3ge.png)
 
 ### GraphQL Screenshot
 
-    ![alt text](https://i.imgur.com/XkRWZyx.png)
+   ![alt text](https://i.imgur.com/XkRWZyx.png)
 
     Thank you!
     
