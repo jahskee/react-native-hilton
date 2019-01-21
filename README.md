@@ -1,8 +1,18 @@
+# Hotel Reservation App
 
-[![Alt text](https://i.imgur.com/pVByW80.png)](https://www.youtube.com/watch?v=VID)
-## Installation Instruction
+GraphQL + React Native + Redux
+
+## RN Installation 
     npm install
     npm start
+
+## GraphQL Server Installation
+    npm install
+    npm start
+
+## Video
+[![Alt text](https://i.imgur.com/pVByW80.png)](https://www.youtube.com/watch?v=VIZ7UAruLTw)
+
 
 ![alt text](https://image.ibb.co/cX8pfe/image8.jpg)
 ![alt text](https://image.ibb.co/hXWxYz/image7.jpg)
