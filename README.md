@@ -10,6 +10,9 @@ GraphQL + React Native + Redux
     npm install
     npm start
 
+### Server location
+    http://kickstartapps.us:4000/graphql
+
 ## Video
 [![Alt text](https://i.imgur.com/pVByW80.png)](https://www.youtube.com/watch?v=VIZ7UAruLTw)
 
