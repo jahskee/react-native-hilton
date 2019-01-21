@@ -1,12 +1,8 @@
 /*jshint esversion: 6 */
 import React from "react";
 import {
-  Button,
   View,
-  Image,
-  Text,
   Dimensions,
-  ScrollView,
   FlatList
 } from "react-native";
 import { connect } from "react-redux";
@@ -55,7 +51,6 @@ class ReservationScreen extends React.PureComponent {
         <FlatList
           data={this.props.reservations.slice(0).reverse()}
           renderItem={reservation => {
-            console.log(reservation)
             return (
               <Reservation>
                 <RowHead>
