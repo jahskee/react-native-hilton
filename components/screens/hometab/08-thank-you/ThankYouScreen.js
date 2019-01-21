@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import {
-  ScrollView,
-  Text,
-} from "react-native";
+import { ScrollView } from "react-native";
 
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
@@ -10,19 +7,10 @@ import { myStyle } from "../../../_styles/myStyle";
 
 import HotelHeader from "../_libs/hotel-header/HotelHeader";
 import HotelFooter from "../_libs/hotel-footer/HotelFooter";
-import {
-  MainView,
-  TopDivFirst,
-  TopText,
-  Row,
-  Label,
-  Value,
-} from "./zstyles";
+import { MainView, TopDivFirst, TopText, Row, Label, Value } from "./zstyles";
 
 class ThankYouScreen extends Component {
-  state ={
-    reservation: this.props.userSession.reservations
-  }
+  state = {};
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: "Reservation Confirmed",
@@ -38,51 +26,64 @@ class ThankYouScreen extends Component {
     this.props.navigation.navigate("ReservationScreen");
   };
 
-    /*
-store.dispatch(_reservationActions.addReservation({name: 'testing', phone: '541-2333', 
-email: 'jahske@ya.com', address: 'address01', arrival: 'Jan 5 2019', departure: 'Jan 7 2019', totalAmount: 120}));
-*/
+  componentDidMount() {
+    const reservation = this.props.userSession.reservation;
+    this.setState({ ...reservation });
+  }
   render() {
-
     return (
       <MainView>
-         
-        <HotelHeader hotel={this.props.userSession.selectedHotel}/>
-        
+        <HotelHeader hotel={this.props.userSession.selectedHotel} />
+
         <ScrollView>
-        
-      
-          
-            <TopDivFirst>
-              <TopText>Reservation Info</TopText>
-            </TopDivFirst>
-               
-            <Row>
-              <Label>Name</Label>
+          <TopDivFirst>
+            <TopText>Please print this information.</TopText>
+          </TopDivFirst>
+          <Row>
+            <Label>Reservation ID</Label>
 
-              <Value>Jaizon Lubaton</Value>
-            </Row>
+            <Value>{this.state.id}</Value>
+          </Row>
+          <Row>
+            <Label>Name</Label>
 
-        
-            <Row>
-              <Label>Phone</Label>
-              <Value>444445555</Value>
-            </Row>
-            <Row>
-              <Label>Email</Label>
-              <Value>jahskee@y.com</Value>
-            </Row>
+            <Value>{this.state.name}</Value>
+          </Row>
 
-         
-        
- 
+          <Row>
+            <Label>Phone</Label>
+            <Value>{this.state.phone}</Value>
+          </Row>
+          <Row>
+            <Label>Email</Label>
+            <Value>{this.state.email}</Value>
+          </Row>
+          <Row>
+            <Label>Hotel</Label>
+            <Value>{this.state.hotel}</Value>
+          </Row>
+          <Row>
+            <Label>Hotel Address</Label>
+            <Value>{this.state.hotelAddress}</Value>
+          </Row>
+          <Row>
+            <Label>Arrival</Label>
+            <Value>{this.state.arrival}</Value>
+          </Row>
+          <Row>
+            <Label>Departure</Label>
+            <Value>{this.state.departure}</Value>
+          </Row>
+          <Row>
+            <Label>Amount paid</Label>
+            <Value>${parseInt(this.state.totalAmount).toFixed(2)}</Value>
+          </Row>
         </ScrollView>
-       
+
         <HotelFooter
           buttonLabel={"View My Reservations"}
           handleSubmit={this.handleSubmit}
         />
-           
       </MainView>
     );
   }
@@ -95,7 +96,7 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = {
-  updateData: _actions.updateData,
+  updateData: _actions.updateData
 };
 
 export default connect(

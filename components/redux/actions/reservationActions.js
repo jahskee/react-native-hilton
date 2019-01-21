@@ -64,7 +64,7 @@ export const addReservation = (param) => async dispatch => {
   try {   
     const reservation = await API.addReservation(param);
     await dispatch(addReservationSuccess(reservation));
-    dispatch(_actions.saveUserSession({reservation}));
+    await dispatch(_actions.saveUserSession({reservation}));
   } catch (error) {
     console.error(error);
     dispatch(addReservationFailure(error));

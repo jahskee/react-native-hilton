@@ -35,9 +35,11 @@ class ReviewBookingScreen extends Component {
 
   handleSubmit = () => {
    
-    this.props.addReservation(this.reservation);
+    this.props.addReservation(this.reservation).then(()=>{
+      this.props.navigation.navigate("ThankYouScreen");
+    })
   
-    this.props.navigation.navigate("ThankYouScreen");
+   
   };
 
   componentDidMount() {
@@ -127,7 +129,7 @@ class ReviewBookingScreen extends Component {
               <Label>Total Amount</Label>
 
               <Value>
-                <Total>${this.state.totalAmount}</Total>
+                <Total>${parseInt(this.state.totalAmount).toFixed(2)}</Total>
               </Value>
             </Row>
 
@@ -179,7 +181,7 @@ class ReviewBookingScreen extends Component {
                     room.pax +
                     " pax, " +
                     room.description}
-                  <SubTotal>(${room.subTotal})</SubTotal>
+                  <SubTotal>(${parseInt(room.subTotal).toFixed(2)})</SubTotal>
                 </Value>
               </Row>
             ))}
