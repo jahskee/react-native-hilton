@@ -51,9 +51,9 @@ class ReservationScreen extends React.PureComponent {
           }}
         />
 
-        <ScrollView>
+      
           <FlatList
-            data={this.props.reservations.slice(0, 20)}
+            data={this.props.reservations}
             renderItem={reservation => {
               return (
                 <Reservation>
@@ -83,7 +83,7 @@ class ReservationScreen extends React.PureComponent {
             }}
             keyExtractor={item => item.id}
           />
-        </ScrollView>
+        
       </View>
     );
   }
