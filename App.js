@@ -94,7 +94,7 @@ const MainTabs = createBottomTabNavigator(
         if (routeName === "Home") {
           iconName = `ios-home${focused ? "" : "-outline"}`;
         } else if (routeName === "Settings") {
-          iconName = `ios-construct${focused ? "" : "-outline"}`;
+          iconName = `ios-settings${focused ? "" : "-outline"}`;
         } else if (routeName === "Reservations") {
           iconName = `ios-calendar${focused ? "" : "-outline"}`;
         }
