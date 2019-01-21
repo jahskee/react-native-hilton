@@ -13,20 +13,15 @@ import HotelHeader from "../_libs/hotel-header/HotelHeader";
 import HotelFooter from "../_libs/hotel-footer/HotelFooter";
 
 class ThankYouScreen extends Component {
-  constructor(props) {
-    super(props);
-
-    this.deck = this.props.navigation.getParam("deck");
-    this.percentCorrect = this.props.navigation.getParam("percentCorrect");
-  }
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: "Thank You",
+      headerTitle: "Reservation Confirmed",
       headerTintColor: myStyle.primaryColor,
       headerTitleStyle: {
         fontWeight: "bold"
-      }
+      },
+      headerLeft: null
     };
   };
 
@@ -34,7 +29,6 @@ class ThankYouScreen extends Component {
     this.props.navigation.navigate("ReservationScreen", { deck: 100 });
   };
 
-  componentDidMount = () => {};
 
   render() {
     return (
