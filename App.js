@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import {
   createStackNavigator,
   createSwitchNavigator,
-  createBottomTabNavigator,
+  createBottomTabNavigator
 } from "react-navigation";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Provider } from "react-redux";
@@ -18,18 +18,18 @@ import ReservationScreen from "./components/screens/reservationstab/reservation/
 
 /*---- Home tab screens ----*/
 import SelectDestinationScreen from "./components/screens/hometab/02-select-destination/SelectDestinationScreen";
-import PickRoomsScreen from  "./components/screens/hometab/03-pick-rooms/PickRoomsScreen";
-import PickDatesScreen from  "./components/screens/hometab/04-pick-dates/PickDatesScreen";
-import GuestInfoScreen from  "./components/screens/hometab/05-guest-info/GuestInfoScreen";
-import PaymentScreen from  "./components/screens/hometab/06-payment/PaymentScreen";
-import ReviewBookingScreen from  "./components/screens/hometab/07-review-booking/ReviewBookingScreen";
-import ThankYouScreen from  "./components/screens/hometab/08-thank-you/ThankYouScreen";
+import PickRoomsScreen from "./components/screens/hometab/03-pick-rooms/PickRoomsScreen";
+import PickDatesScreen from "./components/screens/hometab/04-pick-dates/PickDatesScreen";
+import GuestInfoScreen from "./components/screens/hometab/05-guest-info/GuestInfoScreen";
+import PaymentScreen from "./components/screens/hometab/06-payment/PaymentScreen";
+import ReviewBookingScreen from "./components/screens/hometab/07-review-booking/ReviewBookingScreen";
+import ThankYouScreen from "./components/screens/hometab/08-thank-you/ThankYouScreen";
 
 global.log = console.log;
 
 const HomeTab = createStackNavigator(
   {
-    HomeScreen,    
+    HomeScreen,
     SelectDestinationScreen,
     PickRoomsScreen,
     PickDatesScreen,
@@ -40,81 +40,78 @@ const HomeTab = createStackNavigator(
   },
   {
     //initialRouteName: "ReviewBookingScreen",
-    initialRouteName: "HomeScreen",
+     initialRouteName: "HomeScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
-        backgroundColor: myStyle.topBarColor,       
+        backgroundColor: myStyle.topBarColor
       }
-    },    
+    }
   }
 );
 
-
 const SettingTab = createStackNavigator(
-  {  
-    SettingScreen,
+  {
+    SettingScreen
   },
   {
     initialRouteName: "SettingScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
-        backgroundColor: myStyle.topBarColor,       
+        backgroundColor: myStyle.topBarColor
       }
-    },    
+    }
   }
 );
 
-
 const ReservationsTab = createStackNavigator(
-  {  
-    ReservationScreen,
+  {
+    ReservationScreen
   },
   {
     initialRouteName: "ReservationScreen",
     navigationOptions: {
       headerTintColor: myStyle.primaryColor,
       headerStyle: {
-        backgroundColor: myStyle.topBarColor,       
+        backgroundColor: myStyle.topBarColor
       }
-    },    
+    }
   }
 );
 
 const MainTabs = createBottomTabNavigator(
-  {    
-    Home: HomeTab,       
+  {
+    Home: HomeTab,
     Reservations: ReservationsTab,
-    Settings: SettingTab,
+    Settings: SettingTab
   },
   {
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
-        if (routeName === 'Home') {
-          iconName = `ios-home${focused ? '' : '-outline'}`;          
-        } else if (routeName === 'Settings') {
-          iconName = `ios-construct${focused ? '' : '-outline'}`;
-        } else if (routeName === 'Reservations') {
-          iconName = `ios-calendar${focused ? '' : '-outline'}`;
-        } 
+        if (routeName === "Home") {
+          iconName = `ios-home${focused ? "" : "-outline"}`;
+        } else if (routeName === "Settings") {
+          iconName = `ios-construct${focused ? "" : "-outline"}`;
+        } else if (routeName === "Reservations") {
+          iconName = `ios-calendar${focused ? "" : "-outline"}`;
+        }
         return <Ionicons name={iconName} size={25} color={tintColor} />;
-      },
+      }
     }),
     tabBarOptions: {
       activeTintColor: myStyle.primaryColor,
-      inactiveTintColor: 'gray',
+      inactiveTintColor: "gray"
     },
-    barStyle: { backgroundColor: myStyle.bottomBarColor },
+    barStyle: { backgroundColor: myStyle.bottomBarColor }
   }
 );
 
 const AppNavigator = createSwitchNavigator({
   Main: MainTabs
 });
-
 
 export default class App extends React.Component {
   render() {

@@ -63,12 +63,12 @@ class PickDatesScreen extends Component {
     const selectedRooms = this.props.userSession.selectedRooms.map(room => {
       var subTotal = nightsStay * room.price;
       totalAmount = totalAmount + subTotal;
-      return {...room, nights: nightsStay, subTotal: subTotal.toFixed(2)}
+      return {...room, nights: nightsStay, subTotal: parseInt(subTotal.toFixed(2))}
     });
-
+  
     this.props.saveUserSession({
-      arrival: this.state.startDate._d,
-      departure: this.state.endDate._d,
+      arrival: this.state.startDate.format("MMM D YYYY"),
+      departure: this.state.endDate.format("MMM D YYYY"),
       nightsStay,
       selectedRooms,
       totalAmount,

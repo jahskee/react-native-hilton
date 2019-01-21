@@ -55,3 +55,16 @@ export const Value = styled.Text`
   font-size: 12px;
 `;
 
+export const SubTotal = styled.Text`
+      font-size: 14px;
+      font-weight: bold;
+      padding-left: 40px;
+      color: #ad9595;
+
+`;
+export const Total = styled.Text`
+      font-size: 16px;
+      font-weight: bold;
+      padding-left: 40px;
+
+`;

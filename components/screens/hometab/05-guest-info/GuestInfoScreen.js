@@ -16,6 +16,8 @@ class ReviewBookingScreen extends Component {
   state = {
     firstName: "",
     lastName: "",
+    phone: "",
+    email: "",
     street: "",
     city: "",
     state: "",
@@ -40,6 +42,13 @@ class ReviewBookingScreen extends Component {
     this.setState({ lastName: text });
   };
 
+  handleChangePhone = text => {
+    this.setState({ phone: text });
+  };
+  handleChangeEmail = text => {
+    this.setState({ email: text });
+  };
+
   handleChangeStreet = text => {
     this.setState({ street: text });
   };
@@ -60,6 +69,8 @@ class ReviewBookingScreen extends Component {
     if (
       this.state.firstName === "" ||
       this.state.lastName === "" ||
+      this.state.phone === "" ||
+      this.state.email === "" ||
       this.state.street === "" ||
       this.state.city === "" ||
       this.state.state === "" ||
@@ -72,6 +83,8 @@ class ReviewBookingScreen extends Component {
     this.props.saveUserSession({guestInfo: {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
+      phone: this.state.phone,
+      email: this.state.email,
       street: this.state.street,
       city: this.state.city,
       state: this.state.state,
@@ -101,6 +114,20 @@ class ReviewBookingScreen extends Component {
               <Input
                 onChangeText={this.handleChangeLastName}
                 value={this.state.lastName}
+              />
+            </Row>
+            <Row>
+              <Label>Phone</Label>
+              <Input
+                onChangeText={this.handleChangePhone}
+                value={this.state.phone}
+              />
+            </Row>
+            <Row>
+              <Label>Email</Label>
+              <Input
+                onChangeText={this.handleChangeEmail}
+                value={this.state.email}
               />
             </Row>
             <Row>

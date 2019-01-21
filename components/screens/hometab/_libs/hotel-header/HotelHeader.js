@@ -15,6 +15,8 @@ import {
   
 const HotelHeader = props => {
   image01 = 'https://i.imgur.com/7gQlc4P.png';
+
+ 
   return (
     <Panel1>
     <Photo>
@@ -26,8 +28,15 @@ const HotelHeader = props => {
           />
        </Photo>
        <HotelInfo>
-          <HotelName>{props.hotel.name}</HotelName>
-          <HotelAddress>{props.hotel.address} <HotelDistance> ({props.hotel.distance} mi) </HotelDistance></HotelAddress>
+       { props.hotel !== undefined &&
+        (
+        <View>
+        <HotelName>{props.hotel.name}</HotelName>
+        <HotelAddress>{props.hotel.address} <HotelDistance> ({props.hotel.distance} mi) </HotelDistance></HotelAddress>
+        </View>
+        )
+       }
+          
           
         
        </HotelInfo>
