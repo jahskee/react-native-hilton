@@ -51,8 +51,6 @@ class HomeScreen extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {};
-
     this.dimensions = Dimensions.get("window");
     this.imageHeight = Math.round((this.dimensions.width * 9) / 16);
     this.imageWidth = this.dimensions.width - 20;

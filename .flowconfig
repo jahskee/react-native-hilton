@@ -1,0 +1,16 @@
+[ignore]
+.*/node_modules
+.*/build/.*
+.*/uxdesign/*
+
+[include]
+
+[libs]
+flow-typed
+/type-def-libs
+
+[lints]
+
+[options]
+
+[strict]
