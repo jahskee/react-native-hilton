@@ -1,10 +1,7 @@
 import styled from "styled-components/native";
 
-export const MainView = styled.KeyboardAvoidingView`
+export const KeyboardAvoidingView2 = styled.KeyboardAvoidingView`
   flex: 1;
-  background: whitesmoke;
-  justify-content: flex-start;
-  align-items: center;
 `;
 
 export const Container = styled.View`

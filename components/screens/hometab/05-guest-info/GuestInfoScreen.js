@@ -3,9 +3,8 @@ import {
   ScrollView,
   Text,
   StyleSheet,
-  KeyboardAvoidingView
 } from "react-native";
-import { Container, TopLabel, Row, Label, Input } from "./zstyles";
+import { Container, TopLabel, Row, Label, Input, KeyboardAvoidingView2 } from "./zstyles";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
@@ -98,7 +97,7 @@ class ReviewBookingScreen extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={{ flex: 1 }} behavior="position">
+      <KeyboardAvoidingView2 style={{ flex: 1 }} behavior="position">
         <ScrollView>
           <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <Container>
@@ -168,7 +167,7 @@ class ReviewBookingScreen extends Component {
             />
           </Container>
         </ScrollView>
-      </KeyboardAvoidingView>
+      </KeyboardAvoidingView2>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { ScrollView, Text, KeyboardAvoidingView } from "react-native";
+import { ScrollView, Text } from "react-native";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
@@ -8,7 +8,6 @@ import HotelHeader from "../_libs/hotel-header/HotelHeader";
 import HotelFooter from "../_libs/hotel-footer/HotelFooter";
 
 import {
-  MainView,
   Container,
   TopLabel,
   Row,
@@ -21,7 +20,8 @@ import {
   TextInput4,
   View2,
   Amount,
-  AmountDiv
+  AmountDiv, 
+  KeyboardAvoidingView2
 } from "./zstyles";
 
 class PaymentScreen extends Component {
@@ -127,7 +127,7 @@ class PaymentScreen extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={{ flex: 1 }} behavior="position">
+      <KeyboardAvoidingView2 behavior="position">
         <ScrollView>
           <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <Container>
@@ -216,7 +216,7 @@ class PaymentScreen extends Component {
             />
           </Container>
         </ScrollView>
-      </KeyboardAvoidingView>
+      </KeyboardAvoidingView2>
     );
   }
 }

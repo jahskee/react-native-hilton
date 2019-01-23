@@ -33,9 +33,10 @@ class ThankYouScreen extends PureComponent {
   render() {
     return (
       <MainView>
-        <HotelHeader hotel={this.props.userSession.selectedHotel} />
+     
 
         <ScrollView>
+          <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <TopDivFirst>
             <TopText>Please print this information.</TopText>
           </TopDivFirst>

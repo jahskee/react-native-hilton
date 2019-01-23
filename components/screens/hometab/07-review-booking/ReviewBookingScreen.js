@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { ScrollView, View, Text } from "react-native";
+import { ScrollView, View, Dimensions } from "react-native";
 
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
@@ -82,15 +82,21 @@ class ReviewBookingScreen extends PureComponent {
       arrival,
       departure,
       totalAmount
-    };
+    };   
   }
-
+  
+  dimensions = Dimensions.get("window");
+  
   render() {
     return (
       <MainView>
-        <HotelHeader hotel={this.props.userSession.selectedHotel} />
+        <ScrollView
+          style={{
+            width: this.dimensions.width
+          }}
+        >
+          <HotelHeader hotel={this.props.userSession.selectedHotel} />
 
-        <ScrollView>
           <View>
             <TopDivFirst>
               <TopText>Guest Info</TopText>
@@ -182,10 +188,7 @@ class ReviewBookingScreen extends PureComponent {
             ))}
           </View>
         </ScrollView>
-        <HotelFooter
-          buttonLabel={"Confirm Payment"}
-          handleSubmit={this.handleSubmit}
-        />
+        <HotelFooter buttonLabel={"Payment"} handleSubmit={this.handleSubmit} />
       </MainView>
     );
   }
