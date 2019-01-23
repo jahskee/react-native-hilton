@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, Dimensions } from "react-native";
+
 
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
