@@ -30,12 +30,17 @@ class ThankYouScreen extends PureComponent {
     const reservation = this.props.userSession.reservation;
     this.setState({ ...reservation });
   }
+
+  dimensions = Dimensions.get("window");
+
   render() {
     return (
       <MainView>
      
 
-        <ScrollView>
+        <ScrollView style={{
+            width: this.dimensions.width
+          }}>
           <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <TopDivFirst>
             <TopText>Please print this information.</TopText>
