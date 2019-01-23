@@ -23,7 +23,6 @@ const HotelHeader = props => {
           uri: this.image01
         }}
       />
-    
 
       <Panel1>
         <HotelInfo>

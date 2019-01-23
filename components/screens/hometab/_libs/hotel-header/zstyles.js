@@ -30,7 +30,7 @@ export const HotelAddress = styled.Text`
 
 export const Container = styled.View`
   flex-direction: row;
-  margin-left: 60px;
+  margin-left: 10px;
 `;
 
 export const HotelDistance = styled.Text`

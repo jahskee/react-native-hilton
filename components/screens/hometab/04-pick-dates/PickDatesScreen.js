@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import {
-  Text,
-  ScrollView
-} from "react-native";
+import { Text, ScrollView } from "react-native";
 import Calendar from "react-native-calendario";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
@@ -89,8 +86,8 @@ class PickDatesScreen extends Component {
     };
     return (
       <MainView>
-        <HotelHeader hotel={this.props.userSession.selectedHotel} />
         <ScrollView style={{ width: "100%", height: 500 }}>
+          <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <Panel2>
             <Dates
               onDatesChange={onDatesChange}

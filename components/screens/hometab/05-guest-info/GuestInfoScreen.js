@@ -1,7 +1,11 @@
 import React, { Component } from "react";
-import { ScrollView, Text } from "react-native";
-
-import { MainView, Container, TopLabel, Row, Label, Input } from "./zstyles";
+import {
+  ScrollView,
+  Text,
+  StyleSheet,
+  KeyboardAvoidingView
+} from "react-native";
+import { Container, TopLabel, Row, Label, Input } from "./zstyles";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
@@ -94,9 +98,9 @@ class ReviewBookingScreen extends Component {
 
   render() {
     return (
-      <MainView>
-        <HotelHeader hotel={this.props.userSession.selectedHotel} />
-        <ScrollView style={{ marginTop: 20 }}>
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior="position">
+        <ScrollView>
+          <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <Container>
             <TopLabel>
               <Text>Please enter your personal info.</Text>
@@ -157,17 +161,27 @@ class ReviewBookingScreen extends Component {
                 value={this.state.country}
               />
             </Row>
+
+            <HotelFooter
+              buttonLabel={"Continue"}
+              handleSubmit={this.handleSubmit}
+            />
           </Container>
         </ScrollView>
-        <HotelFooter
-          buttonLabel={"Continue"}
-          handleSubmit={this.handleSubmit}
-        />
-      </MainView>
+      </KeyboardAvoidingView>
     );
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+
+    backgroundColor: "#fffd",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
   data: store.data,

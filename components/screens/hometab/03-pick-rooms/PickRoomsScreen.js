@@ -55,8 +55,8 @@ class PickRoomsScreen extends Component {
   render() {
     return (
       <MainView>
-        <HotelHeader hotel={this.props.userSession.selectedHotel} />
         <ScrollView style={{ width: "100%", height: 500, marginTop: 10 }}>
+          <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <Rooms>
             <FlatList
               data={this.props.rooms}

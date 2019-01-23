@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const MainView = styled.View`
+export const MainView = styled.KeyboardAvoidingView`
   flex: 1;
   background: whitesmoke;
   justify-content: flex-start;

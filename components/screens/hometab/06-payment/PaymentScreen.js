@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Text, ScrollView } from "react-native";
 
+import { ScrollView, Text, KeyboardAvoidingView } from "react-native";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import { myStyle } from "../../../_styles/myStyle";
-
 import HotelHeader from "../_libs/hotel-header/HotelHeader";
 import HotelFooter from "../_libs/hotel-footer/HotelFooter";
 
@@ -128,9 +127,9 @@ class PaymentScreen extends Component {
 
   render() {
     return (
-      <MainView>
-        <HotelHeader hotel={this.props.userSession.selectedHotel} />
-        <ScrollView style={{ marginTop: 20 }}>
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior="position">
+        <ScrollView>
+          <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <Container>
             <AmountDiv>
               <Amount>{this.props.userSession.nightsStay + " night(s)"}</Amount>
@@ -210,13 +209,14 @@ class PaymentScreen extends Component {
                 value={this.state.country}
               />
             </Row>
+
+            <HotelFooter
+              buttonLabel={"Continue"}
+              handleSubmit={this.handleSubmit}
+            />
           </Container>
         </ScrollView>
-        <HotelFooter
-          buttonLabel={"Continue"}
-          handleSubmit={this.handleSubmit}
-        />
-      </MainView>
+      </KeyboardAvoidingView>
     );
   }
 }
