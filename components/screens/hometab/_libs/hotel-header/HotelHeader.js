@@ -8,7 +8,7 @@ import {
   HotelName,
   HotelAddress,
   HotelDistance,
-  Container,
+  Container
 } from "./zstyles";
 
 const HotelHeader = props => {
@@ -16,7 +16,6 @@ const HotelHeader = props => {
 
   return (
     <Container>
-    
       <Image
         style={{ width: 90, height: 90 }}
         source={{
@@ -26,15 +25,13 @@ const HotelHeader = props => {
 
       <Panel1>
         <HotelInfo>
-          
-            <Row>
-              <HotelName>{props.hotel.name}</HotelName>
-              <HotelAddress>
-                {props.hotel.address}{" "}
-                <HotelDistance> ({props.hotel.distance} mi) </HotelDistance>
-              </HotelAddress>
-            </Row>
-          
+          <Row>
+            <HotelName>{props.hotel.name}</HotelName>
+            <HotelAddress>
+              {props.hotel.address}{" "}
+              <HotelDistance> ({props.hotel.distance} mi) </HotelDistance>
+            </HotelAddress>
+          </Row>
         </HotelInfo>
       </Panel1>
     </Container>
