@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 /* ---------- Panel 1 ----------*/
 export const Panel1 = styled.View`
   flex-direction: row;

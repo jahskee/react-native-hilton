@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   Panel1,
@@ -8,14 +8,14 @@ import {
   HotelAddress,
   HotelDistance,
   Container,
-  Photo,
-} from './zstyles';
+  Photo
+} from "./zstyles";
 
 const HotelHeader = props => (
   <Container>
     <Photo
       source={{
-        uri: props.hotel.imageCircle,
+        uri: props.hotel.imageCircle
       }}
     />
 
@@ -24,16 +24,8 @@ const HotelHeader = props => (
         <Row>
           <HotelName>{props.hotel.name}</HotelName>
           <HotelAddress>
-            {props.hotel.address}
-            {' '}
-            <HotelDistance>
-              {' '}
-(
-              {props.hotel.distance}
-              {' '}
-mi)
-              {' '}
-            </HotelDistance>
+            {props.hotel.address}{" "}
+            <HotelDistance> ({props.hotel.distance} mi) </HotelDistance>
           </HotelAddress>
         </Row>
       </HotelInfo>

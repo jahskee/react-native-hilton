@@ -1,28 +1,28 @@
 /* jshint esversion: 6 */
-import API from '../../api/API';
+import API from "../../api/API";
 
 /* ---- Start: Async fetch of CITIES ---- */
-export const FETCH_CITIES_BEGIN = 'FETCH_CITIES_BEGIN';
-export const FETCH_CITIES_SUCCESS = 'FETCH_CITIES_SUCCESS';
-export const FETCH_CITIES_FAILURE = 'FETCH_CITIES_FAILURE';
+export const FETCH_CITIES_BEGIN = "FETCH_CITIES_BEGIN";
+export const FETCH_CITIES_SUCCESS = "FETCH_CITIES_SUCCESS";
+export const FETCH_CITIES_FAILURE = "FETCH_CITIES_FAILURE";
 
 export const fetchCitiesBegin = () => ({
   type: FETCH_CITIES_BEGIN,
-  payload: [],
+  payload: []
 });
 
 export const fetchCitiesSuccess = cities => ({
   type: FETCH_CITIES_SUCCESS,
-  payload: cities,
+  payload: cities
 });
 
 export const fetchCitiesFailure = error => ({
   type: FETCH_CITIES_FAILURE,
-  payload: { error },
+  payload: { error }
 });
 
 // async actions creators
-export const fetchCities = () => async (dispatch) => {
+export const fetchCities = () => async dispatch => {
   dispatch(fetchCitiesBegin);
   try {
     const cities = await API.fetchCities();

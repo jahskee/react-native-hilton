@@ -1,7 +1,7 @@
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import React from "react";
+import { TouchableOpacity } from "react-native";
 
-import { GreenButton, HotelFooterView } from './zstyles';
+import { GreenButton, HotelFooterView } from "./zstyles";
 
 const HotelFooter = props => (
   <HotelFooterView>
