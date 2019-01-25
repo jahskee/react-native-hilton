@@ -3,8 +3,8 @@ import React from "react";
 import { View, Image, Dimensions } from "react-native";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
-import { myStyle } from "../../../_styles/myStyle";
-import { Panel1, HotelInfo, Photo } from "./zstyles";
+import myStyle from "../../../_styles/myStyle";
+import { Panel1, HotelInfo } from "./zstyles";
 
 class SettingScreen extends React.PureComponent {
   state = {

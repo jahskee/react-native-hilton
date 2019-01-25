@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const Room = styled.View`
   flex-direction: row;
@@ -8,7 +8,7 @@ export const Room = styled.View`
   margin-bottom: 3px;
   background: #cccc;
 `;
-/*----- Room header -----*/
+/* ----- Room header -----*/
 export const RoomHeader = styled.View`
   flex-direction: row;
   justify-content: space-between;
@@ -28,7 +28,7 @@ export const RHRight = styled.Text`
   font-weight: bold;
 `;
 
-/*----- Room body -----*/
+/* ----- Room body -----*/
 export const RoomBody = styled.Text`
   margin-top: 2px;
   font-size: 12px;

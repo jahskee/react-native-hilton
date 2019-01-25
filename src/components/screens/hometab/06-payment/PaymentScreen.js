@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { ScrollView, Text } from "react-native";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
-import { myStyle } from "../../../_styles/myStyle";
+import myStyle from "../../../_styles/myStyle";
 import HotelHeader from "../_libs/hotel-header/HotelHeader";
 import HotelFooter from "../_libs/hotel-footer/HotelFooter";
 

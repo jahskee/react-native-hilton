@@ -1,6 +1,5 @@
 /*jshint esversion: 6 */
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import {
   createStackNavigator,
   createSwitchNavigator,
@@ -10,7 +9,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { Provider } from "react-redux";
 import store from "./src/components/redux/store/store";
 
-import { myStyle } from "./src/components/_styles/myStyle";
+import myStyle from "./src/components/_styles/myStyle";
 
 import HomeScreen from "./src/components/screens/hometab/01-home/HomeScreen";
 import SettingScreen from "./src/components/screens/settingtab/setting/SettingScreen";

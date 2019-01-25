@@ -1,14 +1,14 @@
 /* jshint esversion: 6 */
 
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import * as _actions from "../actions/actions";
+import * as _actions from '../actions/actions';
 
-import * as _roomActions from "../actions/roomActions";
-import * as _hotelActions from "../actions/hotelActions";
-import * as _cityActions from "../actions/cityActions";
-import * as _reservationActions from "../actions/reservationActions";
-import reducerFuncs from "./reducerFuncs";
+import * as _roomActions from '../actions/roomActions';
+import * as _hotelActions from '../actions/hotelActions';
+import * as _cityActions from '../actions/cityActions';
+import * as _reservationActions from '../actions/reservationActions';
+import reducerFuncs from './reducerFuncs';
 
 const merge = (prev, next) => Object.assign({}, prev, next);
 
@@ -31,11 +31,9 @@ const roomReducer = (rooms = [], action) => {
     case _roomActions.FETCH_ROOMS_FAILURE:
       return [];
     case _roomActions.TOGGLE_ROOM_SELECTED:
-      rooms = reducerFuncs.toggleRoomSelected(action, rooms);
-      return rooms;
+      return reducerFuncs.toggleRoomSelected(action, rooms);
     case _roomActions.RESET_ROOMS_SELECTION:
-      rooms = rooms.map(room => ({ ...room, isSelected: false }));
-      return rooms;
+      return rooms.map(room => ({ ...room, isSelected: false }));
     default:
       return rooms;
   }
@@ -107,7 +105,7 @@ const reducer = combineReducers({
   hotels: hotelReducer,
   city: cityReducer,
   reservations: reservationReducer,
-  userSession: userSessionReducer
+  userSession: userSessionReducer,
 });
 
 export default reducer;

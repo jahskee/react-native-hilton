@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 /* ---------- Panel 1 ----------*/
 export const Panel1 = styled.View`
   flex-direction: row;
@@ -19,7 +19,7 @@ export const HotelName = styled.Text`
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 5px;
-  color: #30442b; 
+  color: #30442b;
 `;
 
 export const HotelAddress = styled.Text`

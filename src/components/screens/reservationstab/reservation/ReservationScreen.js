@@ -8,7 +8,7 @@ import {
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
 import * as _reservationActions from "../../../redux/actions/reservationActions";
-import { myStyle } from "../../../_styles/myStyle";
+import myStyle from "../../../_styles/myStyle";
 import {
   Reservation,
   RowHead,

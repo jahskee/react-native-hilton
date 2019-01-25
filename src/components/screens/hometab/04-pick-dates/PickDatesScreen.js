@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Text, ScrollView } from "react-native";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
-import { myStyle } from "../../../_styles/myStyle";
+import myStyle from "../../../_styles/myStyle";
 import {
   MainView,
   Panel2,

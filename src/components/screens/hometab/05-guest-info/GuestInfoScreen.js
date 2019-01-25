@@ -7,7 +7,7 @@ import {
 import { Container, TopLabel, Row, Label, Input, KeyboardAvoidingView2 } from "./zstyles";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
-import { myStyle } from "../../../_styles/myStyle";
+import myStyle from "../../../_styles/myStyle";
 
 import HotelHeader from "../_libs/hotel-header/HotelHeader";
 import HotelFooter from "../_libs/hotel-footer/HotelFooter";

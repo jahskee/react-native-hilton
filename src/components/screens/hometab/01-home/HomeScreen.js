@@ -3,37 +3,19 @@ import React from "react";
 import {
   ScrollView,
   Image,
-  Animated,
   Dimensions,
   TouchableHighlight
 } from "react-native";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
-import { myStyle } from "../../../_styles/myStyle";
+import myStyle from "../../../_styles/myStyle";
 import {
   MainView,
-  DeckBtn,
-  TextBtn,
-  TextCards,
   MenuItem,
   MenuRow,
   MenuView
 } from "./zstyles";
-
-const DeckItem = props => {
-  const onPress = () => {
-    props.navToSelectDeck(props);
-  };
-  return (
-    <Animated.View>
-      <DeckBtn onPress={onPress}>
-        <TextBtn> {props.item.title} </TextBtn>
-        <TextCards>{props.item.questions.length} cards</TextCards>
-      </DeckBtn>
-    </Animated.View>
-  );
-};
 
 export const addKeys = (val, key) => ({ key: "" + key, ...val });
 

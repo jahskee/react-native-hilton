@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const KeyboardAvoidingView2 = styled.KeyboardAvoidingView`
   flex: 1;
@@ -65,7 +65,7 @@ export const TextInput3 = styled.TextInput`
   padding: 2px 5px;
 `;
 
-/*-- zip code --*/
+/* -- zip code --*/
 export const TextInput4 = styled.TextInput`
   border: 1px solid gray;
   padding: 5px 10px;

@@ -1,10 +1,9 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const HotelFooterView = styled.View`
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 10px;
-
 `;
 
 export const GreenButton = styled.Text`

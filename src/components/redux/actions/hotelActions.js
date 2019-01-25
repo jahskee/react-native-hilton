@@ -1,24 +1,24 @@
 /* jshint esversion: 6 */
-import API from "../../api/API";
+import API from '../../api/API';
 
 /* ---- Start: Async fetch of Hotels ---- */
-export const FETCH_HOTELS_BEGIN = "FETCH_HOTELS_BEGIN";
-export const FETCH_HOTELS_SUCCESS = "FETCH_HOTELS_SUCCESS";
-export const FETCH_HOTELS_FAILURE = "FETCH_HOTELS_FAILURE";
+export const FETCH_HOTELS_BEGIN = 'FETCH_HOTELS_BEGIN';
+export const FETCH_HOTELS_SUCCESS = 'FETCH_HOTELS_SUCCESS';
+export const FETCH_HOTELS_FAILURE = 'FETCH_HOTELS_FAILURE';
 
 export const fetchHotelsBegin = () => ({
   type: FETCH_HOTELS_BEGIN,
-  payload: []
+  payload: [],
 });
 
 export const fetchHotelsSuccess = hotels => ({
   type: FETCH_HOTELS_SUCCESS,
-  payload: hotels
+  payload: hotels,
 });
 
 export const fetchHotelsFailure = error => ({
   type: FETCH_HOTELS_FAILURE,
-  payload: { error }
+  payload: { error },
 });
 
 // async actions creators
@@ -28,7 +28,6 @@ export const fetchHotels = () => async dispatch => {
     const hotels = await API.fetchHotels();
     await dispatch(fetchHotelsSuccess(hotels));
   } catch (error) {
-    console.error(error);
     dispatch(fetchHotelsFailure(error));
   }
 };

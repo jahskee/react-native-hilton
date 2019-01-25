@@ -1,5 +1,5 @@
-/*jshint esversion: 6 */
-import styled from "styled-components/native";
+/* jshint esversion: 6 */
+import styled from 'styled-components/native';
 /* ---------- Panel 1 ----------*/
 export const Panel1 = styled.View`
 

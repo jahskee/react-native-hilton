@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 
 import { connect } from "react-redux";
 import * as _actions from "../../../redux/actions/actions";
-import { myStyle } from "../../../_styles/myStyle";
+import myStyle from "../../../_styles/myStyle";
 import { Dropdown } from "react-native-material-dropdown";
 import { Destination } from "./parts/Destination";
 

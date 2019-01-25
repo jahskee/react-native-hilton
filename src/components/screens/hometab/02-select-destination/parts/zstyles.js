@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 /* ----- Hotel desk block ----- */
 export const DestinationItem = styled.View`
