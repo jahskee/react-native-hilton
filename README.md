@@ -15,8 +15,8 @@
     graphql live server: http://kickstartapps.us:4000/graphql
      
 ### Video about the project
-   https://www.youtube.com/watch?v=qlZS4IqDEPk
-   [![Alt text](https://i.imgur.com/pVByW80.png)](https://www.youtube.com/watch?v=qlZS4IqDEPk)
+   https://www.youtube.com/watch?v=T7_fl0tT35o
+   [![Alt text](https://i.imgur.com/pVByW80.png)](https://www.youtube.com/watch?v=T7_fl0tT35o)
 
 ### Screenshots
 
