@@ -31,7 +31,7 @@ const data = {
           distance: 2.0,
           price: 185.5,
           image: 'https://i.imgur.com/Yk1DRZ5.png',
-          imageCircle: 'https://i.imgur.com/jH3twe9.gif',
+          imageCircle: 'https://i.imgur.com/c6CrRk9.gif',
           cityId: '5c43f218bede3a2ef82f071b',
         },
         {
@@ -41,6 +41,7 @@ const data = {
           distance: 2.2,
           price: 126.0,
           image: 'https://i.imgur.com/lQPf93K.png',
+          imageCircle: 'https://i.imgur.com/HANo6yB.gif',
           cityId: '5c43f218bede3a2ef82f071b',
         },
         {
@@ -50,6 +51,7 @@ const data = {
           distance: 2.5,
           price: 175,
           image: 'https://i.imgur.com/8hrAX0A.png',
+          imageCircle: 'https://i.imgur.com/uPpWdAX.gif',
           cityId: '5c43f218bede3a2ef82f071b',
         },
         {
@@ -59,6 +61,7 @@ const data = {
           distance: 2.8,
           price: 258,
           image: 'https://i.imgur.com/BMvTesx.png',
+          imageCircle: 'https://i.imgur.com/GxB8A4W.gif',
           cityId: '5c43f218bede3a2ef82f071b',
         },
         {
@@ -68,6 +71,7 @@ const data = {
           distance: 3.0,
           price: 131,
           image: 'https://i.imgur.com/dwOkABr.png',
+          imageCircle: 'https://i.imgur.com/vJisUmq.gif',
           cityId: '5c43f218bede3a2ef82f071b',
         },
         {
@@ -77,6 +81,7 @@ const data = {
           distance: 4.5,
           price: 128,
           image: 'https://i.imgur.com/ZZxPzqN.png',
+          imageCircle: 'https://i.imgur.com/xQxPS5l.gif',
           cityId: '5c43f218bede3a2ef82f071b',
         },
       ],
@@ -92,6 +97,7 @@ const data = {
           distance: 2.0,
           price: 98,
           image: 'https://i.imgur.com/WtMMDvk.png',
+          imageCircle: 'https://i.imgur.com/STau9QH.gif',
           cityId: '5c43f208bede3a2ef82f071a',
         },
         {
@@ -101,6 +107,7 @@ const data = {
           distance: 3.8,
           price: 106,
           image: 'https://i.imgur.com/GsyJ6lS.png',
+          imageCircle: 'https://i.imgur.com/Bxju0QU.gif',
           cityId: '5c43f208bede3a2ef82f071a',
         },
       ],

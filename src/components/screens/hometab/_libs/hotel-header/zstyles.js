@@ -11,7 +11,7 @@ export const Panel1 = styled.View`
 export const Photo = styled.Image`
   width: 90px;
   height: 90px;
-  margin-left: 15px;
+  margin-left: 10px;
   margin-bottom: 10px;
 `;
 

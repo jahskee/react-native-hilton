@@ -48,7 +48,6 @@ export const RoomLeft = styled.View`
 
 export const RoomRight = styled.View`
   padding: 5px;
-
   width: 70%;
 `;
 

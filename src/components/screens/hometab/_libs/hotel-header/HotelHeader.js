@@ -14,7 +14,6 @@ import {
 const HotelHeader = props => (
   <Container>
     <Photo
-      style={{ width: 90, height: 90 }}
       source={{
         uri: props.hotel.imageCircle,
       }}
