@@ -13,7 +13,7 @@ import { RoomDiv } from './parts/Room';
 import { MainView, Rooms } from './zstyles';
 
 class PickRoomsScreen extends Component {
-  static navigationOptions = ({ navigation }) => ({
+  static navigationOptions = () => ({
     headerTitle: 'Available Rooms',
     headerTintColor: myStyle.primaryColor,
     headerTitleStyle: {

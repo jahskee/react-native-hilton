@@ -21,14 +21,14 @@ import {
 } from './zstyles';
 
 class ReservationScreen extends React.PureComponent {
-  state = {
-    image: 'https://i.imgur.com/o7rtJpl.png',
-  };
-
-  static navigationOptions = ({ navigation }) => ({
+  static navigationOptions = () => ({
     headerTitle: 'My Reservations',
     headerTintColor: myStyle.primaryColor,
   });
+
+  state = {
+    image: 'https://i.imgur.com/o7rtJpl.png',
+  };
 
   componentDidMount() {
     this.props.fetchReservations();
@@ -36,7 +36,6 @@ class ReservationScreen extends React.PureComponent {
 
   render() {
     const dimensions = Dimensions.get('window');
-    const imageHeight = Math.round((dimensions.width * 9) / 16);
     const imageWidth = dimensions.width;
     return (
       <View>

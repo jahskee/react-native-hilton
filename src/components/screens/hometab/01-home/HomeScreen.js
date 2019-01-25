@@ -20,7 +20,7 @@ import {
 export const addKeys = (val, key) => ({ key: `${key}`, ...val });
 
 class HomeScreen extends React.PureComponent {
-  static navigationOptions = ({ navigation }) => ({
+  static navigationOptions = () => ({
     headerTitle: 'Home',
     headerTintColor: myStyle.primaryColor,
     headerTitleStyle: {

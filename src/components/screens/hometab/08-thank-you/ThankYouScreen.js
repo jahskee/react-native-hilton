@@ -13,9 +13,7 @@ import {
 } from './zstyles';
 
 class ThankYouScreen extends PureComponent {
-  state = {};
-
-  static navigationOptions = ({ navigation }) => ({
+  static navigationOptions = () => ({
     headerTitle: 'Reservation Confirmed',
     headerTintColor: myStyle.primaryColor,
     headerTitleStyle: {
@@ -23,6 +21,8 @@ class ThankYouScreen extends PureComponent {
     },
     headerLeft: null,
   });
+
+  state = {};
 
   handleSubmit = () => {
     this.props.navigation.navigate('ReservationScreen');
