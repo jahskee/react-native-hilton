@@ -18,7 +18,6 @@ export const Destination = (props) => {
     props.navigation.navigate('PickRoomsScreen', { hotelInfo: props.hotel });
   };
 
-  logoImage = 'https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png';
 
   return (
     <TouchableOpacity onPress={handleSelectHotel}>

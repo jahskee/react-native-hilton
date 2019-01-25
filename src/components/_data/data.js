@@ -11,6 +11,7 @@ const data = {
           distance: 1.0,
           price: 110.5,
           image: 'https://i.imgur.com/uC6Bekk.png',
+          imageCircle: 'https://i.imgur.com/x4eIVem.gif',
           cityId: '5c43f218bede3a2ef82f071b',
         },
         {
@@ -20,6 +21,7 @@ const data = {
           distance: 1.2,
           price: 105,
           image: 'https://i.imgur.com/jijV2re.png',
+          imageCircle: 'https://i.imgur.com/VRm8Erq.gif',
           cityId: '5c43f218bede3a2ef82f071b',
         },
         {
@@ -29,6 +31,7 @@ const data = {
           distance: 2.0,
           price: 185.5,
           image: 'https://i.imgur.com/Yk1DRZ5.png',
+          imageCircle: 'https://i.imgur.com/jH3twe9.gif',
           cityId: '5c43f218bede3a2ef82f071b',
         },
         {

@@ -8,6 +8,13 @@ export const Panel1 = styled.View`
   margin: 5px;
 `;
 
+export const Photo = styled.Image`
+  width: 90px;
+  height: 90px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+`;
+
 export const HotelInfo = styled.View`
   flex-direction: row;
   padding-top: 5px;

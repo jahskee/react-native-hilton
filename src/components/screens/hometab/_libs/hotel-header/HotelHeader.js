@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'react-native';
 
 import {
   Panel1,
@@ -9,14 +8,15 @@ import {
   HotelAddress,
   HotelDistance,
   Container,
+  Photo,
 } from './zstyles';
 
 const HotelHeader = props => (
   <Container>
-    <Image
+    <Photo
       style={{ width: 90, height: 90 }}
       source={{
-        uri: props.hotel.image,
+        uri: props.hotel.imageCircle,
       }}
     />
 
