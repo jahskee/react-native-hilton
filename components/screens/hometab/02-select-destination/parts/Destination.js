@@ -30,9 +30,7 @@ export const Destination = props => {
           <Distance>{props.hotel.distance} mi</Distance>
         </HotelDesc>
         <HotelPhotoPrice>
-          <Price>
-            <Text>${props.hotel.price.toFixed(2)}</Text>
-          </Price>
+        
           <Photo>
             <Image
               style={{ width: 50, height: 50 }}
@@ -41,6 +39,9 @@ export const Destination = props => {
               }}
             />
           </Photo>
+          <Price>
+            <Text>${props.hotel.price.toFixed(2)}</Text>
+          </Price>
         </HotelPhotoPrice>
       </DestinationItem>
     </TouchableOpacity>

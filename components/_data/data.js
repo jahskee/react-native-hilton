@@ -10,8 +10,7 @@ const data = {
           address: "5711 W Century Blvd, Los Angeles, CA 90041 US",
           distance: 1.0,
           price: 110.5,
-          image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+          image: "https://i.imgur.com/uC6Bekk.png",
           cityId: "5c43f218bede3a2ef82f071b"
         },
         {
@@ -21,7 +20,7 @@ const data = {
           distance: 1.2,
           price: 105,
           image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            "https://i.imgur.com/jijV2re.png",
           cityId: "5c43f218bede3a2ef82f071b"
         },
         {
@@ -31,7 +30,7 @@ const data = {
           distance: 2.0,
           price: 185.5,
           image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            "https://i.imgur.com/Yk1DRZ5.png",
           cityId: "5c43f218bede3a2ef82f071b"
         },
         {
@@ -41,7 +40,7 @@ const data = {
           distance: 2.2,
           price: 126.0,
           image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            "https://i.imgur.com/lQPf93K.png",
           cityId: "5c43f218bede3a2ef82f071b"
         },
         {
@@ -51,7 +50,7 @@ const data = {
           distance: 2.5,
           price: 175,
           image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            "https://i.imgur.com/8hrAX0A.png",
           cityId: "5c43f218bede3a2ef82f071b"
         },
         {
@@ -61,7 +60,7 @@ const data = {
           distance: 2.8,
           price: 258,
           image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            "https://i.imgur.com/BMvTesx.png",
           cityId: "5c43f218bede3a2ef82f071b"
         },
         {
@@ -71,7 +70,7 @@ const data = {
           distance: 3.0,
           price: 131,
           image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            "https://i.imgur.com/dwOkABr.png",
           cityId: "5c43f218bede3a2ef82f071b"
         },
         {
@@ -81,7 +80,7 @@ const data = {
           distance: 4.5,
           price: 128,
           image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            "https://i.imgur.com/ZZxPzqN.png",
           cityId: "5c43f218bede3a2ef82f071b"
         }
       ]
@@ -97,7 +96,7 @@ const data = {
           distance: 2.0,
           price: 98,
           image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            "https://i.imgur.com/WtMMDvk.png",
           cityId: "5c43f208bede3a2ef82f071a"
         },
         {
@@ -107,7 +106,7 @@ const data = {
           distance: 3.8,
           price: 106,
           image:
-            "https://cdn2.iconfinder.com/data/icons/fitness-achievement-badges/64/Fitness-14-512.png",
+            "https://i.imgur.com/GsyJ6lS.png",
           cityId: "5c43f208bede3a2ef82f071a"
         }
       ]
