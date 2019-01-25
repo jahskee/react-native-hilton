@@ -8,22 +8,22 @@ import {
 } from "react-navigation";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Provider } from "react-redux";
-import store from "./components/redux/store/store";
+import store from "./src/components/redux/store/store";
 
-import { myStyle } from "./components/_styles/myStyle";
+import { myStyle } from "./src/components/_styles/myStyle";
 
-import HomeScreen from "./components/screens/hometab/01-home/HomeScreen";
-import SettingScreen from "./components/screens/settingtab/setting/SettingScreen";
-import ReservationScreen from "./components/screens/reservationstab/reservation/ReservationScreen";
+import HomeScreen from "./src/components/screens/hometab/01-home/HomeScreen";
+import SettingScreen from "./src/components/screens/settingtab/setting/SettingScreen";
+import ReservationScreen from "./src/components/screens/reservationstab/reservation/ReservationScreen";
 
 /*---- Home tab screens ----*/
-import SelectDestinationScreen from "./components/screens/hometab/02-select-destination/SelectDestinationScreen";
-import PickRoomsScreen from "./components/screens/hometab/03-pick-rooms/PickRoomsScreen";
-import PickDatesScreen from "./components/screens/hometab/04-pick-dates/PickDatesScreen";
-import GuestInfoScreen from "./components/screens/hometab/05-guest-info/GuestInfoScreen";
-import PaymentScreen from "./components/screens/hometab/06-payment/PaymentScreen";
-import ReviewBookingScreen from "./components/screens/hometab/07-review-booking/ReviewBookingScreen";
-import ThankYouScreen from "./components/screens/hometab/08-thank-you/ThankYouScreen";
+import SelectDestinationScreen from "./src/components/screens/hometab/02-select-destination/SelectDestinationScreen";
+import PickRoomsScreen from "./src/components/screens/hometab/03-pick-rooms/PickRoomsScreen";
+import PickDatesScreen from "./src/components/screens/hometab/04-pick-dates/PickDatesScreen";
+import GuestInfoScreen from "./src/components/screens/hometab/05-guest-info/GuestInfoScreen";
+import PaymentScreen from "./src/components/screens/hometab/06-payment/PaymentScreen";
+import ReviewBookingScreen from "./src/components/screens/hometab/07-review-booking/ReviewBookingScreen";
+import ThankYouScreen from "./src/components/screens/hometab/08-thank-you/ThankYouScreen";
 
 global.log = console.log;
 

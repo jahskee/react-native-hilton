@@ -4,6 +4,9 @@
   "private": true,
   "devDependencies": {
     "@babel/preset-flow": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^5.12.1",
     "flow-bin": "^0.91.0",
     "flow-typed": "^2.5.1",
     "jest": "^20.0.4",
@@ -19,7 +22,9 @@
     "flow": "flow",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint",
+    "pretest": "npm run flow "
   },
   "jest": {
     "preset": "jest-expo"

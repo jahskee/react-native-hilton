@@ -6,11 +6,12 @@
 [include]
 
 [libs]
-flow-typed
-/type-def-libs
+./types/global.js
 
 [lints]
 
 [options]
+module.name_mapper='^\(.*\)\.scss$' -> 'CSSModule'
+module.system=haste
 
 [strict]
