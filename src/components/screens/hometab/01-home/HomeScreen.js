@@ -35,31 +35,22 @@ class HomeScreen extends React.PureComponent {
     this.imageHeight = Math.round((this.dimensions.width * 9) / 16);
     this.imageWidth = this.dimensions.width - 20;
     this.menuImageDimension = { width: 60, height: 75 };
+
+    this.logoImage = 'https://i.imgur.com/pAixOoS.png';
+    this.aboutBtn = 'https://i.imgur.com/1H8iyQf.png';
+    this.bookNowBtn = 'https://i.imgur.com/P8dpmLP.png';
+    this.galleryBtn = 'https://i.imgur.com/HWF6YLL.png';
+    this.locationBtn = 'https://i.imgur.com/U4slGhj.png';
+    this.roomsBtn = 'https://i.imgur.com/IFQnA32.png';
+    this.amenityBtn = 'https://i.imgur.com/VqeQ2Vl.png';
+    this.diningBtn = 'https://i.imgur.com/vK0Qr12.png';
+    this.feedbackBtn = 'https://i.imgur.com/PNIoeQe.png';
+    this.moreBtn = 'https://i.imgur.com/hrNRq6Z.png';
   }
 
   selectDestination = () => {
     this.props.navigation.navigate('SelectDestinationScreen', { deck: 100 });
   };
-
-  logoImage = 'https://i.imgur.com/pAixOoS.png';
-
-  aboutBtn = 'https://i.imgur.com/1H8iyQf.png';
-
-  bookNowBtn = 'https://i.imgur.com/P8dpmLP.png';
-
-  galleryBtn = 'https://i.imgur.com/HWF6YLL.png';
-
-  locationBtn = 'https://i.imgur.com/U4slGhj.png';
-
-  roomsBtn = 'https://i.imgur.com/IFQnA32.png';
-
-  amenityBtn = 'https://i.imgur.com/VqeQ2Vl.png';
-
-  diningBtn = 'https://i.imgur.com/vK0Qr12.png';
-
-  feedbackBtn = 'https://i.imgur.com/PNIoeQe.png';
-
-  moreBtn = 'https://i.imgur.com/hrNRq6Z.png';
 
   render() {
     return (
