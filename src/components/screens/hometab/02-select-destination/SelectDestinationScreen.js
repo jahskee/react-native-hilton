@@ -1,53 +1,51 @@
-import React, { Component } from "react";
-import { FlatList } from "react-native";
+import React, { Component } from 'react';
+import { FlatList } from 'react-native';
 
-import { connect } from "react-redux";
-import * as _actions from "../../../redux/actions/actions";
-import myStyle from "../../../_styles/myStyle";
-import { Dropdown } from "react-native-material-dropdown";
-import { Destination } from "./parts/Destination";
+import { connect } from 'react-redux';
+import { Dropdown } from 'react-native-material-dropdown';
+import * as _actions from '../../../redux/actions/actions';
+import myStyle from '../../../_styles/myStyle';
+import { Destination } from './parts/Destination';
 
-import { MainView, Destinations, TopPanel } from "./zstyles";
+import { MainView, Destinations, TopPanel } from './zstyles';
 
-import data from "../../../_data/data";
+import data from '../../../_data/data';
 
 class SelectDestinationScreen extends Component {
   state = {
     locations: data.locations,
-    selectedLocation: 0
+    selectedLocation: 0,
   };
 
   dropDownData = [
     { value: this.state.locations[0].locationName },
-    { value: this.state.locations[1].locationName }
+    { value: this.state.locations[1].locationName },
   ];
 
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: "Select Destination",
-      headerTintColor: myStyle.primaryColor,
-      headerTitleStyle: {
-        fontWeight: "bold"
-      }
-    };
-  };
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: 'Select Destination',
+    headerTintColor: myStyle.primaryColor,
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  });
 
-  handleOnChangeLocation = text => {
+  handleOnChangeLocation = (text) => {
     let locationIndex;
-    if (text === "Los Angeles, CA") {
+    if (text === 'Los Angeles, CA') {
       locationIndex = 0;
-    } else if (text === "Washington, DC") {
+    } else if (text === 'Washington, DC') {
       locationIndex = 1;
     }
     this.props.saveUserSession({
       selectedLocation: text,
-      locationIndex
+      locationIndex,
     });
   };
 
-  handleSelectHotel = hotel => {
+  handleSelectHotel = (hotel) => {
     this.props.saveUserSession({
-      selectedHotel: hotel
+      selectedHotel: hotel,
     });
   };
 
@@ -59,7 +57,7 @@ class SelectDestinationScreen extends Component {
             label="Where are you going?"
             value="Los Angeles, CA"
             data={this.dropDownData}
-            containerStyle={{ width: "90%" }}
+            containerStyle={{ width: '90%' }}
             onChangeText={this.handleOnChangeLocation}
           />
           <Destinations>
@@ -68,15 +66,13 @@ class SelectDestinationScreen extends Component {
                 this.state.locations[this.props.userSession.locationIndex]
                   .hotels
               }
-              renderItem={hotel => {
-                return (
-                  <Destination
-                    hotel={hotel.item}
-                    handleSelectHotel={this.handleSelectHotel}
-                    navigation={this.props.navigation}
-                  />
-                );
-              }}
+              renderItem={hotel => (
+                <Destination
+                  hotel={hotel.item}
+                  handleSelectHotel={this.handleSelectHotel}
+                  navigation={this.props.navigation}
+                />
+              )}
               keyExtractor={item => item.id}
             />
           </Destinations>
@@ -91,15 +87,15 @@ const mapStateToProps = store => ({
   data: store.data,
   userSession: store.userSession,
   hotels: store.hotels,
-  city: store.city
+  city: store.city,
 });
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
-  saveUserSession: _actions.saveUserSession
+  saveUserSession: _actions.saveUserSession,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SelectDestinationScreen);

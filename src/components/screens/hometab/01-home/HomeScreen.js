@@ -1,58 +1,66 @@
 /* jshint esversion: 6 */
-import React from "react";
+import React from 'react';
 import {
   ScrollView,
   Image,
   Dimensions,
-  TouchableHighlight
-} from "react-native";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import * as _actions from "../../../redux/actions/actions";
-import myStyle from "../../../_styles/myStyle";
+  TouchableHighlight,
+} from 'react-native';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as _actions from '../../../redux/actions/actions';
+import myStyle from '../../../_styles/myStyle';
 import {
   MainView,
   MenuItem,
   MenuRow,
-  MenuView
-} from "./zstyles";
+  MenuView,
+} from './zstyles';
 
-export const addKeys = (val, key) => ({ key: "" + key, ...val });
+export const addKeys = (val, key) => ({ key: `${key}`, ...val });
 
 class HomeScreen extends React.PureComponent {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: "Home",
-      headerTintColor: myStyle.primaryColor,
-      headerTitleStyle: {
-        fontWeight: "bold"
-      }
-    };
-  };
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: 'Home',
+    headerTintColor: myStyle.primaryColor,
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  });
 
   constructor(props) {
     super(props);
 
-    this.dimensions = Dimensions.get("window");
+    this.dimensions = Dimensions.get('window');
     this.imageHeight = Math.round((this.dimensions.width * 9) / 16);
     this.imageWidth = this.dimensions.width - 20;
     this.menuImageDimension = { width: 60, height: 75 };
   }
 
   selectDestination = () => {
-    this.props.navigation.navigate("SelectDestinationScreen", { deck: 100 });
+    this.props.navigation.navigate('SelectDestinationScreen', { deck: 100 });
   };
 
-  logoImage = "https://i.imgur.com/pAixOoS.png";
-  aboutBtn = "https://i.imgur.com/1H8iyQf.png";
-  bookNowBtn = "https://i.imgur.com/P8dpmLP.png";
-  galleryBtn = "https://i.imgur.com/HWF6YLL.png";
-  locationBtn = "https://i.imgur.com/U4slGhj.png";
-  roomsBtn = "https://i.imgur.com/IFQnA32.png";
-  amenityBtn = "https://i.imgur.com/VqeQ2Vl.png";
-  diningBtn = "https://i.imgur.com/vK0Qr12.png";
-  feedbackBtn = "https://i.imgur.com/PNIoeQe.png";
-  moreBtn = "https://i.imgur.com/hrNRq6Z.png";
+  logoImage = 'https://i.imgur.com/pAixOoS.png';
+
+  aboutBtn = 'https://i.imgur.com/1H8iyQf.png';
+
+  bookNowBtn = 'https://i.imgur.com/P8dpmLP.png';
+
+  galleryBtn = 'https://i.imgur.com/HWF6YLL.png';
+
+  locationBtn = 'https://i.imgur.com/U4slGhj.png';
+
+  roomsBtn = 'https://i.imgur.com/IFQnA32.png';
+
+  amenityBtn = 'https://i.imgur.com/VqeQ2Vl.png';
+
+  diningBtn = 'https://i.imgur.com/vK0Qr12.png';
+
+  feedbackBtn = 'https://i.imgur.com/PNIoeQe.png';
+
+  moreBtn = 'https://i.imgur.com/hrNRq6Z.png';
+
   render() {
     return (
       <MainView>
@@ -60,10 +68,10 @@ class HomeScreen extends React.PureComponent {
           style={{
             width: this.imageWidth,
             height: this.imageHeight,
-            marginBottom: 0
+            marginBottom: 0,
           }}
           source={{
-            uri: this.logoImage
+            uri: this.logoImage,
           }}
         />
         <ScrollView>
@@ -72,8 +80,8 @@ class HomeScreen extends React.PureComponent {
               margin: 10,
               width: this.imageWidth,
               flex: 1,
-              flexDirection: "column",
-              justifyContent: "space-evenly"
+              flexDirection: 'column',
+              justifyContent: 'space-evenly',
             }}
           >
             {/* -----  First Row ----- */}
@@ -82,7 +90,7 @@ class HomeScreen extends React.PureComponent {
                 <Image
                   style={this.menuImageDimension}
                   source={{
-                    uri: this.aboutBtn
+                    uri: this.aboutBtn,
                   }}
                 />
               </MenuItem>
@@ -91,7 +99,7 @@ class HomeScreen extends React.PureComponent {
                   <Image
                     style={this.menuImageDimension}
                     source={{
-                      uri: this.bookNowBtn
+                      uri: this.bookNowBtn,
                     }}
                   />
                 </TouchableHighlight>
@@ -101,7 +109,7 @@ class HomeScreen extends React.PureComponent {
                 <Image
                   style={this.menuImageDimension}
                   source={{
-                    uri: this.galleryBtn
+                    uri: this.galleryBtn,
                   }}
                 />
               </MenuItem>
@@ -112,7 +120,7 @@ class HomeScreen extends React.PureComponent {
                 <Image
                   style={this.menuImageDimension}
                   source={{
-                    uri: this.locationBtn
+                    uri: this.locationBtn,
                   }}
                 />
               </MenuItem>
@@ -120,7 +128,7 @@ class HomeScreen extends React.PureComponent {
                 <Image
                   style={this.menuImageDimension}
                   source={{
-                    uri: this.roomsBtn
+                    uri: this.roomsBtn,
                   }}
                 />
               </MenuItem>
@@ -129,7 +137,7 @@ class HomeScreen extends React.PureComponent {
                 <Image
                   style={this.menuImageDimension}
                   source={{
-                    uri: this.amenityBtn
+                    uri: this.amenityBtn,
                   }}
                 />
               </MenuItem>
@@ -140,7 +148,7 @@ class HomeScreen extends React.PureComponent {
                 <Image
                   style={this.menuImageDimension}
                   source={{
-                    uri: this.diningBtn
+                    uri: this.diningBtn,
                   }}
                 />
               </MenuItem>
@@ -148,7 +156,7 @@ class HomeScreen extends React.PureComponent {
                 <Image
                   style={this.menuImageDimension}
                   source={{
-                    uri: this.feedbackBtn
+                    uri: this.feedbackBtn,
                   }}
                 />
               </MenuItem>
@@ -157,7 +165,7 @@ class HomeScreen extends React.PureComponent {
                 <Image
                   style={this.menuImageDimension}
                   source={{
-                    uri: this.moreBtn
+                    uri: this.moreBtn,
                   }}
                 />
               </MenuItem>
@@ -171,21 +179,21 @@ class HomeScreen extends React.PureComponent {
 
 // ----------- Prop-Types ------
 HomeScreen.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };
 
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
   data: store.data,
-  decks: store.decks
+  decks: store.decks,
 });
 
 const mapDispatchToProps = {
   addDeck: _actions.addDeck,
-  addDeckKeys: _actions.addDeckKeys
+  addDeckKeys: _actions.addDeckKeys,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(HomeScreen);

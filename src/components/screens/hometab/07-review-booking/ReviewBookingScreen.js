@@ -1,13 +1,13 @@
-import React, { PureComponent } from "react";
-import { ScrollView, View, Dimensions } from "react-native";
+import React, { PureComponent } from 'react';
+import { ScrollView, View, Dimensions } from 'react-native';
 
-import { connect } from "react-redux";
-import * as _actions from "../../../redux/actions/actions";
-import * as _reservationActions from "../../../redux/actions/reservationActions";
-import myStyle from "../../../_styles/myStyle";
+import { connect } from 'react-redux';
+import * as _actions from '../../../redux/actions/actions';
+import * as _reservationActions from '../../../redux/actions/reservationActions';
+import myStyle from '../../../_styles/myStyle';
 
-import HotelHeader from "../_libs/hotel-header/HotelHeader";
-import HotelFooter from "../_libs/hotel-footer/HotelFooter";
+import HotelHeader from '../_libs/hotel-header/HotelHeader';
+import HotelFooter from '../_libs/hotel-footer/HotelFooter';
 
 import {
   MainView,
@@ -18,24 +18,23 @@ import {
   Label,
   Value,
   SubTotal,
-  Total
-} from "./zstyles";
+  Total,
+} from './zstyles';
 
 class ReviewBookingScreen extends PureComponent {
   state = {};
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: "Confirm Reservation",
-      headerTintColor: myStyle.primaryColor,
-      headerTitleStyle: {
-        fontWeight: "bold"
-      }
-    };
-  };
+
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: 'Confirm Reservation',
+    headerTintColor: myStyle.primaryColor,
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  });
 
   handleSubmit = () => {
     this.props.addReservation(this.reservation).then(() => {
-      this.props.navigation.navigate("ThankYouScreen");
+      this.props.navigation.navigate('ThankYouScreen');
     });
   };
 
@@ -44,17 +43,16 @@ class ReviewBookingScreen extends PureComponent {
     const guestInfo = this.props.userSession.guestInfo;
     const hotelInfo = this.props.userSession.selectedHotel;
 
-    const name = guestInfo.firstName + " " + guestInfo.lastName;
+    const name = `${guestInfo.firstName} ${guestInfo.lastName}`;
     const phone = guestInfo.phone;
     const email = guestInfo.email;
-    const address =
-      guestInfo.street +
-      ", " +
-      guestInfo.city +
-      ", " +
-      guestInfo.state +
-      ", " +
-      guestInfo.country;
+    const address = `${guestInfo.street
+    }, ${
+      guestInfo.city
+    }, ${
+      guestInfo.state
+    }, ${
+      guestInfo.country}`;
     const hotelName = hotelInfo.name;
     const hotelAddress = hotelInfo.address;
     const arrival = userInfo.arrival;
@@ -70,7 +68,7 @@ class ReviewBookingScreen extends PureComponent {
       hotelName,
       hotelAddress,
       arrival,
-      departure
+      departure,
     });
 
     this.reservation = {
@@ -81,18 +79,18 @@ class ReviewBookingScreen extends PureComponent {
       address: hotelAddress,
       arrival,
       departure,
-      totalAmount
-    };   
+      totalAmount,
+    };
   }
-  
-  dimensions = Dimensions.get("window");
-  
+
+  dimensions = Dimensions.get('window');
+
   render() {
     return (
       <MainView>
         <ScrollView
           style={{
-            width: this.dimensions.width
+            width: this.dimensions.width,
           }}
         >
           <HotelHeader hotel={this.props.userSession.selectedHotel} />
@@ -130,7 +128,10 @@ class ReviewBookingScreen extends PureComponent {
               <Label>Total Amount</Label>
 
               <Value>
-                <Total>${parseInt(this.state.totalAmount).toFixed(2)}</Total>
+                <Total>
+$
+                  {parseInt(this.state.totalAmount).toFixed(2)}
+                </Total>
               </Value>
             </Row>
 
@@ -160,35 +161,41 @@ class ReviewBookingScreen extends PureComponent {
               <Label>Departure</Label>
               <Value>{this.state.departure}</Value>
             </Row>
-            {console.log(this.state.selectedRooms)}}
+            {console.log(this.state.selectedRooms)}
+}
             {this.props.userSession.selectedRooms.map((room, i) => (
               <Row key={i}>
                 <Label>
-                  Room Reserved{" "}
+                  Room Reserved
+                  {' '}
                   {this.props.userSession.selectedRooms.length === 1
-                    ? ""
+                    ? ''
                     : i + 1}
                 </Label>
                 <Value>
-                  {"room " +
-                    room.roomNo +
-                    ", " +
-                    room.type +
-                    ", $" +
-                    room.price +
-                    " rate, " +
-                    room.nights +
-                    " nights, " +
-                    room.pax +
-                    " pax, " +
-                    room.description}
-                  <SubTotal>(${parseInt(room.subTotal).toFixed(2)})</SubTotal>
+                  {`room ${
+                    room.roomNo
+                  }, ${
+                    room.type
+                  }, $${
+                    room.price
+                  } rate, ${
+                    room.nights
+                  } nights, ${
+                    room.pax
+                  } pax, ${
+                    room.description}`}
+                  <SubTotal>
+($
+                    {parseInt(room.subTotal).toFixed(2)}
+)
+                  </SubTotal>
                 </Value>
               </Row>
             ))}
           </View>
         </ScrollView>
-        <HotelFooter buttonLabel={"Payment"} handleSubmit={this.handleSubmit} />
+        <HotelFooter buttonLabel="Payment" handleSubmit={this.handleSubmit} />
       </MainView>
     );
   }
@@ -197,16 +204,16 @@ class ReviewBookingScreen extends PureComponent {
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
   data: store.data,
-  userSession: store.userSession
+  userSession: store.userSession,
 });
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
   addReservation: _reservationActions.addReservation,
-  saveUserSession: _actions.saveUserSession
+  saveUserSession: _actions.saveUserSession,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ReviewBookingScreen);

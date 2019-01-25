@@ -22,7 +22,7 @@ export const fetchCitiesFailure = error => ({
 });
 
 // async actions creators
-export const fetchCities = () => async dispatch => {
+export const fetchCities = () => async (dispatch) => {
   dispatch(fetchCitiesBegin);
   try {
     const cities = await API.fetchCities();

@@ -33,7 +33,7 @@ export const fetchRoomsFailure = error => ({
 });
 
 // async actions creators
-export const fetchRooms = () => async dispatch => {
+export const fetchRooms = () => async (dispatch) => {
   dispatch(fetchRoomsBegin);
   try {
     const rooms = await API.fetchRooms();

@@ -1,30 +1,31 @@
-import React, { PureComponent } from "react";
-import { ScrollView, Dimensions } from "react-native";
+import React, { PureComponent } from 'react';
+import { ScrollView, Dimensions } from 'react-native';
 
 
-import { connect } from "react-redux";
-import * as _actions from "../../../redux/actions/actions";
-import myStyle from "../../../_styles/myStyle";
+import { connect } from 'react-redux';
+import * as _actions from '../../../redux/actions/actions';
+import myStyle from '../../../_styles/myStyle';
 
-import HotelHeader from "../_libs/hotel-header/HotelHeader";
-import HotelFooter from "../_libs/hotel-footer/HotelFooter";
-import { MainView, TopDivFirst, TopText, Row, Label, Value } from "./zstyles";
+import HotelHeader from '../_libs/hotel-header/HotelHeader';
+import HotelFooter from '../_libs/hotel-footer/HotelFooter';
+import {
+  MainView, TopDivFirst, TopText, Row, Label, Value,
+} from './zstyles';
 
 class ThankYouScreen extends PureComponent {
   state = {};
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: "Reservation Confirmed",
-      headerTintColor: myStyle.primaryColor,
-      headerTitleStyle: {
-        fontWeight: "bold"
-      },
-      headerLeft: null
-    };
-  };
+
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: 'Reservation Confirmed',
+    headerTintColor: myStyle.primaryColor,
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+    headerLeft: null,
+  });
 
   handleSubmit = () => {
-    this.props.navigation.navigate("ReservationScreen");
+    this.props.navigation.navigate('ReservationScreen');
   };
 
   componentDidMount() {
@@ -32,16 +33,17 @@ class ThankYouScreen extends PureComponent {
     this.setState({ ...reservation });
   }
 
-  dimensions = Dimensions.get("window");
+  dimensions = Dimensions.get('window');
 
   render() {
     return (
       <MainView>
-     
+
 
         <ScrollView style={{
-            width: this.dimensions.width
-          }}>
+          width: this.dimensions.width,
+        }}
+        >
           <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <TopDivFirst>
             <TopText>Please print this information.</TopText>
@@ -83,12 +85,15 @@ class ThankYouScreen extends PureComponent {
           </Row>
           <Row>
             <Label>Amount paid</Label>
-            <Value>${parseInt(this.state.totalAmount).toFixed(2)}</Value>
+            <Value>
+$
+              {parseInt(this.state.totalAmount).toFixed(2)}
+            </Value>
           </Row>
         </ScrollView>
 
         <HotelFooter
-          buttonLabel={"View My Reservations"}
+          buttonLabel="View My Reservations"
           handleSubmit={this.handleSubmit}
         />
       </MainView>
@@ -99,14 +104,14 @@ class ThankYouScreen extends PureComponent {
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
   data: store.data,
-  userSession: store.userSession
+  userSession: store.userSession,
 });
 
 const mapDispatchToProps = {
-  updateData: _actions.updateData
+  updateData: _actions.updateData,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ThankYouScreen);

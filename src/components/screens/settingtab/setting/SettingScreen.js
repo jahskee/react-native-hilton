@@ -1,24 +1,23 @@
-/*jshint esversion: 6 */
-import React from "react";
-import { View, Image, Dimensions } from "react-native";
-import { connect } from "react-redux";
-import * as _actions from "../../../redux/actions/actions";
-import myStyle from "../../../_styles/myStyle";
-import { Panel1, HotelInfo } from "./zstyles";
+/* jshint esversion: 6 */
+import React from 'react';
+import { View, Image, Dimensions } from 'react-native';
+import { connect } from 'react-redux';
+import * as _actions from '../../../redux/actions/actions';
+import myStyle from '../../../_styles/myStyle';
+import { Panel1, HotelInfo } from './zstyles';
 
 class SettingScreen extends React.PureComponent {
   state = {
-    image: "https://i.imgur.com/o7rtJpl.png"
-  };
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: "My Reservations",
-      headerTintColor: myStyle.primaryColor
-    };
+    image: 'https://i.imgur.com/o7rtJpl.png',
   };
 
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: 'My Reservations',
+    headerTintColor: myStyle.primaryColor,
+  });
+
   render() {
-    const dimensions = Dimensions.get("window");
+    const dimensions = Dimensions.get('window');
     const imageHeight = Math.round((dimensions.width * 9) / 16);
     const imageWidth = dimensions.width;
     return (
@@ -26,7 +25,7 @@ class SettingScreen extends React.PureComponent {
         <Image
           style={{ height: 60, width: imageWidth }}
           source={{
-            uri: this.state.image
+            uri: this.state.image,
           }}
         />
 
@@ -41,15 +40,15 @@ class SettingScreen extends React.PureComponent {
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
   data: store.data,
-  userSession: store.userSession
+  userSession: store.userSession,
 });
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
-  saveUserSession: _actions.saveUserSession
+  saveUserSession: _actions.saveUserSession,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SettingScreen);

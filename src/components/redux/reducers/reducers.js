@@ -76,7 +76,7 @@ const reservationReducer = (reservations = [], action) => {
     case _reservationActions.FETCH_RESERVATIONS_FAILURE:
       return [];
 
-    /* ---- add reservation -----*/
+      /* ---- add reservation -----*/
 
     case _reservationActions.ADD_RESERVATION_BEGIN:
       return action.payload;

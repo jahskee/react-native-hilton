@@ -22,7 +22,7 @@ export const fetchHotelsFailure = error => ({
 });
 
 // async actions creators
-export const fetchHotels = () => async dispatch => {
+export const fetchHotels = () => async (dispatch) => {
   dispatch(fetchHotelsBegin);
   try {
     const hotels = await API.fetchHotels();

@@ -1,16 +1,14 @@
-import React from "react";
-import { TouchableOpacity } from "react-native";
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
 
-import { GreenButton, HotelFooterView } from "./zstyles";
+import { GreenButton, HotelFooterView } from './zstyles';
 
-const HotelFooter = props => {
-  return (
-    <HotelFooterView>
-      <TouchableOpacity onPress={props.handleSubmit}>
-        <GreenButton>{props.buttonLabel}</GreenButton>
-      </TouchableOpacity>
-    </HotelFooterView>
-  );
-};
+const HotelFooter = props => (
+  <HotelFooterView>
+    <TouchableOpacity onPress={props.handleSubmit}>
+      <GreenButton>{props.buttonLabel}</GreenButton>
+    </TouchableOpacity>
+  </HotelFooterView>
+);
 
 export default HotelFooter;

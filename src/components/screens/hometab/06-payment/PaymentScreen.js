@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { ScrollView, Text } from "react-native";
-import { connect } from "react-redux";
-import * as _actions from "../../../redux/actions/actions";
-import myStyle from "../../../_styles/myStyle";
-import HotelHeader from "../_libs/hotel-header/HotelHeader";
-import HotelFooter from "../_libs/hotel-footer/HotelFooter";
+import { ScrollView, Text } from 'react-native';
+import { connect } from 'react-redux';
+import * as _actions from '../../../redux/actions/actions';
+import myStyle from '../../../_styles/myStyle';
+import HotelHeader from '../_libs/hotel-header/HotelHeader';
+import HotelFooter from '../_libs/hotel-footer/HotelFooter';
 
 import {
   Container,
@@ -20,88 +20,86 @@ import {
   TextInput4,
   View2,
   Amount,
-  AmountDiv, 
-  KeyboardAvoidingView2
-} from "./zstyles";
+  AmountDiv,
+  KeyboardAvoidingView2,
+} from './zstyles';
 
 class PaymentScreen extends Component {
   state = {
-    name: "",
-    creditCard: "",
-    month: "",
-    year: "",
-    cvv: "",
-    street: "",
-    city: "",
-    zipCode: "",
-    state: "",
-    country: ""
+    name: '',
+    creditCard: '',
+    month: '',
+    year: '',
+    cvv: '',
+    street: '',
+    city: '',
+    zipCode: '',
+    state: '',
+    country: '',
   };
 
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: "Payment Info",
-      headerTintColor: myStyle.primaryColor,
-      headerTitleStyle: {
-        fontWeight: "bold"
-      }
-    };
-  };
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: 'Payment Info',
+    headerTintColor: myStyle.primaryColor,
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  });
 
-  handleChangeName = text => {
+  handleChangeName = (text) => {
     this.setState({ name: text });
   };
 
-  handleChangeCreditCard = text => {
+  handleChangeCreditCard = (text) => {
     this.setState({ creditCard: text });
   };
 
-  handleChangeCCMonth = text => {
+  handleChangeCCMonth = (text) => {
     this.setState({ month: text });
   };
 
-  handleChangeCCYear = text => {
+  handleChangeCCYear = (text) => {
     this.setState({ year: text });
   };
 
-  handleChangeCVV = text => {
+  handleChangeCVV = (text) => {
     this.setState({ cvv: text });
   };
 
-  handleChangeStreet = text => {
+  handleChangeStreet = (text) => {
     this.setState({ street: text });
   };
 
-  handleChangeCity = text => {
+  handleChangeCity = (text) => {
     this.setState({ city: text });
   };
 
-  handleChangeZipCode = text => {
+  handleChangeZipCode = (text) => {
     this.setState({ zipCode: text });
   };
 
-  handleChangeState = text => {
+  handleChangeState = (text) => {
     this.setState({ state: text });
   };
 
-  handleChangeCountry = text => {
+  handleChangeCountry = (text) => {
     this.setState({ country: text });
   };
 
   handleSubmit = () => {
     if (
-      this.state.name === "" ||
-      this.state.creditCard === "" ||
-      this.state.month === "" ||
-      this.state.year === "" ||
-      this.state.cvv === "" ||
-      this.state.street === "" ||
-      this.state.city === "" ||
-      this.state.zipCode === "" ||
-      this.state.state === "" ||
-      this.state.country === ""
+      this.state.name === ''
+      || this.state.creditCard === ''
+      || this.state.month === ''
+      || this.state.year === ''
+      || this.state.cvv === ''
+      || this.state.street === ''
+      || this.state.city === ''
+      || this.state.zipCode === ''
+      || this.state.state === ''
+      || this.state.country === ''
     ) {
-      alert("Please enter values on empty fields.");
+      alert('Please enter values on empty fields.');
       return;
     }
 
@@ -110,19 +108,19 @@ class PaymentScreen extends Component {
     this.props.saveUserSession({
       paymentInfo: {
         name: this.state.name,
-        creditCard: "**********XXXXXX",
-        month: "xx",
-        year: "xx",
-        cvv: "xxx",
+        creditCard: '**********XXXXXX',
+        month: 'xx',
+        year: 'xx',
+        cvv: 'xxx',
         street: this.state.street,
         city: this.state.city,
         zipCode: this.state.zipCode,
         state: this.state.state,
-        country: this.state.country
-      }
+        country: this.state.country,
+      },
     });
 
-    this.props.navigation.navigate("ReviewBookingScreen");
+    this.props.navigation.navigate('ReviewBookingScreen');
   };
 
   render() {
@@ -132,9 +130,10 @@ class PaymentScreen extends Component {
           <HotelHeader hotel={this.props.userSession.selectedHotel} />
           <Container>
             <AmountDiv>
-              <Amount>{this.props.userSession.nightsStay + " night(s)"}</Amount>
+              <Amount>{`${this.props.userSession.nightsStay} night(s)`}</Amount>
               <Amount>
-                Total: ${this.props.userSession.totalAmount.toFixed(2)}
+                Total: $
+                {this.props.userSession.totalAmount.toFixed(2)}
               </Amount>
             </AmountDiv>
 
@@ -211,7 +210,7 @@ class PaymentScreen extends Component {
             </Row>
 
             <HotelFooter
-              buttonLabel={"Continue"}
+              buttonLabel="Continue"
               handleSubmit={this.handleSubmit}
             />
           </Container>
@@ -224,15 +223,15 @@ class PaymentScreen extends Component {
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
   data: store.data,
-  userSession: store.userSession
+  userSession: store.userSession,
 });
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
-  saveUserSession: _actions.saveUserSession
+  saveUserSession: _actions.saveUserSession,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(PaymentScreen);

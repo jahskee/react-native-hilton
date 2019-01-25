@@ -23,7 +23,7 @@ export const fetchReservationsFailure = error => ({
 });
 
 // async actions creators
-export const fetchReservations = () => async dispatch => {
+export const fetchReservations = () => async (dispatch) => {
   dispatch(fetchReservationsBegin);
   try {
     const reservations = await API.fetchReservations();
@@ -55,7 +55,7 @@ export const addReservationFailure = error => ({
 });
 
 // async actions creators
-export const addReservation = param => async dispatch => {
+export const addReservation = param => async (dispatch) => {
   dispatch(addReservationBegin);
   try {
     const reservation = await API.addReservation(param);

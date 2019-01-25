@@ -6,7 +6,7 @@ const graphqlServer = 'http://kickstartapps.us:4000/graphql';
 
 const API = {};
 
-API.addReservation = async param => {
+API.addReservation = async (param) => {
   let reservation = {};
   try {
     const response = await axios({
@@ -17,11 +17,11 @@ API.addReservation = async param => {
                   mutation {
                     saveReservation(
                             name: "${param.name}", phone: "${param.phone}", email: "${
-          param.email
-        }", hotel: "${param.hotel}", address: "${param.address}",
+  param.email
+}", hotel: "${param.hotel}", address: "${param.address}",
                             arrival: "${param.arrival}", departure: "${
-          param.departure
-        }", totalAmount: ${param.totalAmount}
+  param.departure
+}", totalAmount: ${param.totalAmount}
                     ){ id name phone email hotel address arrival departure totalAmount }
                   }
                 `,

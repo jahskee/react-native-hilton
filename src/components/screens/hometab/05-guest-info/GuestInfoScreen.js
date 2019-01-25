@@ -1,82 +1,83 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   ScrollView,
   Text,
   StyleSheet,
-} from "react-native";
-import { Container, TopLabel, Row, Label, Input, KeyboardAvoidingView2 } from "./zstyles";
-import { connect } from "react-redux";
-import * as _actions from "../../../redux/actions/actions";
-import myStyle from "../../../_styles/myStyle";
+} from 'react-native';
+import { connect } from 'react-redux';
+import {
+  Container, TopLabel, Row, Label, Input, KeyboardAvoidingView2,
+} from './zstyles';
+import * as _actions from '../../../redux/actions/actions';
+import myStyle from '../../../_styles/myStyle';
 
-import HotelHeader from "../_libs/hotel-header/HotelHeader";
-import HotelFooter from "../_libs/hotel-footer/HotelFooter";
+import HotelHeader from '../_libs/hotel-header/HotelHeader';
+import HotelFooter from '../_libs/hotel-footer/HotelFooter';
 
 class ReviewBookingScreen extends Component {
   state = {
-    firstName: "",
-    lastName: "",
-    phone: "",
-    email: "",
-    street: "",
-    city: "",
-    state: "",
-    country: ""
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+    street: '',
+    city: '',
+    state: '',
+    country: '',
   };
 
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: "Guest Info",
-      headerTintColor: myStyle.primaryColor,
-      headerTitleStyle: {
-        fontWeight: "bold"
-      }
-    };
-  };
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: 'Guest Info',
+    headerTintColor: myStyle.primaryColor,
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  });
 
-  handleChangeFirstName = text => {
+  handleChangeFirstName = (text) => {
     this.setState({ firstName: text });
   };
 
-  handleChangeLastName = text => {
+  handleChangeLastName = (text) => {
     this.setState({ lastName: text });
   };
 
-  handleChangePhone = text => {
+  handleChangePhone = (text) => {
     this.setState({ phone: text });
   };
-  handleChangeEmail = text => {
+
+  handleChangeEmail = (text) => {
     this.setState({ email: text });
   };
 
-  handleChangeStreet = text => {
+  handleChangeStreet = (text) => {
     this.setState({ street: text });
   };
 
-  handleChangeCity = text => {
+  handleChangeCity = (text) => {
     this.setState({ city: text });
   };
 
-  handleChangeState = text => {
+  handleChangeState = (text) => {
     this.setState({ state: text });
   };
 
-  handleChangeCountry = text => {
+  handleChangeCountry = (text) => {
     this.setState({ country: text });
   };
 
   handleSubmit = () => {
     if (
-      this.state.firstName === "" ||
-      this.state.lastName === "" ||
-      this.state.phone === "" ||
-      this.state.email === "" ||
-      this.state.street === "" ||
-      this.state.city === "" ||
-      this.state.state === "" ||
-      this.state.country === ""
+      this.state.firstName === ''
+      || this.state.lastName === ''
+      || this.state.phone === ''
+      || this.state.email === ''
+      || this.state.street === ''
+      || this.state.city === ''
+      || this.state.state === ''
+      || this.state.country === ''
     ) {
-      alert("Please enter values on empty fields.");
+      alert('Please enter values on empty fields.');
       return;
     }
 
@@ -89,10 +90,10 @@ class ReviewBookingScreen extends Component {
         street: this.state.street,
         city: this.state.city,
         state: this.state.state,
-        country: this.state.country
-      }
+        country: this.state.country,
+      },
     });
-    this.props.navigation.navigate("PaymentScreen", { deck: 100 });
+    this.props.navigation.navigate('PaymentScreen', { deck: 100 });
   };
 
   render() {
@@ -162,7 +163,7 @@ class ReviewBookingScreen extends Component {
             </Row>
 
             <HotelFooter
-              buttonLabel={"Continue"}
+              buttonLabel="Continue"
               handleSubmit={this.handleSubmit}
             />
           </Container>
@@ -176,23 +177,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 
-    backgroundColor: "#fffd",
-    alignItems: "center",
-    justifyContent: "center"
-  }
+    backgroundColor: '#fffd',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 // ---------- Setup Redux -------------
 const mapStateToProps = store => ({
   data: store.data,
-  userSession: store.userSession
+  userSession: store.userSession,
 });
 
 const mapDispatchToProps = {
   updateData: _actions.updateData,
-  saveUserSession: _actions.saveUserSession
+  saveUserSession: _actions.saveUserSession,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ReviewBookingScreen);

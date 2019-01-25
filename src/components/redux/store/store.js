@@ -40,7 +40,7 @@ store.dispatch(
   _actions.saveUserSession({
     selectedLocation: 'Los Angeles, CA',
     locationIndex: 0,
-  })
+  }),
 );
 
 export default store;

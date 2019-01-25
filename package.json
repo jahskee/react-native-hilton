@@ -5,6 +5,7 @@
   "devDependencies": {
     "@babel/preset-flow": "^7.0.0",
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -50,10 +51,8 @@
     "react-apollo": "^2.3.3",
     "react-dom": "^16.7.0",
     "react-native": "~0.55.2",
-    "react-native-calendar-picker": "^5.22.0",
     "react-native-dates": "^2.0.4",
     "react-native-material-dropdown": "^0.11.1",
-    "react-native-range-datepicker": "^1.8.2",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "2.2.4",
     "react-redux": "^5.0.7",
