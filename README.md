@@ -23,9 +23,7 @@
     * Find reservation by Id
     http://kickstartapps.us:4000/api/reservation/5c4b837e4001a326f882b2b5
     http://kickstartapps.us:4000/api/reservation/5c4b98ee4001a326f882b2b8
-    http://kickstartapps.us:4000/api/reservation/5c4b998d4001a326f882b2b9
-    
-     
+      
 #### Video about the project
    https://youtu.be/6pam9P3fpTc
    [![Alt text](https://i.imgur.com/pVByW80.png)](https://youtu.be/6pam9P3fpTc)
