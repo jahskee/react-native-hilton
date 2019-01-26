@@ -19,11 +19,11 @@
 #### REST Support Requirement    
 
     * Find all reservations
-    [GET] http://kickstartapps.us:4000/api/reservations
+    http://kickstartapps.us:4000/api/reservations
     
     * Find reservation by Id
-    [GET] http://kickstartapps.us:4000/api/reservation/5c4b837e4001a326f882b2b5
-    [GET] http://kickstartapps.us:4000/api/reservation/5c4b98ee4001a326f882b2b8
+    http://kickstartapps.us:4000/api/reservation/5c4b837e4001a326f882b2b5
+    http://kickstartapps.us:4000/api/reservation/5c4b98ee4001a326f882b2b8
     
     * Add and update reservation
     [POST] http://kickstartapps.us:4000/api/reservation
