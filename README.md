@@ -28,7 +28,7 @@
     * Add and update reservation
     [POST] http://kickstartapps.us:4000/api/reservation
     
-    - If _id is undefined record add; else, update
+    - If _id is undefined add; else, update
      samplePostData = {
             _id: 'any' . 
             name: 'jaizon',
