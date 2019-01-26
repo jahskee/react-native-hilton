@@ -16,8 +16,15 @@
     Live server for the project:
     http://kickstartapps.us:4000/graphql
        
-#### REST Requirement       
+#### REST Requirement        
+    * Find all reservations
     http://kickstartapps.us:4000/api/reservations
+    
+    * Find reservation by Id
+    http://kickstartapps.us:4000/api/reservation/5c4b837e4001a326f882b2b5
+    http://kickstartapps.us:4000/api/reservation/5c4b98ee4001a326f882b2b8
+    http://kickstartapps.us:4000/api/reservation/5c4b998d4001a326f882b2b9
+    
      
 #### Video about the project
    https://youtu.be/6pam9P3fpTc
