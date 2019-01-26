@@ -20,7 +20,7 @@
 
 ### Screenshots
 
-   ![alt text](https://i.imgur.com/8Livwri.png)
+   ![alt text](https://i.imgur.com/Qsf1Mvy.png)
    ![alt text](https://i.imgur.com/nTmJ3ge.png)
 
 ### GraphQL Screenshot
