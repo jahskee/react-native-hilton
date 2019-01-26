@@ -1,29 +1,29 @@
 /* jshint esversion: 6 */
-import API from "../../api/API";
-import * as _actions from "./actions";
+import API from '../../api/API';
+import * as _actions from './actions';
 
 /* ---- Start: Async fetch of Reservations ---- */
-export const FETCH_RESERVATIONS_BEGIN = "FETCH_RESERVATIONS_BEGIN";
-export const FETCH_RESERVATIONS_SUCCESS = "FETCH_RESERVATIONS_SUCCESS";
-export const FETCH_RESERVATIONS_FAILURE = "FETCH_RESERVATIONS_FAILURE";
+export const FETCH_RESERVATIONS_BEGIN = 'FETCH_RESERVATIONS_BEGIN';
+export const FETCH_RESERVATIONS_SUCCESS = 'FETCH_RESERVATIONS_SUCCESS';
+export const FETCH_RESERVATIONS_FAILURE = 'FETCH_RESERVATIONS_FAILURE';
 
 export const fetchReservationsBegin = () => ({
   type: FETCH_RESERVATIONS_BEGIN,
-  payload: []
+  payload: [],
 });
 
 export const fetchReservationsSuccess = reservations => ({
   type: FETCH_RESERVATIONS_SUCCESS,
-  payload: reservations
+  payload: reservations,
 });
 
 export const fetchReservationsFailure = error => ({
   type: FETCH_RESERVATIONS_FAILURE,
-  payload: { error }
+  payload: { error },
 });
 
 // async actions creators
-export const fetchReservations = () => async dispatch => {
+export const fetchReservations = () => async (dispatch) => {
   dispatch(fetchReservationsBegin);
   try {
     const reservations = await API.fetchReservations();
@@ -35,27 +35,27 @@ export const fetchReservations = () => async dispatch => {
 /* ---- End: Async fetch of Reservations ---- */
 
 /* ---- Start: Async Add Reservation ---- */
-export const ADD_RESERVATION_BEGIN = "ADD_RESERVATION_BEGIN";
-export const ADD_RESERVATION_SUCCESS = "ADD_RESERVATION_SUCCESS";
-export const ADD_RESERVATION_FAILURE = "ADD_RESERVATION_FAILURE";
+export const ADD_RESERVATION_BEGIN = 'ADD_RESERVATION_BEGIN';
+export const ADD_RESERVATION_SUCCESS = 'ADD_RESERVATION_SUCCESS';
+export const ADD_RESERVATION_FAILURE = 'ADD_RESERVATION_FAILURE';
 
 export const addReservationBegin = () => ({
   type: ADD_RESERVATION_BEGIN,
-  payload: []
+  payload: [],
 });
 
 export const addReservationSuccess = reservation => ({
   type: ADD_RESERVATION_SUCCESS,
-  payload: reservation
+  payload: reservation,
 });
 
 export const addReservationFailure = error => ({
   type: ADD_RESERVATION_FAILURE,
-  payload: { error }
+  payload: { error },
 });
 
 // async actions creators
-export const addReservation = param => async dispatch => {
+export const addReservation = param => async (dispatch) => {
   dispatch(addReservationBegin);
   try {
     const reservation = await API.addReservation(param);

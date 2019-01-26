@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Image, TouchableOpacity } from "react-native";
+import React, { Component } from 'react';
+import { Image, TouchableOpacity } from 'react-native';
 
 import {
   Room,
@@ -11,10 +11,10 @@ import {
   RHLeft,
   RHMid,
   RHRight,
-  Selected
-} from "./zstyles";
+  Selected,
+} from './zstyles';
 
-export const RoomDiv = props => {
+export const RoomDiv = (props) => {
   const handleRoomSelect = () => {
     props.handleRoomSelect(props.room.roomNo);
   };
@@ -24,9 +24,9 @@ export const RoomDiv = props => {
         <RoomLeft>
           <RoomPhoto>
             <Image
-              style={{ width: "100%", height: 60 }}
+              style={{ width: '100%', height: 60 }}
               source={{
-                uri: props.room.image
+                uri: props.room.image,
               }}
             />
           </RoomPhoto>
@@ -39,7 +39,10 @@ export const RoomDiv = props => {
               {props.room.roomNo}
             </RHLeft>
             <RHMid>{props.room.type}</RHMid>
-            <RHRight>${props.room.price}</RHRight>
+            <RHRight>
+$
+              {props.room.price}
+            </RHRight>
           </RoomHeader>
           <RoomBody>{props.room.description}</RoomBody>
         </RoomRight>

@@ -1,14 +1,14 @@
 /* jshint esversion: 6 */
 
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import * as _actions from "../actions/actions";
+import * as _actions from '../actions/actions';
 
-import * as _roomActions from "../actions/roomActions";
-import * as _hotelActions from "../actions/hotelActions";
-import * as _cityActions from "../actions/cityActions";
-import * as _reservationActions from "../actions/reservationActions";
-import reducerFuncs from "./reducerFuncs";
+import * as _roomActions from '../actions/roomActions';
+import * as _hotelActions from '../actions/hotelActions';
+import * as _cityActions from '../actions/cityActions';
+import * as _reservationActions from '../actions/reservationActions';
+import reducerFuncs from './reducerFuncs';
 
 const merge = (prev, next) => Object.assign({}, prev, next);
 
@@ -76,7 +76,7 @@ const reservationReducer = (reservations = [], action) => {
     case _reservationActions.FETCH_RESERVATIONS_FAILURE:
       return [];
 
-    /* ---- add reservation -----*/
+      /* ---- add reservation -----*/
 
     case _reservationActions.ADD_RESERVATION_BEGIN:
       return action.payload;
@@ -105,7 +105,7 @@ const reducer = combineReducers({
   hotels: hotelReducer,
   city: cityReducer,
   reservations: reservationReducer,
-  userSession: userSessionReducer
+  userSession: userSessionReducer,
 });
 
 export default reducer;
