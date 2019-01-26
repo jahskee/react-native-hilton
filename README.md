@@ -1,6 +1,6 @@
 ## Hotel Reservation, Front-End Mobile App
 
-    GraphQL + React Native + Redux + Axios + Flow or Typescript
+    GraphQL + React Native + Redux + Node + Express + Axios + Flow or Typescript
 
 #### RN Installation 
     git clone https://github.com/jahskee/react-native-hilton
