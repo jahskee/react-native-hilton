@@ -19,14 +19,14 @@
 #### REST Support Requirement    
 
     * Find all reservations
-    http://kickstartapps.us:4000/api/reservations
+    [GET] http://kickstartapps.us:4000/api/reservations
     
     * Find reservation by Id
-    [get] http://kickstartapps.us:4000/api/reservation/5c4b837e4001a326f882b2b5
-    [get] http://kickstartapps.us:4000/api/reservation/5c4b98ee4001a326f882b2b8
+    [GET] http://kickstartapps.us:4000/api/reservation/5c4b837e4001a326f882b2b5
+    [GET] http://kickstartapps.us:4000/api/reservation/5c4b98ee4001a326f882b2b8
     
     * Add and update reservation
-    [post] http://kickstartapps.us:4000/api/reservation
+    [POST] http://kickstartapps.us:4000/api/reservation
     
     - If _id is undefined record add; else, update
      samplePostData = {
