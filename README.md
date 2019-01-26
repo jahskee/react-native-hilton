@@ -12,7 +12,7 @@
     npm install
     npm start
    
-#### GraphQL Server
+#### GraphQL Live Server
     Live server for the project:
     http://kickstartapps.us:4000/graphql
        
