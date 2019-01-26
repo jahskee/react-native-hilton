@@ -14,17 +14,14 @@ API.addReservation = async (param) => {
       method: 'post',
       data: {
         query: `
-                  mutation {
-                    saveReservation(
-                            name: "${param.name}", phone: "${param.phone}", email: "${
-  param.email
-}", hotel: "${param.hotel}", address: "${param.address}",
-                            arrival: "${param.arrival}", departure: "${
-  param.departure
-}", totalAmount: ${param.totalAmount}
-                    ){ id name phone email hotel address arrival departure totalAmount }
-                  }
-                `,
+          mutation {
+            saveReservation(
+                    name: "${param.name}", phone: "${param.phone}", email: "${ param.email}", 
+                    hotel: "${param.hotel}", address: "${param.address}",
+                    arrival: "${param.arrival}", departure: "${param.departure}", totalAmount: ${param.totalAmount}
+            ){ id name phone email hotel address arrival departure totalAmount }
+          }
+        `,
       },
     });
 
