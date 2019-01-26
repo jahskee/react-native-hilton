@@ -26,8 +26,7 @@ export const Destination = (props) => {
           <HotelAddress>{props.hotel.address}</HotelAddress>
           <Distance>
             {props.hotel.distance}
-            {' '}
-mi
+            {' mi'}
           </Distance>
         </HotelDesc>
         <HotelPhotoPrice>
@@ -41,8 +40,7 @@ mi
           </Photo>
           <Price>
             <Text>
-$
-              {props.hotel.price.toFixed(2)}
+              {'$'+props.hotel.price.toFixed(2)}
             </Text>
           </Price>
         </HotelPhotoPrice>
