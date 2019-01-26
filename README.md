@@ -1,4 +1,4 @@
-## Hotel Reservation, Front-End Mobile App
+## Hotel Reservation, Native Mobile App
 
     GraphQL + React Native + Redux + Node + Express + Axios + Flow or Typescript
 
